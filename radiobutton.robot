@@ -3,7 +3,6 @@ Library    SeleniumLibrary
 
 *** Variables ***
 ${browser}    chrome
-${}
 
 *** Test Cases ***
 
