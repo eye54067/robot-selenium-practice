@@ -1,73 +1,95 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.4.2 (Python 3.14.4 on darwin)" generated="2026-06-05T16:03:55.992954" rpa="false" schemaversion="5">
-<suite id="s1" name="Inputbox" source="/Users/eye/Documents/automation-robot/inputbox.robot">
-<test id="s1-t1" name="TestingInputBox" line="10">
+<robot generator="Robot 7.4.2 (Python 3.14.4 on darwin)" generated="2026-06-15T15:15:58.052402" rpa="false" schemaversion="5">
+<suite id="s1" name="Radiobutton" source="/Users/eye/Documents/automation-robot/radiobutton.robot">
+<test id="s1-t1" name="Testing Radio Buttons" line="9">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2026-06-05T16:03:56.084968" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com/'.</msg>
+<msg time="2026-06-15T15:15:58.130173" level="INFO">Opening browser 'chrome' to base url 'https://qa-automation-practice.netlify.app/'.</msg>
 <arg>${url}</arg>
 <arg>${browser}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2026-06-05T16:03:56.084854" elapsed="1.489882"/>
+<status status="PASS" start="2026-06-15T15:15:58.130058" elapsed="1.903038"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2026-06-05T16:03:57.575378" elapsed="0.334879"/>
+<status status="PASS" start="2026-06-15T15:16:00.033569" elapsed="0.342665"/>
 </kw>
-<kw name="Title Should Be" owner="SeleniumLibrary">
-<msg time="2026-06-05T16:03:57.913489" level="INFO">Page title is 'Swag Labs'.</msg>
-<arg>Swag Labs</arg>
-<doc>Verifies that the current page title equals ``title``.</doc>
-<status status="PASS" start="2026-06-05T16:03:57.910529" elapsed="0.003007"/>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath=//*[@id="buttons"]</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2026-06-15T15:16:00.376719" elapsed="0.008946"/>
 </kw>
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2026-06-05T16:03:57.914173" level="INFO">${username_txt} = id=user-name</msg>
-<var>${username_txt}</var>
-<arg>id=user-name</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2026-06-05T16:03:57.913676" elapsed="0.000518"/>
+<kw name="clickButtonsSubmenu">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-15T15:16:00.386509" level="INFO">Clicking element 'xpath=//*[@id="buttons"]'.</msg>
+<arg>xpath=//*[@id="buttons"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-15T15:16:00.386360" elapsed="0.027494"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-15T15:16:01.415386" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-15T15:16:00.413984" elapsed="1.001779"/>
 </kw>
 <kw name="Element Should Be Visible" owner="SeleniumLibrary">
-<msg time="2026-06-05T16:03:57.926060" level="INFO">Element 'id=user-name' is displayed.</msg>
-<arg>${username_txt}</arg>
+<msg time="2026-06-15T15:16:01.439947" level="INFO">Element 'xpath=//*[@id="checkboxes"]' is displayed.</msg>
+<arg>xpath=//*[@id="checkboxes"]</arg>
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="PASS" start="2026-06-05T16:03:57.914284" elapsed="0.011848"/>
+<status status="PASS" start="2026-06-15T15:16:01.416445" elapsed="0.023633"/>
 </kw>
-<kw name="Element Should Be Enabled" owner="SeleniumLibrary">
-<arg>${username_txt}</arg>
-<doc>Verifies that element identified by ``locator`` is enabled.</doc>
-<status status="PASS" start="2026-06-05T16:03:57.926274" elapsed="0.007410"/>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2026-06-15T15:16:01.450651" level="INFO">Element 'xpath=//*[@id="radio-buttons"]' is displayed.</msg>
+<arg>xpath=//*[@id="radio-buttons"]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-15T15:16:01.440277" elapsed="0.010458"/>
 </kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-06-05T16:03:57.933909" level="INFO">Typing text 'standard_user' into text field 'id=user-name'.</msg>
-<arg>${username_txt}</arg>
-<arg>standard_user</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-06-05T16:03:57.933777" elapsed="0.055556"/>
+<status status="PASS" start="2026-06-15T15:16:00.386071" elapsed="1.064773"/>
 </kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2026-06-05T16:04:02.991625" level="INFO">Slept 5 seconds.</msg>
-<arg>5</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2026-06-05T16:03:57.989694" elapsed="5.002273"/>
-</kw>
-<kw name="Clear Element Text" owner="SeleniumLibrary">
-<arg>${username_txt}</arg>
-<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
-<status status="PASS" start="2026-06-05T16:04:02.992698" elapsed="0.025013"/>
+<kw name="clickRadioMenu">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-15T15:16:01.451498" level="INFO">Clicking element 'xpath=//*[@id="radio-buttons"]'.</msg>
+<arg>xpath=//*[@id="radio-buttons"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-15T15:16:01.451340" elapsed="0.686748"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2026-06-05T16:04:08.019779" level="INFO">Slept 5 seconds.</msg>
-<arg>5</arg>
+<msg time="2026-06-15T15:16:03.139469" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2026-06-05T16:04:03.018064" elapsed="5.002022"/>
+<status status="PASS" start="2026-06-15T15:16:02.138226" elapsed="1.001538"/>
 </kw>
-<kw name="Close Browser" owner="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" start="2026-06-05T16:04:08.020576" elapsed="0.080480"/>
+<status status="PASS" start="2026-06-15T15:16:01.451109" elapsed="1.688894"/>
 </kw>
-<status status="PASS" start="2026-06-05T16:03:56.084497" elapsed="12.016733"/>
+<kw name="clickRadioButton">
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-06-15T15:16:03.154589" level="INFO">Current page contains text 'Radio button 1'.</msg>
+<arg>Radio button 1</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2026-06-15T15:16:03.141273" elapsed="0.013419"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-15T15:16:04.156592" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-15T15:16:03.154864" elapsed="1.002011"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-15T15:16:04.157919" level="INFO">Clicking element 'xpath=//label[text()='Radio button 1']/preceding-sibling::input[@type='radio']'.</msg>
+<arg>xpath=//label[text()='Radio button 1']/preceding-sibling::input[@type='radio']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-15T15:16:04.157266" elapsed="0.046649"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-15T15:16:05.205390" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-15T15:16:04.204129" elapsed="1.001608"/>
+</kw>
+<status status="PASS" start="2026-06-15T15:16:03.140640" elapsed="2.065299"/>
+</kw>
+<status status="PASS" start="2026-06-15T15:15:58.129693" elapsed="7.076828"/>
 </test>
-<status status="PASS" start="2026-06-05T16:03:55.993353" elapsed="12.108199"/>
+<status status="PASS" start="2026-06-15T15:15:58.053133" elapsed="7.154537"/>
 </suite>
 <statistics>
 <total>
@@ -76,7 +98,7 @@
 <tag>
 </tag>
 <suite>
-<stat name="Inputbox" id="s1" pass="1" fail="0" skip="0">Inputbox</stat>
+<stat name="Radiobutton" id="s1" pass="1" fail="0" skip="0">Radiobutton</stat>
 </suite>
 </statistics>
 <errors>

@@ -12,6 +12,7 @@ ${error_user}    error_user
 ${visual_user}    visual_user
 ${password}    secret_sauce
 
+
 *** Test Cases ***
 LoginTest
     openWebsite
