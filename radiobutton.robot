@@ -4,16 +4,27 @@ Library    SeleniumLibrary
 *** Variables ***
 ${browser}    chrome
 ${url}    https://qa-automation-practice.netlify.app/
+${path_radio_1}    //label[text()='Radio button 1']/preceding-sibling::input[@type='radio']
+${path_radio_2}    //label[text()='Radio button 2']/preceding-sibling::input[@type='radio']
+${path_radio_3}    //label[text()='Radio button 3']//preceding-sibling::input[@type='radio']
+${path_radio_4}    //label[text()='Radio button 4 - disabled']/preceding-sibling::input[@type='radio']
 
 *** Test Cases ***
-Testing Radio Buttons
+Click Radio Button 1
     Open Browser    ${url}    ${browser}
     Maximize Browser Window  
     Wait Until Page Contains Element    xpath=//*[@id="buttons"]
     clickButtonsSubmenu
     clickRadioMenu
-    clickRadioButton
-   
+    clickRadioButton1
+Click Radio Button 2
+    clickRadioButton2
+Click Radio Button 3
+    clickRadioButton3
+Verify Radio Button 4 is Disabled
+    Element Should Be Disabled    xpath=${path_radio_4}
+    
+
 *** Keywords ***
 clickButtonsSubmenu
     Click Element    xpath=//*[@id="buttons"]
@@ -23,9 +34,16 @@ clickButtonsSubmenu
 clickRadioMenu
     Click Element    xpath=//*[@id="radio-buttons"]
     Sleep    1
-clickRadioButton
+clickRadioButton1
     Page Should Contain    Radio button 1
-    Sleep    1
-    Click Element    xpath=//label[text()='Radio button 1']/preceding-sibling::input[@type='radio']
-    Sleep    1
+    Click Element    xpath=${path_radio_1}
+clickRadioButton2
+    Page Should Contain    Radio button 2
+    Click Element    xpath=${path_radio_2}
+clickRadioButton3
+    Page Should Contain    Radio button    3
+    Click Element    xpath=${path_radio_3}
+
+
+
 

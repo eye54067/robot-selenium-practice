@@ -1,104 +1,137 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.4.2 (Python 3.14.4 on darwin)" generated="2026-06-15T15:15:58.052402" rpa="false" schemaversion="5">
+<robot generator="Robot 7.4.2 (Python 3.14.4 on darwin)" generated="2026-06-16T14:08:43.792128" rpa="false" schemaversion="5">
 <suite id="s1" name="Radiobutton" source="/Users/eye/Documents/automation-robot/radiobutton.robot">
-<test id="s1-t1" name="Testing Radio Buttons" line="9">
+<test id="s1-t1" name="Click Radio Button 1" line="13">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2026-06-15T15:15:58.130173" level="INFO">Opening browser 'chrome' to base url 'https://qa-automation-practice.netlify.app/'.</msg>
+<msg time="2026-06-16T14:08:43.870566" level="INFO">Opening browser 'chrome' to base url 'https://qa-automation-practice.netlify.app/'.</msg>
 <arg>${url}</arg>
 <arg>${browser}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2026-06-15T15:15:58.130058" elapsed="1.903038"/>
+<status status="PASS" start="2026-06-16T14:08:43.870452" elapsed="1.798110"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2026-06-15T15:16:00.033569" elapsed="0.342665"/>
+<status status="PASS" start="2026-06-16T14:08:45.669098" elapsed="0.343794"/>
 </kw>
 <kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
 <arg>xpath=//*[@id="buttons"]</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" start="2026-06-15T15:16:00.376719" elapsed="0.008946"/>
+<status status="PASS" start="2026-06-16T14:08:46.013380" elapsed="0.006561"/>
 </kw>
 <kw name="clickButtonsSubmenu">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-06-15T15:16:00.386509" level="INFO">Clicking element 'xpath=//*[@id="buttons"]'.</msg>
+<msg time="2026-06-16T14:08:46.020734" level="INFO">Clicking element 'xpath=//*[@id="buttons"]'.</msg>
 <arg>xpath=//*[@id="buttons"]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-06-15T15:16:00.386360" elapsed="0.027494"/>
+<status status="PASS" start="2026-06-16T14:08:46.020555" elapsed="0.026372"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2026-06-15T15:16:01.415386" level="INFO">Slept 1 second.</msg>
+<msg time="2026-06-16T14:08:47.048506" level="INFO">Slept 1 second.</msg>
 <arg>1</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2026-06-15T15:16:00.413984" elapsed="1.001779"/>
+<status status="PASS" start="2026-06-16T14:08:46.047214" elapsed="1.001594"/>
 </kw>
 <kw name="Element Should Be Visible" owner="SeleniumLibrary">
-<msg time="2026-06-15T15:16:01.439947" level="INFO">Element 'xpath=//*[@id="checkboxes"]' is displayed.</msg>
+<msg time="2026-06-16T14:08:47.071180" level="INFO">Element 'xpath=//*[@id="checkboxes"]' is displayed.</msg>
 <arg>xpath=//*[@id="checkboxes"]</arg>
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="PASS" start="2026-06-15T15:16:01.416445" elapsed="0.023633"/>
+<status status="PASS" start="2026-06-16T14:08:47.049199" elapsed="0.022143"/>
 </kw>
 <kw name="Element Should Be Visible" owner="SeleniumLibrary">
-<msg time="2026-06-15T15:16:01.450651" level="INFO">Element 'xpath=//*[@id="radio-buttons"]' is displayed.</msg>
+<msg time="2026-06-16T14:08:47.082375" level="INFO">Element 'xpath=//*[@id="radio-buttons"]' is displayed.</msg>
 <arg>xpath=//*[@id="radio-buttons"]</arg>
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="PASS" start="2026-06-15T15:16:01.440277" elapsed="0.010458"/>
+<status status="PASS" start="2026-06-16T14:08:47.071581" elapsed="0.010859"/>
 </kw>
-<status status="PASS" start="2026-06-15T15:16:00.386071" elapsed="1.064773"/>
+<status status="PASS" start="2026-06-16T14:08:46.020263" elapsed="1.062270"/>
 </kw>
 <kw name="clickRadioMenu">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-06-15T15:16:01.451498" level="INFO">Clicking element 'xpath=//*[@id="radio-buttons"]'.</msg>
+<msg time="2026-06-16T14:08:47.083195" level="INFO">Clicking element 'xpath=//*[@id="radio-buttons"]'.</msg>
 <arg>xpath=//*[@id="radio-buttons"]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-06-15T15:16:01.451340" elapsed="0.686748"/>
+<status status="PASS" start="2026-06-16T14:08:47.083034" elapsed="0.255067"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2026-06-15T15:16:03.139469" level="INFO">Slept 1 second.</msg>
+<msg time="2026-06-16T14:08:48.339255" level="INFO">Slept 1 second.</msg>
 <arg>1</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2026-06-15T15:16:02.138226" elapsed="1.001538"/>
+<status status="PASS" start="2026-06-16T14:08:47.338228" elapsed="1.001406"/>
 </kw>
-<status status="PASS" start="2026-06-15T15:16:01.451109" elapsed="1.688894"/>
+<status status="PASS" start="2026-06-16T14:08:47.082795" elapsed="1.257120"/>
 </kw>
-<kw name="clickRadioButton">
+<kw name="clickRadioButton1">
 <kw name="Page Should Contain" owner="SeleniumLibrary">
-<msg time="2026-06-15T15:16:03.154589" level="INFO">Current page contains text 'Radio button 1'.</msg>
+<msg time="2026-06-16T14:08:48.357177" level="INFO">Current page contains text 'Radio button 1'.</msg>
 <arg>Radio button 1</arg>
 <doc>Verifies that current page contains ``text``.</doc>
-<status status="PASS" start="2026-06-15T15:16:03.141273" elapsed="0.013419"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2026-06-15T15:16:04.156592" level="INFO">Slept 1 second.</msg>
-<arg>1</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2026-06-15T15:16:03.154864" elapsed="1.002011"/>
+<status status="PASS" start="2026-06-16T14:08:48.341052" elapsed="0.016260"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-06-15T15:16:04.157919" level="INFO">Clicking element 'xpath=//label[text()='Radio button 1']/preceding-sibling::input[@type='radio']'.</msg>
-<arg>xpath=//label[text()='Radio button 1']/preceding-sibling::input[@type='radio']</arg>
+<msg time="2026-06-16T14:08:48.357920" level="INFO">Clicking element 'xpath=//label[text()='Radio button 1']/preceding-sibling::input[@type='radio']'.</msg>
+<arg>xpath=${path_radio_1}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-06-15T15:16:04.157266" elapsed="0.046649"/>
+<status status="PASS" start="2026-06-16T14:08:48.357526" elapsed="0.033503"/>
 </kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2026-06-15T15:16:05.205390" level="INFO">Slept 1 second.</msg>
-<arg>1</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2026-06-15T15:16:04.204129" elapsed="1.001608"/>
+<status status="PASS" start="2026-06-16T14:08:48.340438" elapsed="0.050668"/>
 </kw>
-<status status="PASS" start="2026-06-15T15:16:03.140640" elapsed="2.065299"/>
-</kw>
-<status status="PASS" start="2026-06-15T15:15:58.129693" elapsed="7.076828"/>
+<status status="PASS" start="2026-06-16T14:08:43.870061" elapsed="4.521181"/>
 </test>
-<status status="PASS" start="2026-06-15T15:15:58.053133" elapsed="7.154537"/>
+<test id="s1-t2" name="Click Radio Button 2" line="20">
+<kw name="clickRadioButton2">
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-06-16T14:08:48.396945" level="INFO">Current page contains text 'Radio button 2'.</msg>
+<arg>Radio button 2</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2026-06-16T14:08:48.391807" elapsed="0.005174"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-16T14:08:48.397173" level="INFO">Clicking element 'xpath=//label[text()='Radio button 2']/preceding-sibling::input[@type='radio']'.</msg>
+<arg>xpath=${path_radio_2}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-16T14:08:48.397041" elapsed="0.019388"/>
+</kw>
+<status status="PASS" start="2026-06-16T14:08:48.391663" elapsed="0.024835"/>
+</kw>
+<status status="PASS" start="2026-06-16T14:08:48.391435" elapsed="0.025181"/>
+</test>
+<test id="s1-t3" name="Click Radio Button 3" line="22">
+<kw name="clickRadioButton3">
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-06-16T14:08:48.421410" level="INFO">Current page contains text 'Radio button'.</msg>
+<arg>Radio button</arg>
+<arg>3</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2026-06-16T14:08:48.417030" elapsed="0.004409"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-16T14:08:48.421600" level="INFO">Clicking element 'xpath=//label[text()='Radio button 3']//preceding-sibling::input[@type='radio']'.</msg>
+<arg>xpath=${path_radio_3}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-16T14:08:48.421491" elapsed="0.017387"/>
+</kw>
+<status status="PASS" start="2026-06-16T14:08:48.416926" elapsed="0.022009"/>
+</kw>
+<status status="PASS" start="2026-06-16T14:08:48.416743" elapsed="0.022274"/>
+</test>
+<test id="s1-t4" name="Verify Radio Button 4 is Disabled" line="24">
+<kw name="Element Should Be Disabled" owner="SeleniumLibrary">
+<arg>xpath=${path_radio_4}</arg>
+<doc>Verifies that element identified by ``locator`` is disabled.</doc>
+<status status="PASS" start="2026-06-16T14:08:48.439239" elapsed="0.005430"/>
+</kw>
+<status status="PASS" start="2026-06-16T14:08:48.439103" elapsed="0.005626"/>
+</test>
+<status status="PASS" start="2026-06-16T14:08:43.792607" elapsed="4.652305"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="4" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat name="Radiobutton" id="s1" pass="1" fail="0" skip="0">Radiobutton</stat>
+<stat name="Radiobutton" id="s1" pass="4" fail="0" skip="0">Radiobutton</stat>
 </suite>
 </statistics>
 <errors>
