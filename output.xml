@@ -1,177 +1,174 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.4.2 (Python 3.14.4 on darwin)" generated="2026-06-17T13:41:53.916826" rpa="false" schemaversion="5">
+<robot generator="Robot 7.4.2 (Python 3.14.4 on darwin)" generated="2026-06-17T14:17:44.502450" rpa="false" schemaversion="5">
 <suite id="s1" name="Checkboxes" source="/Users/eye/Documents/automation-robot/checkboxes.robot">
-<test id="s1-t1" name="Open Test Website" line="15">
+<test id="s1-t1" name="Test Checkboxes" line="15">
+<kw name="openTestWebsite">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2026-06-17T13:41:53.996608" level="INFO">Opening browser 'chrome' to base url 'https://qa-automation-practice.netlify.app/'.</msg>
+<msg time="2026-06-17T14:17:44.603897" level="INFO">Opening browser 'chrome' to base url 'https://qa-automation-practice.netlify.app/'.</msg>
 <arg>${url}</arg>
 <arg>${browser}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2026-06-17T13:41:53.996492" elapsed="1.644883"/>
+<status status="PASS" start="2026-06-17T14:17:44.603793" elapsed="2.517187"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2026-06-17T13:41:55.641950" elapsed="0.341477"/>
+<status status="PASS" start="2026-06-17T14:17:47.122014" elapsed="0.335958"/>
 </kw>
-<status status="PASS" start="2026-06-17T13:41:53.996121" elapsed="1.987569"/>
-</test>
-<test id="s1-t2" name="Click Button Menu" line="18">
+<status status="PASS" start="2026-06-17T14:17:44.603504" elapsed="2.854732"/>
+</kw>
+<kw name="clickButtonMenu">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-06-17T13:41:55.984872" level="INFO">Clicking element 'xpath=//*[@id="buttons"]'.</msg>
-<arg>xpath=${path_button_menu}</arg>
+<msg time="2026-06-17T14:17:47.460036" level="INFO">Clicking element '//*[@id="buttons"]'.</msg>
+<arg>${xpath_button_menu}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-06-17T13:41:55.984241" elapsed="0.032646"/>
+<status status="PASS" start="2026-06-17T14:17:47.459448" elapsed="0.031484"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2026-06-17T13:41:57.018980" level="INFO">Slept 1 second.</msg>
+<msg time="2026-06-17T14:17:48.492639" level="INFO">Slept 1 second.</msg>
 <arg>1</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2026-06-17T13:41:56.017097" elapsed="1.002239"/>
+<status status="PASS" start="2026-06-17T14:17:47.491100" elapsed="1.001862"/>
 </kw>
-<status status="PASS" start="2026-06-17T13:41:55.983931" elapsed="1.036096"/>
-</test>
-<test id="s1-t3" name="Click Checkboxes Submenu" line="21">
+<status status="PASS" start="2026-06-17T14:17:47.458958" elapsed="1.034273"/>
+</kw>
+<kw name="clickCheckboxesSubmenu">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-06-17T13:41:57.022020" level="INFO">Clicking element 'xpath=//*[@id="checkboxes"]'.</msg>
-<arg>xpath=${path_checkbox_submenu}</arg>
+<msg time="2026-06-17T14:17:48.495270" level="INFO">Clicking element 'xpath=//*[@id="checkboxes"]'.</msg>
+<arg>${xpath_checkbox_submenu}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-06-17T13:41:57.021292" elapsed="0.505994"/>
+<status status="PASS" start="2026-06-17T14:17:48.494654" elapsed="0.586470"/>
 </kw>
-<status status="PASS" start="2026-06-17T13:41:57.020531" elapsed="0.506915"/>
-</test>
-<test id="s1-t4" name="Verify Checkbox 1 is enabled" line="23">
+<status status="PASS" start="2026-06-17T14:17:48.493853" elapsed="0.587360"/>
+</kw>
+<kw name="verifyCheckbox1IsEnabled">
 <kw name="Element Should Be Enabled" owner="SeleniumLibrary">
-<arg>xpath=${path_checkbox_1}</arg>
+<arg>${xpath_checkbox_1}</arg>
 <doc>Verifies that element identified by ``locator`` is enabled.</doc>
-<status status="PASS" start="2026-06-17T13:41:57.527778" elapsed="0.009914"/>
+<status status="PASS" start="2026-06-17T14:17:49.081645" elapsed="0.010424"/>
 </kw>
 <kw name="Checkbox Should Not Be Selected" owner="SeleniumLibrary">
-<msg time="2026-06-17T13:41:57.537998" level="INFO">Verifying checkbox 'xpath=//label[text()='Check me out - 1']//preceding-sibling::input[@type='checkbox']' is not selected.</msg>
-<arg>xpath=${path_checkbox_1}</arg>
+<msg time="2026-06-17T14:17:49.092425" level="INFO">Verifying checkbox 'xpath=//label[text()='Check me out - 1']//preceding-sibling::input[@type='checkbox']' is not selected.</msg>
+<arg>${xpath_checkbox_1}</arg>
 <doc>Verifies checkbox ``locator`` is not selected/checked.</doc>
-<status status="PASS" start="2026-06-17T13:41:57.537825" elapsed="0.008136"/>
+<status status="PASS" start="2026-06-17T14:17:49.092215" elapsed="0.008148"/>
 </kw>
-<status status="PASS" start="2026-06-17T13:41:57.527566" elapsed="0.018580"/>
-</test>
-<test id="s1-t5" name="Click Checkbox 1" line="26">
+<status status="PASS" start="2026-06-17T14:17:49.081456" elapsed="0.018957"/>
+</kw>
+<kw name="clickCheckbox1">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-06-17T13:41:57.546518" level="INFO">Clicking element 'xpath=//label[text()='Check me out - 1']//preceding-sibling::input[@type='checkbox']'.</msg>
-<arg>xpath=${path_checkbox_1}</arg>
+<msg time="2026-06-17T14:17:49.100751" level="INFO">Clicking element 'xpath=//label[text()='Check me out - 1']//preceding-sibling::input[@type='checkbox']'.</msg>
+<arg>${xpath_checkbox_1}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-06-17T13:41:57.546397" elapsed="0.023015"/>
+<status status="PASS" start="2026-06-17T14:17:49.100645" elapsed="0.020550"/>
 </kw>
 <kw name="Checkbox Should Be Selected" owner="SeleniumLibrary">
-<msg time="2026-06-17T13:41:57.569773" level="INFO">Verifying checkbox 'xpath=//label[text()='Check me out - 1']//preceding-sibling::input[@type='checkbox']' is selected.</msg>
-<arg>xpath=${path_checkbox_1}</arg>
+<msg time="2026-06-17T14:17:49.121463" level="INFO">Verifying checkbox 'xpath=//label[text()='Check me out - 1']//preceding-sibling::input[@type='checkbox']' is selected.</msg>
+<arg>${xpath_checkbox_1}</arg>
 <doc>Verifies checkbox ``locator`` is selected/checked.</doc>
-<status status="PASS" start="2026-06-17T13:41:57.569579" elapsed="0.007728"/>
+<status status="PASS" start="2026-06-17T14:17:49.121320" elapsed="0.007694"/>
 </kw>
-<status status="PASS" start="2026-06-17T13:41:57.546252" elapsed="0.031171"/>
-</test>
-<test id="s1-t6" name="Verify Checkbox 2 is enabled" line="29">
+<status status="PASS" start="2026-06-17T14:17:49.100528" elapsed="0.028547"/>
+</kw>
+<kw name="verifyCheckbox2Isenabled">
 <kw name="Element Should Be Enabled" owner="SeleniumLibrary">
-<arg>xpath=${path_checkbox_2}</arg>
+<arg>${xpath_checkbox_2}</arg>
 <doc>Verifies that element identified by ``locator`` is enabled.</doc>
-<status status="PASS" start="2026-06-17T13:41:57.577659" elapsed="0.006186"/>
+<status status="PASS" start="2026-06-17T14:17:49.129315" elapsed="0.005995"/>
 </kw>
 <kw name="Checkbox Should Not Be Selected" owner="SeleniumLibrary">
-<msg time="2026-06-17T13:41:57.584042" level="INFO">Verifying checkbox 'xpath=//label[text()='Check me out - 2']//preceding-sibling::input[@type='checkbox']' is not selected.</msg>
-<arg>xpath=${path_checkbox_2}</arg>
+<msg time="2026-06-17T14:17:49.135463" level="INFO">Verifying checkbox 'xpath=//label[text()='Check me out - 2']//preceding-sibling::input[@type='checkbox']' is not selected.</msg>
+<arg>${xpath_checkbox_2}</arg>
 <doc>Verifies checkbox ``locator`` is not selected/checked.</doc>
-<status status="PASS" start="2026-06-17T13:41:57.583932" elapsed="0.006675"/>
+<status status="PASS" start="2026-06-17T14:17:49.135368" elapsed="0.006134"/>
 </kw>
-<status status="PASS" start="2026-06-17T13:41:57.577518" elapsed="0.013183"/>
-</test>
-<test id="s1-t7" name="Click Checkbox 2" line="32">
+<status status="PASS" start="2026-06-17T14:17:49.129194" elapsed="0.012350"/>
+</kw>
+<kw name="clickCheckbox2">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-06-17T13:41:57.591028" level="INFO">Clicking element 'xpath=//label[text()='Check me out - 2']//preceding-sibling::input[@type='checkbox']'.</msg>
-<arg>xpath=${path_checkbox_2}</arg>
+<msg time="2026-06-17T14:17:49.141858" level="INFO">Clicking element 'xpath=//label[text()='Check me out - 2']//preceding-sibling::input[@type='checkbox']'.</msg>
+<arg>${xpath_checkbox_2}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-06-17T13:41:57.590912" elapsed="0.017134"/>
+<status status="PASS" start="2026-06-17T14:17:49.141749" elapsed="0.017032"/>
 </kw>
 <kw name="Checkbox Should Be Selected" owner="SeleniumLibrary">
-<msg time="2026-06-17T13:41:57.608350" level="INFO">Verifying checkbox 'xpath=//label[text()='Check me out - 2']//preceding-sibling::input[@type='checkbox']' is selected.</msg>
-<arg>xpath=${path_checkbox_2}</arg>
+<msg time="2026-06-17T14:17:49.159082" level="INFO">Verifying checkbox 'xpath=//label[text()='Check me out - 2']//preceding-sibling::input[@type='checkbox']' is selected.</msg>
+<arg>${xpath_checkbox_2}</arg>
 <doc>Verifies checkbox ``locator`` is selected/checked.</doc>
-<status status="PASS" start="2026-06-17T13:41:57.608187" elapsed="0.006373"/>
+<status status="PASS" start="2026-06-17T14:17:49.158918" elapsed="0.006842"/>
 </kw>
-<status status="PASS" start="2026-06-17T13:41:57.590788" elapsed="0.023854"/>
-</test>
-<test id="s1-t8" name="Verify Checkbox 3 is enabled" line="35">
+<status status="PASS" start="2026-06-17T14:17:49.141650" elapsed="0.024159"/>
+</kw>
+<kw name="verifyCheckbox3IsEnabled">
 <kw name="Element Should Be Enabled" owner="SeleniumLibrary">
-<arg>xpath=${path_checkbox_3}</arg>
+<arg>${xpath_checkbox_3}</arg>
 <doc>Verifies that element identified by ``locator`` is enabled.</doc>
-<status status="PASS" start="2026-06-17T13:41:57.614858" elapsed="0.007316"/>
+<status status="PASS" start="2026-06-17T14:17:49.166045" elapsed="0.006266"/>
 </kw>
 <kw name="Checkbox Should Not Be Selected" owner="SeleniumLibrary">
-<msg time="2026-06-17T13:41:57.622514" level="INFO">Verifying checkbox 'xpath=//label[text()='Check me out - 3']//preceding-sibling::input[@type='checkbox']' is not selected.</msg>
-<arg>xpath=${path_checkbox_3}</arg>
+<msg time="2026-06-17T14:17:49.172435" level="INFO">Verifying checkbox 'xpath=//label[text()='Check me out - 3']//preceding-sibling::input[@type='checkbox']' is not selected.</msg>
+<arg>${xpath_checkbox_3}</arg>
 <doc>Verifies checkbox ``locator`` is not selected/checked.</doc>
-<status status="PASS" start="2026-06-17T13:41:57.622339" elapsed="0.006199"/>
+<status status="PASS" start="2026-06-17T14:17:49.172357" elapsed="0.006609"/>
 </kw>
-<status status="PASS" start="2026-06-17T13:41:57.614733" elapsed="0.013891"/>
-</test>
-<test id="s1-t9" name="Click Checkbox 3" line="38">
+<status status="PASS" start="2026-06-17T14:17:49.165941" elapsed="0.013085"/>
+</kw>
+<kw name="clickCheckbox3">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-06-17T13:41:57.628958" level="INFO">Clicking element 'xpath=//label[text()='Check me out - 3']//preceding-sibling::input[@type='checkbox']'.</msg>
-<arg>xpath=${path_checkbox_3}</arg>
+<msg time="2026-06-17T14:17:49.179356" level="INFO">Clicking element 'xpath=//label[text()='Check me out - 3']//preceding-sibling::input[@type='checkbox']'.</msg>
+<arg>${xpath_checkbox_3}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-06-17T13:41:57.628856" elapsed="0.017936"/>
+<status status="PASS" start="2026-06-17T14:17:49.179255" elapsed="0.017211"/>
 </kw>
 <kw name="Checkbox Should Be Selected" owner="SeleniumLibrary">
-<msg time="2026-06-17T13:41:57.647227" level="INFO">Verifying checkbox 'xpath=//label[text()='Check me out - 3']//preceding-sibling::input[@type='checkbox']' is selected.</msg>
-<arg>xpath=${path_checkbox_3}</arg>
+<msg time="2026-06-17T14:17:49.196654" level="INFO">Verifying checkbox 'xpath=//label[text()='Check me out - 3']//preceding-sibling::input[@type='checkbox']' is selected.</msg>
+<arg>${xpath_checkbox_3}</arg>
 <doc>Verifies checkbox ``locator`` is selected/checked.</doc>
-<status status="PASS" start="2026-06-17T13:41:57.646947" elapsed="0.007459"/>
+<status status="PASS" start="2026-06-17T14:17:49.196546" elapsed="0.006326"/>
 </kw>
-<status status="PASS" start="2026-06-17T13:41:57.628721" elapsed="0.025790"/>
-</test>
-<test id="s1-t10" name="Reset All Checkboxes" line="41">
+<status status="PASS" start="2026-06-17T14:17:49.179147" elapsed="0.023769"/>
+</kw>
+<kw name="resetAllCheckboxes">
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2026-06-17T13:41:57.654960" level="INFO">Clicking button 'xpath=//button[text()='Reset']'.</msg>
-<arg>xpath=${path_reset_button}</arg>
+<msg time="2026-06-17T14:17:49.203245" level="INFO">Clicking button 'xpath=//button[text()='Reset']'.</msg>
+<arg>${xpath_reset_button}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2026-06-17T13:41:57.654792" elapsed="0.025307"/>
+<status status="PASS" start="2026-06-17T14:17:49.203163" elapsed="0.022410"/>
 </kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2026-06-17T13:41:58.682565" level="INFO">Slept 1 second.</msg>
-<arg>1</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2026-06-17T13:41:57.680229" elapsed="1.002674"/>
+<status status="PASS" start="2026-06-17T14:17:49.203056" elapsed="0.022598"/>
 </kw>
-<status status="PASS" start="2026-06-17T13:41:57.654601" elapsed="1.028912"/>
+<kw name="verifyAllCheckboxesAreUnselected">
+<kw name="Checkbox Should Not Be Selected" owner="SeleniumLibrary">
+<msg time="2026-06-17T14:17:49.226149" level="INFO">Verifying checkbox 'xpath=//label[text()='Check me out - 1']//preceding-sibling::input[@type='checkbox']' is not selected.</msg>
+<arg>${xpath_checkbox_1}</arg>
+<doc>Verifies checkbox ``locator`` is not selected/checked.</doc>
+<status status="PASS" start="2026-06-17T14:17:49.226021" elapsed="0.006404"/>
+</kw>
+<kw name="Checkbox Should Not Be Selected" owner="SeleniumLibrary">
+<msg time="2026-06-17T14:17:49.232571" level="INFO">Verifying checkbox 'xpath=//label[text()='Check me out - 2']//preceding-sibling::input[@type='checkbox']' is not selected.</msg>
+<arg>${xpath_checkbox_2}</arg>
+<doc>Verifies checkbox ``locator`` is not selected/checked.</doc>
+<status status="PASS" start="2026-06-17T14:17:49.232490" elapsed="0.005763"/>
+</kw>
+<kw name="Checkbox Should Not Be Selected" owner="SeleniumLibrary">
+<msg time="2026-06-17T14:17:49.238401" level="INFO">Verifying checkbox 'xpath=//label[text()='Check me out - 3']//preceding-sibling::input[@type='checkbox']' is not selected.</msg>
+<arg>${xpath_checkbox_3}</arg>
+<doc>Verifies checkbox ``locator`` is not selected/checked.</doc>
+<status status="PASS" start="2026-06-17T14:17:49.238310" elapsed="0.007076"/>
+</kw>
+<status status="PASS" start="2026-06-17T14:17:49.225825" elapsed="0.019637"/>
+</kw>
+<status status="PASS" start="2026-06-17T14:17:44.603242" elapsed="4.642387"/>
 </test>
-<test id="s1-t11" name="Verify All Checkboxes are unselected" line="44">
-<kw name="Checkbox Should Not Be Selected" owner="SeleniumLibrary">
-<msg time="2026-06-17T13:41:58.685112" level="INFO">Verifying checkbox 'xpath=//label[text()='Check me out - 1']//preceding-sibling::input[@type='checkbox']' is not selected.</msg>
-<arg>xpath=${path_checkbox_1}</arg>
-<doc>Verifies checkbox ``locator`` is not selected/checked.</doc>
-<status status="PASS" start="2026-06-17T13:41:58.684603" elapsed="0.024753"/>
-</kw>
-<kw name="Checkbox Should Not Be Selected" owner="SeleniumLibrary">
-<msg time="2026-06-17T13:41:58.710033" level="INFO">Verifying checkbox 'xpath=//label[text()='Check me out - 2']//preceding-sibling::input[@type='checkbox']' is not selected.</msg>
-<arg>xpath=${path_checkbox_2}</arg>
-<doc>Verifies checkbox ``locator`` is not selected/checked.</doc>
-<status status="PASS" start="2026-06-17T13:41:58.709674" elapsed="0.010889"/>
-</kw>
-<kw name="Checkbox Should Not Be Selected" owner="SeleniumLibrary">
-<msg time="2026-06-17T13:41:58.721204" level="INFO">Verifying checkbox 'xpath=//label[text()='Check me out - 3']//preceding-sibling::input[@type='checkbox']' is not selected.</msg>
-<arg>xpath=${path_checkbox_3}</arg>
-<doc>Verifies checkbox ``locator`` is not selected/checked.</doc>
-<status status="PASS" start="2026-06-17T13:41:58.720872" elapsed="0.009638"/>
-</kw>
-<status status="PASS" start="2026-06-17T13:41:58.683937" elapsed="0.046677"/>
-</test>
-<status status="PASS" start="2026-06-17T13:41:53.917531" elapsed="4.813355"/>
+<status status="PASS" start="2026-06-17T14:17:44.503095" elapsed="4.742863"/>
 </suite>
 <statistics>
 <total>
-<stat pass="11" fail="0" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat name="Checkboxes" id="s1" pass="11" fail="0" skip="0">Checkboxes</stat>
+<stat name="Checkboxes" id="s1" pass="1" fail="0" skip="0">Checkboxes</stat>
 </suite>
 </statistics>
 <errors>

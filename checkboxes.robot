@@ -4,47 +4,57 @@ Library    SeleniumLibrary
 *** Variables ***
 ${browser}    chrome
 ${url}    https://qa-automation-practice.netlify.app/
-${path_button_menu}    //*[@id="buttons"]
-${path_checkbox_submenu}    //*[@id="checkboxes"]
-${path_checkbox_1}    //label[text()='Check me out - 1']//preceding-sibling::input[@type='checkbox']
-${path_checkbox_2}    //label[text()='Check me out - 2']//preceding-sibling::input[@type='checkbox']
-${path_checkbox_3}    //label[text()='Check me out - 3']//preceding-sibling::input[@type='checkbox']
-${path_reset_button}    //button[text()='Reset']
+${xpath_button_menu}    //*[@id="buttons"]
+${xpath_checkbox_submenu}    xpath=//*[@id="checkboxes"]
+${xpath_checkbox_1}    xpath=//label[text()='Check me out - 1']//preceding-sibling::input[@type='checkbox']
+${xpath_checkbox_2}    xpath=//label[text()='Check me out - 2']//preceding-sibling::input[@type='checkbox']
+${xpath_checkbox_3}    xpath=//label[text()='Check me out - 3']//preceding-sibling::input[@type='checkbox']
+${xpath_reset_button}    xpath=//button[text()='Reset']
 
 *** Test Cases ***
-Open Test Website
+Test Checkboxes
+    openTestWebsite
+    clickButtonMenu
+    clickCheckboxesSubmenu
+    verifyCheckbox1IsEnabled
+    clickCheckbox1 
+    verifyCheckbox2Isenabled
+    clickCheckbox2
+    verifyCheckbox3IsEnabled
+    clickCheckbox3
+    resetAllCheckboxes
+    verifyAllCheckboxesAreUnselected
+    
+*** Keywords ***
+openTestWebsite
     Open Browser    ${url}    ${browser}
     Maximize Browser Window
-Click Button Menu
-    Click Element    xpath=${path_button_menu}
+clickButtonMenu
+    Click Element    ${xpath_button_menu}
     Sleep    1
-Click Checkboxes Submenu
-    Click Element    xpath=${path_checkbox_submenu}
-Verify Checkbox 1 is enabled
-    Element Should Be Enabled    xpath=${path_checkbox_1}
-    Checkbox Should Not Be Selected    xpath=${path_checkbox_1}
-Click Checkbox 1
-    Click Element    xpath=${path_checkbox_1}
-    Checkbox Should Be Selected    xpath=${path_checkbox_1}
-Verify Checkbox 2 is enabled
-    Element Should Be Enabled    xpath=${path_checkbox_2}
-    Checkbox Should Not Be Selected    xpath=${path_checkbox_2}
-Click Checkbox 2
-    Click Element    xpath=${path_checkbox_2}
-    Checkbox Should Be Selected    xpath=${path_checkbox_2}
-Verify Checkbox 3 is enabled
-    Element Should Be Enabled    xpath=${path_checkbox_3}
-    Checkbox Should Not Be Selected    xpath=${path_checkbox_3}
-Click Checkbox 3
-    Click Element    xpath=${path_checkbox_3}
-    Checkbox Should Be Selected    xpath=${path_checkbox_3}
-Reset All Checkboxes
-    Click Button    xpath=${path_reset_button}
-Verify All Checkboxes are unselected
-    Checkbox Should Not Be Selected    xpath=${path_checkbox_1}
-    Checkbox Should Not Be Selected    xpath=${path_checkbox_2}
-    Checkbox Should Not Be Selected    xpath=${path_checkbox_3}
-
-*** Keywords ***
-
-
+clickCheckboxesSubmenu
+    Click Element    ${xpath_checkbox_submenu}
+verifyCheckbox1IsEnabled
+    Element Should Be Enabled    ${xpath_checkbox_1}
+    Checkbox Should Not Be Selected    ${xpath_checkbox_1}
+clickCheckbox1
+    Click Element    ${xpath_checkbox_1}
+    Checkbox Should Be Selected    ${xpath_checkbox_1}
+verifyCheckbox2Isenabled
+    Element Should Be Enabled    ${xpath_checkbox_2}
+    Checkbox Should Not Be Selected    ${xpath_checkbox_2}
+clickCheckbox2
+    Click Element    ${xpath_checkbox_2}
+    Checkbox Should Be Selected    ${xpath_checkbox_2}
+verifyCheckbox3IsEnabled
+    Element Should Be Enabled    ${xpath_checkbox_3}
+    Checkbox Should Not Be Selected    ${xpath_checkbox_3}
+clickCheckbox3
+    Click Element    ${xpath_checkbox_3}
+    Checkbox Should Be Selected    ${xpath_checkbox_3}
+resetAllCheckboxes
+    Click Button    ${xpath_reset_button}
+verifyAllCheckboxesAreUnselected
+    Checkbox Should Not Be Selected    ${xpath_checkbox_1}
+    Checkbox Should Not Be Selected    ${xpath_checkbox_2}
+    Checkbox Should Not Be Selected    ${xpath_checkbox_3}
