@@ -1,137 +1,177 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.4.2 (Python 3.14.4 on darwin)" generated="2026-06-16T14:08:43.792128" rpa="false" schemaversion="5">
-<suite id="s1" name="Radiobutton" source="/Users/eye/Documents/automation-robot/radiobutton.robot">
-<test id="s1-t1" name="Click Radio Button 1" line="13">
+<robot generator="Robot 7.4.2 (Python 3.14.4 on darwin)" generated="2026-06-17T13:41:53.916826" rpa="false" schemaversion="5">
+<suite id="s1" name="Checkboxes" source="/Users/eye/Documents/automation-robot/checkboxes.robot">
+<test id="s1-t1" name="Open Test Website" line="15">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2026-06-16T14:08:43.870566" level="INFO">Opening browser 'chrome' to base url 'https://qa-automation-practice.netlify.app/'.</msg>
+<msg time="2026-06-17T13:41:53.996608" level="INFO">Opening browser 'chrome' to base url 'https://qa-automation-practice.netlify.app/'.</msg>
 <arg>${url}</arg>
 <arg>${browser}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2026-06-16T14:08:43.870452" elapsed="1.798110"/>
+<status status="PASS" start="2026-06-17T13:41:53.996492" elapsed="1.644883"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2026-06-16T14:08:45.669098" elapsed="0.343794"/>
+<status status="PASS" start="2026-06-17T13:41:55.641950" elapsed="0.341477"/>
 </kw>
-<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
-<arg>xpath=//*[@id="buttons"]</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" start="2026-06-16T14:08:46.013380" elapsed="0.006561"/>
-</kw>
-<kw name="clickButtonsSubmenu">
+<status status="PASS" start="2026-06-17T13:41:53.996121" elapsed="1.987569"/>
+</test>
+<test id="s1-t2" name="Click Button Menu" line="18">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-06-16T14:08:46.020734" level="INFO">Clicking element 'xpath=//*[@id="buttons"]'.</msg>
-<arg>xpath=//*[@id="buttons"]</arg>
+<msg time="2026-06-17T13:41:55.984872" level="INFO">Clicking element 'xpath=//*[@id="buttons"]'.</msg>
+<arg>xpath=${path_button_menu}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-06-16T14:08:46.020555" elapsed="0.026372"/>
+<status status="PASS" start="2026-06-17T13:41:55.984241" elapsed="0.032646"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2026-06-16T14:08:47.048506" level="INFO">Slept 1 second.</msg>
+<msg time="2026-06-17T13:41:57.018980" level="INFO">Slept 1 second.</msg>
 <arg>1</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2026-06-16T14:08:46.047214" elapsed="1.001594"/>
+<status status="PASS" start="2026-06-17T13:41:56.017097" elapsed="1.002239"/>
 </kw>
-<kw name="Element Should Be Visible" owner="SeleniumLibrary">
-<msg time="2026-06-16T14:08:47.071180" level="INFO">Element 'xpath=//*[@id="checkboxes"]' is displayed.</msg>
-<arg>xpath=//*[@id="checkboxes"]</arg>
-<doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="PASS" start="2026-06-16T14:08:47.049199" elapsed="0.022143"/>
-</kw>
-<kw name="Element Should Be Visible" owner="SeleniumLibrary">
-<msg time="2026-06-16T14:08:47.082375" level="INFO">Element 'xpath=//*[@id="radio-buttons"]' is displayed.</msg>
-<arg>xpath=//*[@id="radio-buttons"]</arg>
-<doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="PASS" start="2026-06-16T14:08:47.071581" elapsed="0.010859"/>
-</kw>
-<status status="PASS" start="2026-06-16T14:08:46.020263" elapsed="1.062270"/>
-</kw>
-<kw name="clickRadioMenu">
+<status status="PASS" start="2026-06-17T13:41:55.983931" elapsed="1.036096"/>
+</test>
+<test id="s1-t3" name="Click Checkboxes Submenu" line="21">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-06-16T14:08:47.083195" level="INFO">Clicking element 'xpath=//*[@id="radio-buttons"]'.</msg>
-<arg>xpath=//*[@id="radio-buttons"]</arg>
+<msg time="2026-06-17T13:41:57.022020" level="INFO">Clicking element 'xpath=//*[@id="checkboxes"]'.</msg>
+<arg>xpath=${path_checkbox_submenu}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-06-16T14:08:47.083034" elapsed="0.255067"/>
+<status status="PASS" start="2026-06-17T13:41:57.021292" elapsed="0.505994"/>
+</kw>
+<status status="PASS" start="2026-06-17T13:41:57.020531" elapsed="0.506915"/>
+</test>
+<test id="s1-t4" name="Verify Checkbox 1 is enabled" line="23">
+<kw name="Element Should Be Enabled" owner="SeleniumLibrary">
+<arg>xpath=${path_checkbox_1}</arg>
+<doc>Verifies that element identified by ``locator`` is enabled.</doc>
+<status status="PASS" start="2026-06-17T13:41:57.527778" elapsed="0.009914"/>
+</kw>
+<kw name="Checkbox Should Not Be Selected" owner="SeleniumLibrary">
+<msg time="2026-06-17T13:41:57.537998" level="INFO">Verifying checkbox 'xpath=//label[text()='Check me out - 1']//preceding-sibling::input[@type='checkbox']' is not selected.</msg>
+<arg>xpath=${path_checkbox_1}</arg>
+<doc>Verifies checkbox ``locator`` is not selected/checked.</doc>
+<status status="PASS" start="2026-06-17T13:41:57.537825" elapsed="0.008136"/>
+</kw>
+<status status="PASS" start="2026-06-17T13:41:57.527566" elapsed="0.018580"/>
+</test>
+<test id="s1-t5" name="Click Checkbox 1" line="26">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-17T13:41:57.546518" level="INFO">Clicking element 'xpath=//label[text()='Check me out - 1']//preceding-sibling::input[@type='checkbox']'.</msg>
+<arg>xpath=${path_checkbox_1}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-17T13:41:57.546397" elapsed="0.023015"/>
+</kw>
+<kw name="Checkbox Should Be Selected" owner="SeleniumLibrary">
+<msg time="2026-06-17T13:41:57.569773" level="INFO">Verifying checkbox 'xpath=//label[text()='Check me out - 1']//preceding-sibling::input[@type='checkbox']' is selected.</msg>
+<arg>xpath=${path_checkbox_1}</arg>
+<doc>Verifies checkbox ``locator`` is selected/checked.</doc>
+<status status="PASS" start="2026-06-17T13:41:57.569579" elapsed="0.007728"/>
+</kw>
+<status status="PASS" start="2026-06-17T13:41:57.546252" elapsed="0.031171"/>
+</test>
+<test id="s1-t6" name="Verify Checkbox 2 is enabled" line="29">
+<kw name="Element Should Be Enabled" owner="SeleniumLibrary">
+<arg>xpath=${path_checkbox_2}</arg>
+<doc>Verifies that element identified by ``locator`` is enabled.</doc>
+<status status="PASS" start="2026-06-17T13:41:57.577659" elapsed="0.006186"/>
+</kw>
+<kw name="Checkbox Should Not Be Selected" owner="SeleniumLibrary">
+<msg time="2026-06-17T13:41:57.584042" level="INFO">Verifying checkbox 'xpath=//label[text()='Check me out - 2']//preceding-sibling::input[@type='checkbox']' is not selected.</msg>
+<arg>xpath=${path_checkbox_2}</arg>
+<doc>Verifies checkbox ``locator`` is not selected/checked.</doc>
+<status status="PASS" start="2026-06-17T13:41:57.583932" elapsed="0.006675"/>
+</kw>
+<status status="PASS" start="2026-06-17T13:41:57.577518" elapsed="0.013183"/>
+</test>
+<test id="s1-t7" name="Click Checkbox 2" line="32">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-17T13:41:57.591028" level="INFO">Clicking element 'xpath=//label[text()='Check me out - 2']//preceding-sibling::input[@type='checkbox']'.</msg>
+<arg>xpath=${path_checkbox_2}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-17T13:41:57.590912" elapsed="0.017134"/>
+</kw>
+<kw name="Checkbox Should Be Selected" owner="SeleniumLibrary">
+<msg time="2026-06-17T13:41:57.608350" level="INFO">Verifying checkbox 'xpath=//label[text()='Check me out - 2']//preceding-sibling::input[@type='checkbox']' is selected.</msg>
+<arg>xpath=${path_checkbox_2}</arg>
+<doc>Verifies checkbox ``locator`` is selected/checked.</doc>
+<status status="PASS" start="2026-06-17T13:41:57.608187" elapsed="0.006373"/>
+</kw>
+<status status="PASS" start="2026-06-17T13:41:57.590788" elapsed="0.023854"/>
+</test>
+<test id="s1-t8" name="Verify Checkbox 3 is enabled" line="35">
+<kw name="Element Should Be Enabled" owner="SeleniumLibrary">
+<arg>xpath=${path_checkbox_3}</arg>
+<doc>Verifies that element identified by ``locator`` is enabled.</doc>
+<status status="PASS" start="2026-06-17T13:41:57.614858" elapsed="0.007316"/>
+</kw>
+<kw name="Checkbox Should Not Be Selected" owner="SeleniumLibrary">
+<msg time="2026-06-17T13:41:57.622514" level="INFO">Verifying checkbox 'xpath=//label[text()='Check me out - 3']//preceding-sibling::input[@type='checkbox']' is not selected.</msg>
+<arg>xpath=${path_checkbox_3}</arg>
+<doc>Verifies checkbox ``locator`` is not selected/checked.</doc>
+<status status="PASS" start="2026-06-17T13:41:57.622339" elapsed="0.006199"/>
+</kw>
+<status status="PASS" start="2026-06-17T13:41:57.614733" elapsed="0.013891"/>
+</test>
+<test id="s1-t9" name="Click Checkbox 3" line="38">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-17T13:41:57.628958" level="INFO">Clicking element 'xpath=//label[text()='Check me out - 3']//preceding-sibling::input[@type='checkbox']'.</msg>
+<arg>xpath=${path_checkbox_3}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-17T13:41:57.628856" elapsed="0.017936"/>
+</kw>
+<kw name="Checkbox Should Be Selected" owner="SeleniumLibrary">
+<msg time="2026-06-17T13:41:57.647227" level="INFO">Verifying checkbox 'xpath=//label[text()='Check me out - 3']//preceding-sibling::input[@type='checkbox']' is selected.</msg>
+<arg>xpath=${path_checkbox_3}</arg>
+<doc>Verifies checkbox ``locator`` is selected/checked.</doc>
+<status status="PASS" start="2026-06-17T13:41:57.646947" elapsed="0.007459"/>
+</kw>
+<status status="PASS" start="2026-06-17T13:41:57.628721" elapsed="0.025790"/>
+</test>
+<test id="s1-t10" name="Reset All Checkboxes" line="41">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-06-17T13:41:57.654960" level="INFO">Clicking button 'xpath=//button[text()='Reset']'.</msg>
+<arg>xpath=${path_reset_button}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-17T13:41:57.654792" elapsed="0.025307"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2026-06-16T14:08:48.339255" level="INFO">Slept 1 second.</msg>
+<msg time="2026-06-17T13:41:58.682565" level="INFO">Slept 1 second.</msg>
 <arg>1</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2026-06-16T14:08:47.338228" elapsed="1.001406"/>
+<status status="PASS" start="2026-06-17T13:41:57.680229" elapsed="1.002674"/>
 </kw>
-<status status="PASS" start="2026-06-16T14:08:47.082795" elapsed="1.257120"/>
-</kw>
-<kw name="clickRadioButton1">
-<kw name="Page Should Contain" owner="SeleniumLibrary">
-<msg time="2026-06-16T14:08:48.357177" level="INFO">Current page contains text 'Radio button 1'.</msg>
-<arg>Radio button 1</arg>
-<doc>Verifies that current page contains ``text``.</doc>
-<status status="PASS" start="2026-06-16T14:08:48.341052" elapsed="0.016260"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-06-16T14:08:48.357920" level="INFO">Clicking element 'xpath=//label[text()='Radio button 1']/preceding-sibling::input[@type='radio']'.</msg>
-<arg>xpath=${path_radio_1}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-06-16T14:08:48.357526" elapsed="0.033503"/>
-</kw>
-<status status="PASS" start="2026-06-16T14:08:48.340438" elapsed="0.050668"/>
-</kw>
-<status status="PASS" start="2026-06-16T14:08:43.870061" elapsed="4.521181"/>
+<status status="PASS" start="2026-06-17T13:41:57.654601" elapsed="1.028912"/>
 </test>
-<test id="s1-t2" name="Click Radio Button 2" line="20">
-<kw name="clickRadioButton2">
-<kw name="Page Should Contain" owner="SeleniumLibrary">
-<msg time="2026-06-16T14:08:48.396945" level="INFO">Current page contains text 'Radio button 2'.</msg>
-<arg>Radio button 2</arg>
-<doc>Verifies that current page contains ``text``.</doc>
-<status status="PASS" start="2026-06-16T14:08:48.391807" elapsed="0.005174"/>
+<test id="s1-t11" name="Verify All Checkboxes are unselected" line="44">
+<kw name="Checkbox Should Not Be Selected" owner="SeleniumLibrary">
+<msg time="2026-06-17T13:41:58.685112" level="INFO">Verifying checkbox 'xpath=//label[text()='Check me out - 1']//preceding-sibling::input[@type='checkbox']' is not selected.</msg>
+<arg>xpath=${path_checkbox_1}</arg>
+<doc>Verifies checkbox ``locator`` is not selected/checked.</doc>
+<status status="PASS" start="2026-06-17T13:41:58.684603" elapsed="0.024753"/>
 </kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-06-16T14:08:48.397173" level="INFO">Clicking element 'xpath=//label[text()='Radio button 2']/preceding-sibling::input[@type='radio']'.</msg>
-<arg>xpath=${path_radio_2}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-06-16T14:08:48.397041" elapsed="0.019388"/>
+<kw name="Checkbox Should Not Be Selected" owner="SeleniumLibrary">
+<msg time="2026-06-17T13:41:58.710033" level="INFO">Verifying checkbox 'xpath=//label[text()='Check me out - 2']//preceding-sibling::input[@type='checkbox']' is not selected.</msg>
+<arg>xpath=${path_checkbox_2}</arg>
+<doc>Verifies checkbox ``locator`` is not selected/checked.</doc>
+<status status="PASS" start="2026-06-17T13:41:58.709674" elapsed="0.010889"/>
 </kw>
-<status status="PASS" start="2026-06-16T14:08:48.391663" elapsed="0.024835"/>
+<kw name="Checkbox Should Not Be Selected" owner="SeleniumLibrary">
+<msg time="2026-06-17T13:41:58.721204" level="INFO">Verifying checkbox 'xpath=//label[text()='Check me out - 3']//preceding-sibling::input[@type='checkbox']' is not selected.</msg>
+<arg>xpath=${path_checkbox_3}</arg>
+<doc>Verifies checkbox ``locator`` is not selected/checked.</doc>
+<status status="PASS" start="2026-06-17T13:41:58.720872" elapsed="0.009638"/>
 </kw>
-<status status="PASS" start="2026-06-16T14:08:48.391435" elapsed="0.025181"/>
+<status status="PASS" start="2026-06-17T13:41:58.683937" elapsed="0.046677"/>
 </test>
-<test id="s1-t3" name="Click Radio Button 3" line="22">
-<kw name="clickRadioButton3">
-<kw name="Page Should Contain" owner="SeleniumLibrary">
-<msg time="2026-06-16T14:08:48.421410" level="INFO">Current page contains text 'Radio button'.</msg>
-<arg>Radio button</arg>
-<arg>3</arg>
-<doc>Verifies that current page contains ``text``.</doc>
-<status status="PASS" start="2026-06-16T14:08:48.417030" elapsed="0.004409"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-06-16T14:08:48.421600" level="INFO">Clicking element 'xpath=//label[text()='Radio button 3']//preceding-sibling::input[@type='radio']'.</msg>
-<arg>xpath=${path_radio_3}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-06-16T14:08:48.421491" elapsed="0.017387"/>
-</kw>
-<status status="PASS" start="2026-06-16T14:08:48.416926" elapsed="0.022009"/>
-</kw>
-<status status="PASS" start="2026-06-16T14:08:48.416743" elapsed="0.022274"/>
-</test>
-<test id="s1-t4" name="Verify Radio Button 4 is Disabled" line="24">
-<kw name="Element Should Be Disabled" owner="SeleniumLibrary">
-<arg>xpath=${path_radio_4}</arg>
-<doc>Verifies that element identified by ``locator`` is disabled.</doc>
-<status status="PASS" start="2026-06-16T14:08:48.439239" elapsed="0.005430"/>
-</kw>
-<status status="PASS" start="2026-06-16T14:08:48.439103" elapsed="0.005626"/>
-</test>
-<status status="PASS" start="2026-06-16T14:08:43.792607" elapsed="4.652305"/>
+<status status="PASS" start="2026-06-17T13:41:53.917531" elapsed="4.813355"/>
 </suite>
 <statistics>
 <total>
-<stat pass="4" fail="0" skip="0">All Tests</stat>
+<stat pass="11" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat name="Radiobutton" id="s1" pass="4" fail="0" skip="0">Radiobutton</stat>
+<stat name="Checkboxes" id="s1" pass="11" fail="0" skip="0">Checkboxes</stat>
 </suite>
 </statistics>
 <errors>
