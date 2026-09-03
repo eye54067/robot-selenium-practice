@@ -1,168 +1,104 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.4.2 (Python 3.14.4 on darwin)" generated="2026-06-18T14:34:09.080590" rpa="false" schemaversion="5">
-<suite id="s1" name="Dropdown" source="/Users/eye/Documents/automation-robot/dropdown.robot">
-<test id="s1-t1" name="Test Simple Dropdown" line="17">
-<kw name="openWebSite">
+<robot generator="Robot 7.4.2 (Python 3.14.4 on darwin)" generated="2026-09-03T12:49:04.798157" rpa="false" schemaversion="5">
+<suite id="s1" name="06 Btn Actions" source="/Users/eye/Documents/automation-robot/06_btn_actions.robot">
+<test id="s1-t1" name="Open Test Website" line="13">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2026-06-18T14:34:09.153666" level="INFO">Opening browser 'chrome' to base url 'https://qa-automation-practice.netlify.app/'.</msg>
+<msg time="2026-09-03T12:49:04.873040" level="INFO">Opening browser 'chrome' to base url 'https://qa-automation-practice.netlify.app/'.</msg>
 <arg>${url}</arg>
 <arg>${browser}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2026-06-18T14:34:09.153554" elapsed="1.217865"/>
+<status status="PASS" start="2026-09-03T12:49:04.872931" elapsed="1.036364"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2026-06-18T14:34:10.371898" elapsed="0.335381"/>
+<status status="PASS" start="2026-09-03T12:49:05.909771" elapsed="0.338359"/>
 </kw>
-<status status="PASS" start="2026-06-18T14:34:09.153293" elapsed="1.554299"/>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${xpath_btn_menu}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2026-09-03T12:49:06.248329" elapsed="0.005271"/>
 </kw>
-<kw name="clickDropdownMenu">
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-06-18T14:34:10.708714" level="INFO">Clicking element 'xpath=//a[text()='Dropdowns']'.</msg>
-<arg>${xpath_dropdown_menu}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-06-18T14:34:10.708297" elapsed="0.258071"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2026-06-18T14:34:11.967389" level="INFO">Slept 1 second.</msg>
-<arg>1</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2026-06-18T14:34:10.966504" elapsed="1.001239"/>
-</kw>
-<status status="PASS" start="2026-06-18T14:34:10.708049" elapsed="1.260000"/>
-</kw>
-<kw name="verifyCountryDropdownNotSelected">
-<kw name="Select From List By Label" owner="SeleniumLibrary">
-<msg time="2026-06-18T14:34:11.969824" level="INFO">Selecting options from selection list 'xpath=//select[@id='dropdown-menu']' by label Select a country....</msg>
-<arg>${xpath_country_dropdown}</arg>
-<arg>Select a country...</arg>
-<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
-<status status="PASS" start="2026-06-18T14:34:11.969364" elapsed="0.044559"/>
-</kw>
-<status status="PASS" start="2026-06-18T14:34:11.968704" elapsed="0.045288"/>
-</kw>
-<kw name="selectCountryDropdown1">
-<kw name="Select From List By Value" owner="SeleniumLibrary">
-<msg time="2026-06-18T14:34:12.014408" level="INFO">Selecting options from selection list 'xpath=//select[@id='dropdown-menu']' by value Thailand.</msg>
-<arg>${xpath_country_dropdown}</arg>
-<arg>Thailand</arg>
-<doc>Selects options from selection list ``locator`` by ``values``.</doc>
-<status status="PASS" start="2026-06-18T14:34:12.014268" elapsed="0.022886"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2026-06-18T14:34:13.039214" level="INFO">Slept 1 second.</msg>
-<arg>1</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2026-06-18T14:34:12.037299" elapsed="1.002224"/>
-</kw>
-<status status="PASS" start="2026-06-18T14:34:12.014123" elapsed="1.025613"/>
-</kw>
-<kw name="selectCountryDropdown2">
-<kw name="Select From List By Value" owner="SeleniumLibrary">
-<msg time="2026-06-18T14:34:13.041517" level="INFO">Selecting options from selection list 'xpath=//select[@id='dropdown-menu']' by value Spain.</msg>
-<arg>${xpath_country_dropdown}</arg>
-<arg>Spain</arg>
-<doc>Selects options from selection list ``locator`` by ``values``.</doc>
-<status status="PASS" start="2026-06-18T14:34:13.041040" elapsed="0.038592"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2026-06-18T14:34:14.081731" level="INFO">Slept 1 second.</msg>
-<arg>1</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2026-06-18T14:34:13.079883" elapsed="1.002197"/>
-</kw>
-<status status="PASS" start="2026-06-18T14:34:13.040336" elapsed="1.042001"/>
-</kw>
-<status status="PASS" start="2026-06-18T14:34:09.153049" elapsed="4.929864"/>
+<status status="PASS" start="2026-09-03T12:49:04.872546" elapsed="1.381208"/>
 </test>
-<test id="s1-t2" name="Test Multi-Level Dropdown" line="23">
-<kw name="clickDropdownButton">
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2026-06-18T14:34:14.085157" level="INFO">Clicking button 'xpath=//button[@id="multi-level-dropdown-btn"]'.</msg>
-<arg>${xpath_multi_dropdown_button}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2026-06-18T14:34:14.084810" elapsed="0.047289"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2026-06-18T14:34:15.133210" level="INFO">Slept 1 second.</msg>
-<arg>1</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2026-06-18T14:34:14.132292" elapsed="1.001293"/>
-</kw>
-<status status="PASS" start="2026-06-18T14:34:14.084453" elapsed="1.049405"/>
-</kw>
-<kw name="hoverMultiDropdownLevel1">
-<kw name="Mouse Down" owner="SeleniumLibrary">
-<msg time="2026-06-18T14:34:15.135661" level="INFO">Simulating Mouse Down on element 'xpath=//a[text()='Hover me for more options']'.</msg>
-<arg>${xpath_hovered_dropdown}</arg>
-<doc>Simulates pressing the left mouse button on the element ``locator``.</doc>
-<status status="PASS" start="2026-06-18T14:34:15.135059" elapsed="0.275152"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2026-06-18T14:34:16.410958" level="INFO">Slept 1 second.</msg>
-<arg>1</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2026-06-18T14:34:15.410412" elapsed="1.000864"/>
-</kw>
-<status status="PASS" start="2026-06-18T14:34:15.134421" elapsed="1.277107"/>
-</kw>
-<kw name="hoverMultiDropdownLevel2">
-<kw name="Mouse Down" owner="SeleniumLibrary">
-<msg time="2026-06-18T14:34:16.413247" level="INFO">Simulating Mouse Down on element 'xpath=//a[text()='Even More..']'.</msg>
-<arg>${xpath_hovered_dropdown_2}</arg>
-<doc>Simulates pressing the left mouse button on the element ``locator``.</doc>
-<status status="PASS" start="2026-06-18T14:34:16.412704" elapsed="0.274661"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2026-06-18T14:34:17.688513" level="INFO">Slept 1 second.</msg>
-<arg>1</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2026-06-18T14:34:16.687748" elapsed="1.001077"/>
-</kw>
-<status status="PASS" start="2026-06-18T14:34:16.412064" elapsed="1.277016"/>
-</kw>
-<kw name="hoverMultiDropdownLevel3">
-<kw name="Mouse Down" owner="SeleniumLibrary">
-<msg time="2026-06-18T14:34:17.690821" level="INFO">Simulating Mouse Down on element 'xpath=//a[text()='another level']'.</msg>
-<arg>${xpath_hovered_dropdown_3}</arg>
-<doc>Simulates pressing the left mouse button on the element ``locator``.</doc>
-<status status="PASS" start="2026-06-18T14:34:17.690251" elapsed="0.278805"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2026-06-18T14:34:18.971987" level="INFO">Slept 1 second.</msg>
-<arg>1</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2026-06-18T14:34:17.969431" elapsed="1.002863"/>
-</kw>
-<status status="PASS" start="2026-06-18T14:34:17.689615" elapsed="1.282935"/>
-</kw>
-<kw name="clickDropdownLevel4">
+<test id="s1-t2" name="Click Btn actions menu" line="17">
+<kw name="clickBtnActionsMenu">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-06-18T14:34:18.974478" level="INFO">Clicking element 'xpath=//a[text()='4th level - 1']'.</msg>
-<arg>${xpath_dropdown_4}</arg>
+<msg time="2026-09-03T12:49:06.254595" level="INFO">Clicking element 'xpath=//a[text()='Btn actions']'.</msg>
+<arg>${xpath_btn_menu}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-06-18T14:34:18.973868" elapsed="0.037932"/>
+<status status="PASS" start="2026-09-03T12:49:06.254448" elapsed="0.022508"/>
 </kw>
-<kw name="Location Should Be" owner="SeleniumLibrary">
-<msg time="2026-06-18T14:34:19.014215" level="INFO">Current location is 'https://qa-automation-practice.netlify.app/dropdowns#4th-level-1'.</msg>
-<arg>${result_url}</arg>
-<doc>Verifies that the current URL is exactly ``url``.</doc>
-<status status="PASS" start="2026-06-18T14:34:19.012100" elapsed="0.002155"/>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-09-03T12:49:07.279432" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-09-03T12:49:06.277092" elapsed="1.002621"/>
 </kw>
-<status status="PASS" start="2026-06-18T14:34:18.973100" elapsed="0.041200"/>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${xpath_double_click_submenu}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2026-09-03T12:49:07.280121" elapsed="0.009806"/>
 </kw>
-<status status="PASS" start="2026-06-18T14:34:14.083589" elapsed="4.930805"/>
+<status status="PASS" start="2026-09-03T12:49:06.254246" elapsed="1.035900"/>
+</kw>
+<status status="PASS" start="2026-09-03T12:49:06.253922" elapsed="1.036510"/>
 </test>
-<status status="PASS" start="2026-06-18T14:34:09.081198" elapsed="9.933440"/>
+<test id="s1-t3" name="Click double click btn menu" line="19">
+<kw name="clickDoubleActionsSubMenu">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-09-03T12:49:07.291971" level="INFO">Clicking element 'xpath=//a[text()='Double click btn']'.</msg>
+<arg>${xpath_double_click_submenu}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-03T12:49:07.291582" elapsed="0.273477"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${xpath_double_click_me_btn}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-09-03T12:49:07.565187" elapsed="0.006746"/>
+</kw>
+<status status="PASS" start="2026-09-03T12:49:07.291221" elapsed="0.280777"/>
+</kw>
+<status status="PASS" start="2026-09-03T12:49:07.290719" elapsed="0.281367"/>
+</test>
+<test id="s1-t4" name="Double click on button and validate the result" line="21">
+<kw name="doubleClickOnButton">
+<kw name="Double Click Element" owner="SeleniumLibrary">
+<msg time="2026-09-03T12:49:07.572599" level="INFO">Double clicking element 'xpath=//*[@id='double-click-btn']'.</msg>
+<arg>${xpath_double_click_me_btn}</arg>
+<doc>Double clicks the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-03T12:49:07.572475" elapsed="0.268922"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-09-03T12:49:08.844919" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-09-03T12:49:07.841798" elapsed="1.003432"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${xpath_double_click_result}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-09-03T12:49:08.845676" elapsed="0.014977"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-09-03T12:49:08.869198" level="INFO">Current page contains text 'Congrats, you double clicked!'.</msg>
+<arg>Congrats, you double clicked!</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2026-09-03T12:49:08.860939" elapsed="0.008374"/>
+</kw>
+<status status="PASS" start="2026-09-03T12:49:07.572363" elapsed="1.297053"/>
+</kw>
+<status status="PASS" start="2026-09-03T12:49:07.572180" elapsed="1.297412"/>
+</test>
+<status status="PASS" start="2026-09-03T12:49:04.798796" elapsed="4.071217"/>
 </suite>
 <statistics>
 <total>
-<stat pass="2" fail="0" skip="0">All Tests</stat>
+<stat pass="4" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat name="Dropdown" id="s1" pass="2" fail="0" skip="0">Dropdown</stat>
+<stat name="06 Btn Actions" id="s1" pass="4" fail="0" skip="0">06 Btn Actions</stat>
 </suite>
 </statistics>
 <errors>
