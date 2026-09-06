@@ -1,98 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.4.2 (Python 3.14.4 on darwin)" generated="2026-09-06T22:14:24.954402" rpa="false" schemaversion="5">
-<suite id="s1" name="08 Mouse Hover" source="/Users/eye/Documents/automation-robot/08_mouse_hover.robot">
-<test id="s1-t1" name="Open Test Website" line="14">
+<robot generator="Robot 7.4.2 (Python 3.14.4 on darwin)" generated="2026-09-06T22:38:40.440451" rpa="false" schemaversion="5">
+<suite id="s1" name="09 Show Hide Element" source="/Users/eye/Documents/automation-robot/09_show_hide_element.robot">
+<test id="s1-t1" name="Open Test Website" line="13">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2026-09-06T22:14:25.028998" level="INFO">Opening browser 'chrome' to base url 'https://qa-automation-practice.netlify.app/'.</msg>
+<msg time="2026-09-06T22:38:40.517814" level="INFO">Opening browser 'chrome' to base url 'https://qa-automation-practice.netlify.app/'.</msg>
 <arg>${url}</arg>
 <arg>${browser}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2026-09-06T22:14:25.028889" elapsed="1.525966"/>
+<status status="PASS" start="2026-09-06T22:38:40.517700" elapsed="1.069707"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2026-09-06T22:14:26.555292" elapsed="0.341651"/>
+<status status="PASS" start="2026-09-06T22:38:41.587774" elapsed="0.340792"/>
 </kw>
 <kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
 <arg>${xpath_btn_menu}</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" start="2026-09-06T22:14:26.897170" elapsed="0.005233"/>
+<status status="PASS" start="2026-09-06T22:38:41.928797" elapsed="0.004760"/>
 </kw>
-<status status="PASS" start="2026-09-06T22:14:25.028518" elapsed="1.874035"/>
+<status status="PASS" start="2026-09-06T22:38:40.517322" elapsed="1.416371"/>
 </test>
-<test id="s1-t2" name="Go To Mouse Hover Page" line="18">
+<test id="s1-t2" name="Go To Test Page" line="17">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-09-06T22:14:26.903073" level="INFO">Clicking element 'xpath=//a[text()='Btn actions']'.</msg>
+<msg time="2026-09-06T22:38:41.934159" level="INFO">Clicking element 'xpath=//a[text()='Btn actions']'.</msg>
 <arg>${xpath_btn_menu}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-09-06T22:14:26.902923" elapsed="0.023977"/>
+<status status="PASS" start="2026-09-06T22:38:41.934024" elapsed="0.024403"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${xpath_hover_submenu}</arg>
+<arg>${xpath_show_hide_submenu}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-09-06T22:14:26.927091" elapsed="0.221761"/>
+<status status="PASS" start="2026-09-06T22:38:41.958621" elapsed="0.218255"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-09-06T22:14:27.149506" level="INFO">Clicking element 'xpath=//*[@id="mouse-hover"]'.</msg>
-<arg>${xpath_hover_submenu}</arg>
+<msg time="2026-09-06T22:38:42.177372" level="INFO">Clicking element 'xpath=//*[@id="show-hide-elements"]'.</msg>
+<arg>${xpath_show_hide_submenu}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-09-06T22:14:27.149163" elapsed="0.221185"/>
+<status status="PASS" start="2026-09-06T22:38:42.177083" elapsed="0.211087"/>
 </kw>
 <kw name="Wait Until Page Contains" owner="SeleniumLibrary">
-<arg>Mouse Hover Example</arg>
+<arg>Show / Hide Element</arg>
 <doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" start="2026-09-06T22:14:27.370496" elapsed="0.003254"/>
+<status status="PASS" start="2026-09-06T22:38:42.388331" elapsed="0.003316"/>
 </kw>
-<status status="PASS" start="2026-09-06T22:14:26.902720" elapsed="0.471136"/>
+<status status="PASS" start="2026-09-06T22:38:41.933845" elapsed="0.457904"/>
 </test>
-<test id="s1-t3" name="Mouse Hover The First Element" line="23">
-<kw name="Mouse Over" owner="SeleniumLibrary">
-<msg time="2026-09-06T22:14:27.374232" level="INFO">Simulating Mouse Over on element 'xpath=//*[@id="demo"][text()="If you hover this text, it will be changed."]'.</msg>
-<arg>${xpath_first_element}</arg>
-<doc>Simulates hovering the mouse over the element ``locator``.</doc>
-<status status="PASS" start="2026-09-06T22:14:27.374107" elapsed="0.258105"/>
+<test id="s1-t3" name="Verfify Text Is Visible Before Click Btn" line="22">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2026-09-06T22:38:42.394632" level="INFO">Current page contains element 'xpath=//*[@id="hiddenText"]'.</msg>
+<arg>${xpath_visible_text}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2026-09-06T22:38:42.391997" elapsed="0.002674"/>
 </kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${xpath_first_result}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-09-06T22:14:27.632428" elapsed="0.008608"/>
-</kw>
-<kw name="Element Should Not Be Visible" owner="SeleniumLibrary">
-<msg time="2026-09-06T22:14:27.644164" level="INFO">Element 'xpath=//*[@id="demo"][text()="If you hover this text, it will be changed."]' did not exist.</msg>
-<arg>${xpath_first_element}</arg>
-<doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
-<status status="PASS" start="2026-09-06T22:14:27.641187" elapsed="0.003019"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2026-09-06T22:14:28.646054" level="INFO">Slept 1 second.</msg>
-<arg>1</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2026-09-06T22:14:27.644323" elapsed="1.002027"/>
-</kw>
-<status status="PASS" start="2026-09-06T22:14:27.373966" elapsed="1.272872"/>
+<status status="PASS" start="2026-09-06T22:38:42.391855" elapsed="0.002897"/>
 </test>
-<test id="s1-t4" name="Mouse Hover The Second Element" line="28">
-<kw name="Mouse Over" owner="SeleniumLibrary">
-<msg time="2026-09-06T22:14:28.648707" level="INFO">Simulating Mouse Over on element 'xpath=//*[@id="button-hover-over"]'.</msg>
-<arg>${xpath_second_element}</arg>
-<doc>Simulates hovering the mouse over the element ``locator``.</doc>
-<status status="PASS" start="2026-09-06T22:14:28.647989" elapsed="0.270772"/>
+<test id="s1-t4" name="Verify Text Is Invisible After Click Btn" line="24">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-09-06T22:38:42.395074" level="INFO">Clicking button 'xpath=//button[@id="showHideBtn"]'.</msg>
+<arg>${xpath_show_hide_btn}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-06T22:38:42.394971" elapsed="0.019272"/>
 </kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2026-09-06T22:14:29.920895" level="INFO">Slept 1 second.</msg>
-<arg>1</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2026-09-06T22:14:28.919330" elapsed="1.001887"/>
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>${xpath_visible_text}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2026-09-06T22:38:42.414380" elapsed="0.003826"/>
 </kw>
-<kw name="Page Should Contain" owner="SeleniumLibrary">
-<msg time="2026-09-06T22:14:29.932984" level="INFO">Current page contains text 'I am shown when someone hovers over the text above.'.</msg>
-<arg>I am shown when someone hovers over the text above.</arg>
-<doc>Verifies that current page contains ``text``.</doc>
-<status status="PASS" start="2026-09-06T22:14:29.921800" elapsed="0.011384"/>
-</kw>
-<status status="PASS" start="2026-09-06T22:14:28.647311" elapsed="1.286191"/>
+<status status="PASS" start="2026-09-06T22:38:42.394845" elapsed="0.023438"/>
 </test>
-<status status="PASS" start="2026-09-06T22:14:24.955021" elapsed="4.979052"/>
+<status status="PASS" start="2026-09-06T22:38:40.441107" elapsed="1.977368"/>
 </suite>
 <statistics>
 <total>
@@ -101,7 +77,7 @@
 <tag>
 </tag>
 <suite>
-<stat name="08 Mouse Hover" id="s1" pass="4" fail="0" skip="0">08 Mouse Hover</stat>
+<stat name="09 Show Hide Element" id="s1" pass="4" fail="0" skip="0">09 Show Hide Element</stat>
 </suite>
 </statistics>
 <errors>
