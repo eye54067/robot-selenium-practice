@@ -1,74 +1,112 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.4.2 (Python 3.14.4 on darwin)" generated="2026-09-06T22:38:40.440451" rpa="false" schemaversion="5">
-<suite id="s1" name="09 Show Hide Element" source="/Users/eye/Documents/automation-robot/09_show_hide_element.robot">
-<test id="s1-t1" name="Open Test Website" line="13">
+<robot generator="Robot 7.4.2 (Python 3.14.4 on darwin)" generated="2026-09-08T17:39:56.509710" rpa="false" schemaversion="5">
+<suite id="s1" name="10 New Browser Tab" source="/Users/eye/Documents/automation-robot/10_new_browser_tab.robot">
+<test id="s1-t1" name="Open Test Website" line="12">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2026-09-06T22:38:40.517814" level="INFO">Opening browser 'chrome' to base url 'https://qa-automation-practice.netlify.app/'.</msg>
+<msg time="2026-09-08T17:39:56.591974" level="INFO">Opening browser 'chrome' to base url 'https://qa-automation-practice.netlify.app/'.</msg>
 <arg>${url}</arg>
 <arg>${browser}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2026-09-06T22:38:40.517700" elapsed="1.069707"/>
+<status status="PASS" start="2026-09-08T17:39:56.591847" elapsed="1.538006"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2026-09-06T22:38:41.587774" elapsed="0.340792"/>
+<status status="PASS" start="2026-09-08T17:39:58.130263" elapsed="0.335950"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${xpath_new_tab_window_menu}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-09-08T17:39:58.466448" elapsed="0.274139"/>
 </kw>
 <kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
-<arg>${xpath_btn_menu}</arg>
+<arg>${xpath_new_tab_window_menu}</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" start="2026-09-06T22:38:41.928797" elapsed="0.004760"/>
+<status status="PASS" start="2026-09-08T17:39:58.741037" elapsed="0.006791"/>
 </kw>
-<status status="PASS" start="2026-09-06T22:38:40.517322" elapsed="1.416371"/>
+<status status="PASS" start="2026-09-08T17:39:56.591440" elapsed="2.156719"/>
 </test>
 <test id="s1-t2" name="Go To Test Page" line="17">
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${xpath_new_tab_window_menu}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-09-08T17:39:58.748914" elapsed="0.275006"/>
+</kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-09-06T22:38:41.934159" level="INFO">Clicking element 'xpath=//a[text()='Btn actions']'.</msg>
-<arg>${xpath_btn_menu}</arg>
+<msg time="2026-09-08T17:39:59.025275" level="INFO">Clicking element 'xpath=//a[text()="New Tab / Window"]'.</msg>
+<arg>${xpath_new_tab_window_menu}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-09-06T22:38:41.934024" elapsed="0.024403"/>
+<status status="PASS" start="2026-09-08T17:39:59.024634" elapsed="0.044575"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${xpath_show_hide_submenu}</arg>
+<arg>${xpath_new_tab_submenu}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-09-06T22:38:41.958621" elapsed="0.218255"/>
+<status status="PASS" start="2026-09-08T17:39:59.069523" elapsed="0.008512"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-09-06T22:38:42.177372" level="INFO">Clicking element 'xpath=//*[@id="show-hide-elements"]'.</msg>
-<arg>${xpath_show_hide_submenu}</arg>
+<msg time="2026-09-08T17:39:59.078389" level="INFO">Clicking element 'xpath=//*[@id="browser-tab"]'.</msg>
+<arg>${xpath_new_tab_submenu}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-09-06T22:38:42.177083" elapsed="0.211087"/>
+<status status="PASS" start="2026-09-08T17:39:59.078206" elapsed="0.498446"/>
 </kw>
-<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
-<arg>Show / Hide Element</arg>
-<doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" start="2026-09-06T22:38:42.388331" elapsed="0.003316"/>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-09-08T17:39:59.581636" level="INFO">Current page contains text 'Switch to a new Browser Tab'.</msg>
+<arg>Switch to a new Browser Tab</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2026-09-08T17:39:59.576856" elapsed="0.004822"/>
 </kw>
-<status status="PASS" start="2026-09-06T22:38:41.933845" elapsed="0.457904"/>
+<status status="PASS" start="2026-09-08T17:39:58.748491" elapsed="0.833313"/>
 </test>
-<test id="s1-t3" name="Verfify Text Is Visible Before Click Btn" line="22">
-<kw name="Page Should Contain Element" owner="SeleniumLibrary">
-<msg time="2026-09-06T22:38:42.394632" level="INFO">Current page contains element 'xpath=//*[@id="hiddenText"]'.</msg>
-<arg>${xpath_visible_text}</arg>
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<status status="PASS" start="2026-09-06T22:38:42.391997" elapsed="0.002674"/>
-</kw>
-<status status="PASS" start="2026-09-06T22:38:42.391855" elapsed="0.002897"/>
-</test>
-<test id="s1-t4" name="Verify Text Is Invisible After Click Btn" line="24">
+<test id="s1-t3" name="Click Button To Open New Tab" line="23">
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2026-09-06T22:38:42.395074" level="INFO">Clicking button 'xpath=//button[@id="showHideBtn"]'.</msg>
-<arg>${xpath_show_hide_btn}</arg>
+<msg time="2026-09-08T17:39:59.582246" level="INFO">Clicking button 'xpath=//*[@id="newTabBtn"]'.</msg>
+<arg>${xpath_new_tab_btn}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2026-09-06T22:38:42.394971" elapsed="0.019272"/>
+<status status="PASS" start="2026-09-08T17:39:59.582100" elapsed="0.041715"/>
 </kw>
-<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
-<arg>${xpath_visible_text}</arg>
-<doc>Waits until the element ``locator`` is not visible.</doc>
-<status status="PASS" start="2026-09-06T22:38:42.414380" elapsed="0.003826"/>
+<kw name="Switch Window" owner="SeleniumLibrary">
+<arg>NEW</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="PASS" start="2026-09-08T17:39:59.624157" elapsed="0.006598"/>
 </kw>
-<status status="PASS" start="2026-09-06T22:38:42.394845" elapsed="0.023438"/>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-09-08T17:40:00.633378" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-09-08T17:39:59.631050" elapsed="1.002683"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-09-08T17:40:00.649960" level="INFO">Current page contains text 'Table Example'.</msg>
+<arg>Table Example</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2026-09-08T17:40:00.634415" elapsed="0.015725"/>
+</kw>
+<status status="PASS" start="2026-09-08T17:39:59.581935" elapsed="1.068510"/>
 </test>
-<status status="PASS" start="2026-09-06T22:38:40.441107" elapsed="1.977368"/>
+<test id="s1-t4" name="Close New Window And Go To Main Window" line="28">
+<kw name="Close Window" owner="SeleniumLibrary">
+<doc>Closes currently opened and selected browser window/tab.</doc>
+<status status="PASS" start="2026-09-08T17:40:00.651057" elapsed="0.053610"/>
+</kw>
+<kw name="Switch Window" owner="SeleniumLibrary">
+<arg>MAIN</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="PASS" start="2026-09-08T17:40:00.704837" elapsed="0.003229"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-09-08T17:40:00.711371" level="INFO">Current page contains text 'Switch to a new Browser Tab'.</msg>
+<arg>Switch to a new Browser Tab</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2026-09-08T17:40:00.708229" elapsed="0.003184"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-09-08T17:40:01.712086" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-09-08T17:40:00.711505" elapsed="1.000866"/>
+</kw>
+<status status="PASS" start="2026-09-08T17:40:00.650679" elapsed="1.062159"/>
+</test>
+<status status="PASS" start="2026-09-08T17:39:56.510433" elapsed="5.203091"/>
 </suite>
 <statistics>
 <total>
@@ -77,7 +115,7 @@
 <tag>
 </tag>
 <suite>
-<stat name="09 Show Hide Element" id="s1" pass="4" fail="0" skip="0">09 Show Hide Element</stat>
+<stat name="10 New Browser Tab" id="s1" pass="4" fail="0" skip="0">10 New Browser Tab</stat>
 </suite>
 </statistics>
 <errors>
