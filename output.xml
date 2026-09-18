@@ -1,121 +1,165 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.4.2 (Python 3.14.4 on darwin)" generated="2026-09-08T17:39:56.509710" rpa="false" schemaversion="5">
-<suite id="s1" name="10 New Browser Tab" source="/Users/eye/Documents/automation-robot/10_new_browser_tab.robot">
+<robot generator="Robot 7.4.2 (Python 3.14.4 on darwin)" generated="2026-09-18T17:32:17.673765" rpa="false" schemaversion="5">
+<suite id="s1" name="11 Static Table" source="/Users/eye/Documents/automation-robot/11_static_table.robot">
 <test id="s1-t1" name="Open Test Website" line="12">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2026-09-08T17:39:56.591974" level="INFO">Opening browser 'chrome' to base url 'https://qa-automation-practice.netlify.app/'.</msg>
+<msg time="2026-09-18T17:32:17.750509" level="INFO">Opening browser 'chrome' to base url 'https://qa-automation-practice.netlify.app/'.</msg>
 <arg>${url}</arg>
 <arg>${browser}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2026-09-08T17:39:56.591847" elapsed="1.538006"/>
+<status status="PASS" start="2026-09-18T17:32:17.750395" elapsed="2.016494"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2026-09-08T17:39:58.130263" elapsed="0.335950"/>
-</kw>
-<kw name="Scroll Element Into View" owner="SeleniumLibrary">
-<arg>${xpath_new_tab_window_menu}</arg>
-<doc>Scrolls the element identified by ``locator`` into view.</doc>
-<status status="PASS" start="2026-09-08T17:39:58.466448" elapsed="0.274139"/>
+<status status="PASS" start="2026-09-18T17:32:19.767250" elapsed="0.337900"/>
 </kw>
 <kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
-<arg>${xpath_new_tab_window_menu}</arg>
+<arg>${xpath_tables_menu}</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" start="2026-09-08T17:39:58.741037" elapsed="0.006791"/>
+<status status="PASS" start="2026-09-18T17:32:20.105480" elapsed="0.005271"/>
 </kw>
-<status status="PASS" start="2026-09-08T17:39:56.591440" elapsed="2.156719"/>
+<status status="PASS" start="2026-09-18T17:32:17.750016" elapsed="2.360927"/>
 </test>
-<test id="s1-t2" name="Go To Test Page" line="17">
+<test id="s1-t2" name="Go To Test Page" line="16">
 <kw name="Scroll Element Into View" owner="SeleniumLibrary">
-<arg>${xpath_new_tab_window_menu}</arg>
+<arg>${xpath_tables_menu}</arg>
 <doc>Scrolls the element identified by ``locator`` into view.</doc>
-<status status="PASS" start="2026-09-08T17:39:58.748914" elapsed="0.275006"/>
+<status status="PASS" start="2026-09-18T17:32:20.111345" elapsed="0.278888"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-09-08T17:39:59.025275" level="INFO">Clicking element 'xpath=//a[text()="New Tab / Window"]'.</msg>
-<arg>${xpath_new_tab_window_menu}</arg>
+<msg time="2026-09-18T17:32:20.390646" level="INFO">Clicking element 'xpath=//a[text()="Tables"]'.</msg>
+<arg>${xpath_tables_menu}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-09-08T17:39:59.024634" elapsed="0.044575"/>
+<status status="PASS" start="2026-09-18T17:32:20.390429" elapsed="0.022077"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${xpath_new_tab_submenu}</arg>
+<arg>${xpath_static_table_submenu}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-09-08T17:39:59.069523" elapsed="0.008512"/>
+<status status="PASS" start="2026-09-18T17:32:20.412632" elapsed="0.226763"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-09-08T17:39:59.078389" level="INFO">Clicking element 'xpath=//*[@id="browser-tab"]'.</msg>
-<arg>${xpath_new_tab_submenu}</arg>
+<msg time="2026-09-18T17:32:20.640221" level="INFO">Clicking element 'xpath=//a[text()="Static Table"]'.</msg>
+<arg>${xpath_static_table_submenu}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-09-08T17:39:59.078206" elapsed="0.498446"/>
+<status status="PASS" start="2026-09-18T17:32:20.639794" elapsed="0.621860"/>
 </kw>
-<kw name="Page Should Contain" owner="SeleniumLibrary">
-<msg time="2026-09-08T17:39:59.581636" level="INFO">Current page contains text 'Switch to a new Browser Tab'.</msg>
-<arg>Switch to a new Browser Tab</arg>
-<doc>Verifies that current page contains ``text``.</doc>
-<status status="PASS" start="2026-09-08T17:39:59.576856" elapsed="0.004822"/>
-</kw>
-<status status="PASS" start="2026-09-08T17:39:58.748491" elapsed="0.833313"/>
-</test>
-<test id="s1-t3" name="Click Button To Open New Tab" line="23">
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2026-09-08T17:39:59.582246" level="INFO">Clicking button 'xpath=//*[@id="newTabBtn"]'.</msg>
-<arg>${xpath_new_tab_btn}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2026-09-08T17:39:59.582100" elapsed="0.041715"/>
-</kw>
-<kw name="Switch Window" owner="SeleniumLibrary">
-<arg>NEW</arg>
-<doc>Switches to browser window matching ``locator``.</doc>
-<status status="PASS" start="2026-09-08T17:39:59.624157" elapsed="0.006598"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2026-09-08T17:40:00.633378" level="INFO">Slept 1 second.</msg>
-<arg>1</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2026-09-08T17:39:59.631050" elapsed="1.002683"/>
-</kw>
-<kw name="Page Should Contain" owner="SeleniumLibrary">
-<msg time="2026-09-08T17:40:00.649960" level="INFO">Current page contains text 'Table Example'.</msg>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
 <arg>Table Example</arg>
-<doc>Verifies that current page contains ``text``.</doc>
-<status status="PASS" start="2026-09-08T17:40:00.634415" elapsed="0.015725"/>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-09-18T17:32:21.261796" elapsed="0.003904"/>
 </kw>
-<status status="PASS" start="2026-09-08T17:39:59.581935" elapsed="1.068510"/>
+<status status="PASS" start="2026-09-18T17:32:20.111114" elapsed="1.154715"/>
 </test>
-<test id="s1-t4" name="Close New Window And Go To Main Window" line="28">
-<kw name="Close Window" owner="SeleniumLibrary">
-<doc>Closes currently opened and selected browser window/tab.</doc>
-<status status="PASS" start="2026-09-08T17:40:00.651057" elapsed="0.053610"/>
+<test id="s1-t3" name="Verify Table Should Be Visible" line="22">
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2026-09-18T17:32:21.271040" level="INFO">Element 'xpath=//*[@id="peopleTable"]' is displayed.</msg>
+<arg>${xpath_static_table}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2026-09-18T17:32:21.266106" elapsed="0.004974"/>
 </kw>
-<kw name="Switch Window" owner="SeleniumLibrary">
-<arg>MAIN</arg>
-<doc>Switches to browser window matching ``locator``.</doc>
-<status status="PASS" start="2026-09-08T17:40:00.704837" elapsed="0.003229"/>
+<status status="PASS" start="2026-09-18T17:32:21.265953" elapsed="0.005201"/>
+</test>
+<test id="s1-t4" name="Verify Table Should Have Correct Headers" line="24">
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-09-18T17:32:21.277557" level="INFO">${h1} = #</msg>
+<var>${h1}</var>
+<arg>${xpath_static_table}/thead/tr/th[1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-18T17:32:21.271369" elapsed="0.006211"/>
 </kw>
-<kw name="Page Should Contain" owner="SeleniumLibrary">
-<msg time="2026-09-08T17:40:00.711371" level="INFO">Current page contains text 'Switch to a new Browser Tab'.</msg>
-<arg>Switch to a new Browser Tab</arg>
-<doc>Verifies that current page contains ``text``.</doc>
-<status status="PASS" start="2026-09-08T17:40:00.708229" elapsed="0.003184"/>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-09-18T17:32:21.282869" level="INFO">${h2} = First</msg>
+<var>${h2}</var>
+<arg>${xpath_static_table}/thead/tr/th[2]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-18T17:32:21.277660" elapsed="0.005227"/>
 </kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2026-09-08T17:40:01.712086" level="INFO">Slept 1 second.</msg>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-09-18T17:32:21.287523" level="INFO">${h3} = Last</msg>
+<var>${h3}</var>
+<arg>${xpath_static_table}/thead/tr/th[3]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-18T17:32:21.282969" elapsed="0.004568"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-09-18T17:32:21.291775" level="INFO">${h4} = Email</msg>
+<var>${h4}</var>
+<arg>${xpath_static_table}/thead/tr/th[4]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-18T17:32:21.287603" elapsed="0.004184"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${h1}</arg>
+<arg>\#</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2026-09-18T17:32:21.291855" elapsed="0.000263"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${h2}</arg>
+<arg>First</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2026-09-18T17:32:21.292171" elapsed="0.000102"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${h3}</arg>
+<arg>Last</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2026-09-18T17:32:21.292320" elapsed="0.000093"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${h4}</arg>
+<arg>Email</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2026-09-18T17:32:21.292460" elapsed="0.000092"/>
+</kw>
+<status status="PASS" start="2026-09-18T17:32:21.271234" elapsed="0.021369"/>
+</test>
+<test id="s1-t5" name="Verify Table Should Have Correct Row Count" line="33">
+<kw name="Get Element Count" owner="SeleniumLibrary">
+<msg time="2026-09-18T17:32:21.295153" level="INFO">${count} = 5</msg>
+<var>${count}</var>
+<arg>${xpath_static_table}/tbody/tr</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<status status="PASS" start="2026-09-18T17:32:21.292785" elapsed="0.002380"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2026-09-18T17:32:21.295304" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${count}</arg>
+<arg>5</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2026-09-18T17:32:21.295217" elapsed="0.000110"/>
+</kw>
+<status status="PASS" start="2026-09-18T17:32:21.292674" elapsed="0.002696"/>
+</test>
+<test id="s1-t6" name="Verify Table Should Contain Expected Data" line="36">
+<kw name="Table Column Should Contain" owner="SeleniumLibrary">
+<arg>${xpath_static_table}</arg>
+<arg>2</arg>
+<arg>First</arg>
+<doc>Verifies table column contains text ``expected``.</doc>
+<status status="PASS" start="2026-09-18T17:32:21.295524" elapsed="0.008517"/>
+</kw>
+<kw name="Table Row Should Contain" owner="SeleniumLibrary">
+<arg>${xpath_static_table}</arg>
 <arg>1</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2026-09-08T17:40:00.711505" elapsed="1.000866"/>
+<arg>Mark</arg>
+<doc>Verifies that table row contains text ``expected``.</doc>
+<status status="PASS" start="2026-09-18T17:32:21.304153" elapsed="0.012014"/>
 </kw>
-<status status="PASS" start="2026-09-08T17:40:00.650679" elapsed="1.062159"/>
+<status status="PASS" start="2026-09-18T17:32:21.295430" elapsed="0.020837"/>
 </test>
-<status status="PASS" start="2026-09-08T17:39:56.510433" elapsed="5.203091"/>
+<status status="PASS" start="2026-09-18T17:32:17.674441" elapsed="3.642017"/>
 </suite>
 <statistics>
 <total>
-<stat pass="4" fail="0" skip="0">All Tests</stat>
+<stat pass="6" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat name="10 New Browser Tab" id="s1" pass="4" fail="0" skip="0">10 New Browser Tab</stat>
+<stat name="11 Static Table" id="s1" pass="6" fail="0" skip="0">11 Static Table</stat>
 </suite>
 </statistics>
 <errors>
