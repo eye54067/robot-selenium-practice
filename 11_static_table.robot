@@ -36,6 +36,10 @@ Verify Table Should Have Correct Row Count
 Verify Table Should Contain Expected Data
     Table Column Should Contain    ${xpath_static_table}    2    First    
     Table Row Should Contain    ${xpath_static_table}    1    Mark
+Verify Specific Test Data In Specific Cell
+    Table Cell Should Contain    ${xpath_static_table}    4    2    Larry
+    Table Cell Should Contain    ${xpath_static_table}    4    3    Bow
+    Table Cell Should Contain    ${xpath_static_table}    4    4    lbow@gmail.com
     
 *** Keywords ***
 
