@@ -1,162 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.4.2 (Python 3.14.4 on darwin)" generated="2026-09-21T16:18:28.394571" rpa="false" schemaversion="5">
-<suite id="s1" name="14 Alerts" source="/Users/eye/Documents/automation-robot/14_alerts.robot">
+<robot generator="Robot 7.4.2 (Python 3.14.4 on darwin)" generated="2026-09-21T22:11:25.064477" rpa="false" schemaversion="5">
+<suite id="s1" name="15 Loader" source="/Users/eye/Documents/automation-robot/15_loader.robot">
 <test id="s1-t1" name="Open Test Website" line="11">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2026-09-21T16:18:28.468547" level="INFO">Opening browser 'chrome' to base url 'https://qa-automation-practice.netlify.app/'.</msg>
+<msg time="2026-09-21T22:11:25.137905" level="INFO">Opening browser 'chrome' to base url 'https://qa-automation-practice.netlify.app/'.</msg>
 <arg>${url}</arg>
 <arg>${browser}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2026-09-21T16:18:28.468441" elapsed="1.077077"/>
+<status status="PASS" start="2026-09-21T22:11:25.137798" elapsed="1.817190"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2026-09-21T16:18:29.545907" elapsed="0.343075"/>
+<status status="PASS" start="2026-09-21T22:11:26.955615" elapsed="0.334473"/>
 </kw>
-<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
-<arg>${xpath_alerts_menu}</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" start="2026-09-21T16:18:29.889226" elapsed="0.005072"/>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2026-09-21T22:11:27.295280" level="INFO">Current page contains element 'xpath=//a[text()="Loader"]'.</msg>
+<arg>${loader_menu}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2026-09-21T22:11:27.290302" elapsed="0.005032"/>
 </kw>
-<status status="PASS" start="2026-09-21T16:18:28.468089" elapsed="1.426347"/>
+<status status="PASS" start="2026-09-21T22:11:25.137432" elapsed="2.158039"/>
 </test>
-<test id="s1-t2" name="Go To Test Page And Verify Elements" line="15">
+<test id="s1-t2" name="Go To Test Page" line="15">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-09-21T16:18:29.894890" level="INFO">Clicking element 'xpath=//a[@id="alerts"]'.</msg>
-<arg>${xpath_alerts_menu}</arg>
+<msg time="2026-09-21T22:11:27.295964" level="INFO">Clicking element 'xpath=//a[text()="Loader"]'.</msg>
+<arg>${loader_menu}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-09-21T16:18:29.894767" elapsed="0.287862"/>
+<status status="PASS" start="2026-09-21T22:11:27.295820" elapsed="0.214759"/>
 </kw>
-<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
-<arg>Alerts Example</arg>
-<doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" start="2026-09-21T16:18:30.182780" elapsed="0.003676"/>
-</kw>
-<kw name="Page Should Contain Button" owner="SeleniumLibrary">
-<msg time="2026-09-21T16:18:30.195115" level="INFO">Current page contains button 'xpath=//button[@id="alert-btn"]'.</msg>
-<arg>${xpath_alert_btn}</arg>
-<doc>Verifies button ``locator`` is found from current page.</doc>
-<status status="PASS" start="2026-09-21T16:18:30.186546" elapsed="0.008604"/>
-</kw>
-<kw name="Element Should Be Enabled" owner="SeleniumLibrary">
-<arg>${xpath_alert_btn}</arg>
-<doc>Verifies that element identified by ``locator`` is enabled.</doc>
-<status status="PASS" start="2026-09-21T16:18:30.195239" elapsed="0.005623"/>
-</kw>
-<kw name="Page Should Contain Button" owner="SeleniumLibrary">
-<msg time="2026-09-21T16:18:30.208892" level="INFO">Current page contains button 'xpath=//button[@id="confirm-btn"]'.</msg>
-<arg>${xpath_confirm_btn}</arg>
-<doc>Verifies button ``locator`` is found from current page.</doc>
-<status status="PASS" start="2026-09-21T16:18:30.200933" elapsed="0.007994"/>
-</kw>
-<kw name="Element Should Be Enabled" owner="SeleniumLibrary">
-<arg>${xpath_confirm_btn}</arg>
-<doc>Verifies that element identified by ``locator`` is enabled.</doc>
-<status status="PASS" start="2026-09-21T16:18:30.209015" elapsed="0.004391"/>
-</kw>
-<status status="PASS" start="2026-09-21T16:18:29.894579" elapsed="0.318902"/>
+<status status="PASS" start="2026-09-21T22:11:27.295627" elapsed="0.215112"/>
 </test>
-<test id="s1-t3" name="Click Alert Button And Verify Alert Box" line="22">
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2026-09-21T16:18:30.213779" level="INFO">Clicking button 'xpath=//button[@id="alert-btn"]'.</msg>
-<arg>${xpath_alert_btn}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2026-09-21T16:18:30.213699" elapsed="0.024739"/>
+<test id="s1-t3" name="Verify Loader And The Result After Loading Stop" line="17">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${loader}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-09-21T22:11:27.511032" elapsed="0.005875"/>
 </kw>
-<kw name="Alert Should Be Present" owner="SeleniumLibrary">
-<msg time="2026-09-21T16:18:30.238691" level="INFO">HANDLE::&lt;class 'NoneType'&gt;::None</msg>
-<arg>Hello! I am an alert box!!</arg>
-<arg>action=LEAVE</arg>
-<doc>Verifies that an alert is present and by default, accepts it.</doc>
-<status status="PASS" start="2026-09-21T16:18:30.238563" elapsed="0.001028"/>
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>${loader}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2026-09-21T22:11:27.516999" elapsed="2.150879"/>
 </kw>
-<status status="PASS" start="2026-09-21T16:18:30.213576" elapsed="0.026120"/>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-09-21T22:11:29.676913" level="INFO">Current page contains text 'Tada!'.</msg>
+<arg>Tada!</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2026-09-21T22:11:29.668291" elapsed="0.008750"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-09-21T22:11:29.683907" level="INFO">Current page contains text 'Some text in my newly loaded page..'.</msg>
+<arg>Some text in my newly loaded page..</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2026-09-21T22:11:29.677289" elapsed="0.006669"/>
+</kw>
+<status status="PASS" start="2026-09-21T22:11:27.510854" elapsed="2.173261"/>
 </test>
-<test id="s1-t4" name="Click OK On Alert Box And Verify The Result" line="25">
-<kw name="Handle Alert" owner="SeleniumLibrary">
-<msg time="2026-09-21T16:18:30.240014" level="INFO">HANDLE::&lt;class 'NoneType'&gt;::None</msg>
-<arg>action=ACCEPT</arg>
-<doc>Handles the current alert and returns its message.</doc>
-<status status="PASS" start="2026-09-21T16:18:30.239941" elapsed="0.001668"/>
-</kw>
-<kw name="Alert Should Not Be Present" owner="SeleniumLibrary">
-<doc>Verifies that no alert is present.</doc>
-<status status="PASS" start="2026-09-21T16:18:30.241806" elapsed="5.076695"/>
-</kw>
-<status status="PASS" start="2026-09-21T16:18:30.239788" elapsed="5.079192"/>
-</test>
-<test id="s1-t5" name="Click Confirm Button And Verify Alert Box" line="28">
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2026-09-21T16:18:35.320412" level="INFO">Clicking button 'xpath=//button[@id="confirm-btn"]'.</msg>
-<arg>${xpath_confirm_btn}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2026-09-21T16:18:35.319993" elapsed="0.062137"/>
-</kw>
-<kw name="Alert Should Be Present" owner="SeleniumLibrary">
-<msg time="2026-09-21T16:18:35.382798" level="INFO">HANDLE::&lt;class 'NoneType'&gt;::None</msg>
-<arg>Press a button! Either OK or Cancel.</arg>
-<arg>action=LEAVE</arg>
-<doc>Verifies that an alert is present and by default, accepts it.</doc>
-<status status="PASS" start="2026-09-21T16:18:35.382612" elapsed="0.001526"/>
-</kw>
-<status status="PASS" start="2026-09-21T16:18:35.319396" elapsed="0.065066"/>
-</test>
-<test id="s1-t6" name="Click Cancel button on Alert Box And Verify The Result" line="31">
-<kw name="Handle Alert" owner="SeleniumLibrary">
-<msg time="2026-09-21T16:18:35.385041" level="INFO">HANDLE::&lt;class 'NoneType'&gt;::None</msg>
-<arg>action=DISMISS</arg>
-<doc>Handles the current alert and returns its message.</doc>
-<status status="PASS" start="2026-09-21T16:18:35.384926" elapsed="0.002194"/>
-</kw>
-<kw name="Alert Should Not Be Present" owner="SeleniumLibrary">
-<doc>Verifies that no alert is present.</doc>
-<status status="PASS" start="2026-09-21T16:18:35.387356" elapsed="5.081297"/>
-</kw>
-<status status="PASS" start="2026-09-21T16:18:35.384651" elapsed="5.084493"/>
-</test>
-<test id="s1-t7" name="Click Confirm Button To Open Alert Box Again" line="34">
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2026-09-21T16:18:40.470476" level="INFO">Clicking button 'xpath=//button[@id="confirm-btn"]'.</msg>
-<arg>${xpath_confirm_btn}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2026-09-21T16:18:40.470017" elapsed="0.051162"/>
-</kw>
-<kw name="Alert Should Be Present" owner="SeleniumLibrary">
-<msg time="2026-09-21T16:18:40.522143" level="INFO">HANDLE::&lt;class 'NoneType'&gt;::None</msg>
-<arg>Press a button! Either OK or Cancel.</arg>
-<arg>action=LEAVE</arg>
-<doc>Verifies that an alert is present and by default, accepts it.</doc>
-<status status="PASS" start="2026-09-21T16:18:40.521762" elapsed="0.001603"/>
-</kw>
-<status status="PASS" start="2026-09-21T16:18:40.469502" elapsed="0.054164"/>
-</test>
-<test id="s1-t8" name="Click OK On Alert Box" line="37">
-<kw name="Handle Alert" owner="SeleniumLibrary">
-<msg time="2026-09-21T16:18:40.524143" level="INFO">HANDLE::&lt;class 'NoneType'&gt;::None</msg>
-<arg>action=ACCEPT</arg>
-<doc>Handles the current alert and returns its message.</doc>
-<status status="PASS" start="2026-09-21T16:18:40.524059" elapsed="0.001969"/>
-</kw>
-<kw name="Alert Should Not Be Present" owner="SeleniumLibrary">
-<doc>Verifies that no alert is present.</doc>
-<status status="PASS" start="2026-09-21T16:18:40.526227" elapsed="5.070206"/>
-</kw>
-<kw name="Close Browser" owner="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" start="2026-09-21T16:18:45.596879" elapsed="0.078186"/>
-</kw>
-<status status="PASS" start="2026-09-21T16:18:40.523830" elapsed="5.151432"/>
-</test>
-<status status="PASS" start="2026-09-21T16:18:28.395105" elapsed="17.280366"/>
+<status status="PASS" start="2026-09-21T22:11:25.065126" elapsed="4.619375"/>
 </suite>
 <statistics>
 <total>
-<stat pass="8" fail="0" skip="0">All Tests</stat>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat name="14 Alerts" id="s1" pass="8" fail="0" skip="0">14 Alerts</stat>
+<stat name="15 Loader" id="s1" pass="3" fail="0" skip="0">15 Loader</stat>
 </suite>
 </statistics>
 <errors>
