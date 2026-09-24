@@ -1,70 +1,138 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.4.2 (Python 3.14.4 on darwin)" generated="2026-09-21T22:11:25.064477" rpa="false" schemaversion="5">
-<suite id="s1" name="15 Loader" source="/Users/eye/Documents/automation-robot/15_loader.robot">
-<test id="s1-t1" name="Open Test Website" line="11">
+<robot generator="Robot 7.4.2 (Python 3.14.4 on darwin)" generated="2026-09-24T14:13:42.644228" rpa="false" schemaversion="5">
+<suite id="s1" name="16 Pagination" source="/Users/eye/Documents/automation-robot/16_pagination.robot">
+<test id="s1-t1" name="Open Test Website" line="17">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2026-09-21T22:11:25.137905" level="INFO">Opening browser 'chrome' to base url 'https://qa-automation-practice.netlify.app/'.</msg>
+<msg time="2026-09-24T14:13:42.742239" level="INFO">Opening browser 'chrome' to base url 'https://qa-automation-practice.netlify.app/'.</msg>
 <arg>${url}</arg>
 <arg>${browser}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2026-09-21T22:11:25.137798" elapsed="1.817190"/>
+<status status="PASS" start="2026-09-24T14:13:42.742122" elapsed="6.773872"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2026-09-21T22:11:26.955615" elapsed="0.334473"/>
+<status status="PASS" start="2026-09-24T14:13:49.516412" elapsed="0.337447"/>
 </kw>
 <kw name="Page Should Contain Element" owner="SeleniumLibrary">
-<msg time="2026-09-21T22:11:27.295280" level="INFO">Current page contains element 'xpath=//a[text()="Loader"]'.</msg>
-<arg>${loader_menu}</arg>
+<msg time="2026-09-24T14:13:49.860117" level="INFO">Current page contains element 'xpath=//a[text()="Pagination"]'.</msg>
+<arg>${pagination_menu}</arg>
 <doc>Verifies that element ``locator`` is found on the current page.</doc>
-<status status="PASS" start="2026-09-21T22:11:27.290302" elapsed="0.005032"/>
+<status status="PASS" start="2026-09-24T14:13:49.854060" elapsed="0.006124"/>
 </kw>
-<status status="PASS" start="2026-09-21T22:11:25.137432" elapsed="2.158039"/>
+<status status="PASS" start="2026-09-24T14:13:42.741728" elapsed="7.118613"/>
 </test>
-<test id="s1-t2" name="Go To Test Page" line="15">
+<test id="s1-t2" name="Go To Test Page" line="21">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-09-21T22:11:27.295964" level="INFO">Clicking element 'xpath=//a[text()="Loader"]'.</msg>
-<arg>${loader_menu}</arg>
+<msg time="2026-09-24T14:13:49.860838" level="INFO">Clicking element 'xpath=//a[text()="Pagination"]'.</msg>
+<arg>${pagination_menu}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-09-21T22:11:27.295820" elapsed="0.214759"/>
+<status status="PASS" start="2026-09-24T14:13:49.860706" elapsed="1.225619"/>
 </kw>
-<status status="PASS" start="2026-09-21T22:11:27.295627" elapsed="0.215112"/>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${pagination_element}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2026-09-24T14:13:51.086653" elapsed="0.006961"/>
+</kw>
+<status status="PASS" start="2026-09-24T14:13:49.860516" elapsed="1.233335"/>
 </test>
-<test id="s1-t3" name="Verify Loader And The Result After Loading Stop" line="17">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${loader}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-09-21T22:11:27.511032" elapsed="0.005875"/>
+<test id="s1-t3" name="Verify Page 1 Link Is Enabled" line="24">
+<kw name="Element Should Be Enabled" owner="SeleniumLibrary">
+<arg>${page_1}</arg>
+<doc>Verifies that element identified by ``locator`` is enabled.</doc>
+<status status="PASS" start="2026-09-24T14:13:51.094313" elapsed="0.011082"/>
 </kw>
-<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
-<arg>${loader}</arg>
-<doc>Waits until the element ``locator`` is not visible.</doc>
-<status status="PASS" start="2026-09-21T22:11:27.516999" elapsed="2.150879"/>
-</kw>
-<kw name="Page Should Contain" owner="SeleniumLibrary">
-<msg time="2026-09-21T22:11:29.676913" level="INFO">Current page contains text 'Tada!'.</msg>
-<arg>Tada!</arg>
-<doc>Verifies that current page contains ``text``.</doc>
-<status status="PASS" start="2026-09-21T22:11:29.668291" elapsed="0.008750"/>
-</kw>
-<kw name="Page Should Contain" owner="SeleniumLibrary">
-<msg time="2026-09-21T22:11:29.683907" level="INFO">Current page contains text 'Some text in my newly loaded page..'.</msg>
-<arg>Some text in my newly loaded page..</arg>
-<doc>Verifies that current page contains ``text``.</doc>
-<status status="PASS" start="2026-09-21T22:11:29.677289" elapsed="0.006669"/>
-</kw>
-<status status="PASS" start="2026-09-21T22:11:27.510854" elapsed="2.173261"/>
+<status status="PASS" start="2026-09-24T14:13:51.094043" elapsed="0.011492"/>
 </test>
-<status status="PASS" start="2026-09-21T22:11:25.065126" elapsed="4.619375"/>
+<test id="s1-t4" name="Click Page 1 Link And Verify The Result" line="26">
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2026-09-24T14:13:51.106110" level="INFO">Clicking link 'xpath=//*[@id="content"]/nav[2]/ul/li[2]/a'.</msg>
+<arg>${page_1}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-24T14:13:51.105893" elapsed="0.021482"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>You clicked page no. 1</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-09-24T14:13:51.127514" elapsed="0.007322"/>
+</kw>
+<status status="PASS" start="2026-09-24T14:13:51.105659" elapsed="0.029278"/>
+</test>
+<test id="s1-t5" name="Verify Page 2 Link Is Enabled" line="29">
+<kw name="Element Should Be Enabled" owner="SeleniumLibrary">
+<arg>${page_2}</arg>
+<doc>Verifies that element identified by ``locator`` is enabled.</doc>
+<status status="PASS" start="2026-09-24T14:13:51.135162" elapsed="0.007943"/>
+</kw>
+<status status="PASS" start="2026-09-24T14:13:51.135031" elapsed="0.008189"/>
+</test>
+<test id="s1-t6" name="Click Page 2 Link And Verify The Result" line="31">
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2026-09-24T14:13:51.143571" level="INFO">Clicking link 'xpath=//*[@id="content"]/nav[2]/ul/li[3]/a'.</msg>
+<arg>${page_2}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-24T14:13:51.143447" elapsed="0.016506"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>You clicked page no. 2</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-09-24T14:13:51.160074" elapsed="0.002963"/>
+</kw>
+<status status="PASS" start="2026-09-24T14:13:51.143310" elapsed="0.019821"/>
+</test>
+<test id="s1-t7" name="Verify Page 3 Link Is Enabled" line="34">
+<kw name="Element Should Be Enabled" owner="SeleniumLibrary">
+<arg>${page_3}</arg>
+<doc>Verifies that element identified by ``locator`` is enabled.</doc>
+<status status="PASS" start="2026-09-24T14:13:51.163358" elapsed="0.005420"/>
+</kw>
+<status status="PASS" start="2026-09-24T14:13:51.163217" elapsed="0.005644"/>
+</test>
+<test id="s1-t8" name="Click Page 3 Link And Verify The Result" line="36">
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2026-09-24T14:13:51.169141" level="INFO">Clicking link 'xpath=//*[@id="content"]/nav[2]/ul/li[4]/a'.</msg>
+<arg>${page_3}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-24T14:13:51.169053" elapsed="0.016139"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>You clicked page no. 3</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-09-24T14:13:51.185311" elapsed="0.002595"/>
+</kw>
+<status status="PASS" start="2026-09-24T14:13:51.168943" elapsed="0.019042"/>
+</test>
+<test id="s1-t9" name="Verify Page Link Next Should Be Enabled" line="39">
+<kw name="Element Should Be Enabled" owner="SeleniumLibrary">
+<arg>${page_next}</arg>
+<doc>Verifies that element identified by ``locator`` is enabled.</doc>
+<status status="PASS" start="2026-09-24T14:13:51.188192" elapsed="0.006311"/>
+</kw>
+<status status="PASS" start="2026-09-24T14:13:51.188069" elapsed="0.006543"/>
+</test>
+<test id="s1-t10" name="Click Page Link Next And Verify The Result" line="41">
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2026-09-24T14:13:51.194936" level="INFO">Clicking link 'xpath=//*[@id="content"]/nav[2]/ul/li[5]/a'.</msg>
+<arg>${page_next}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-24T14:13:51.194837" elapsed="0.015461"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>You clicked the "Next" button</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-09-24T14:13:51.210416" elapsed="0.002594"/>
+</kw>
+<status status="PASS" start="2026-09-24T14:13:51.194701" elapsed="0.018388"/>
+</test>
+<status status="PASS" start="2026-09-24T14:13:42.644665" elapsed="8.568632"/>
 </suite>
 <statistics>
 <total>
-<stat pass="3" fail="0" skip="0">All Tests</stat>
+<stat pass="10" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat name="15 Loader" id="s1" pass="3" fail="0" skip="0">15 Loader</stat>
+<stat name="16 Pagination" id="s1" pass="10" fail="0" skip="0">16 Pagination</stat>
 </suite>
 </statistics>
 <errors>
