@@ -1,151 +1,250 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.4.2 (Python 3.14.4 on darwin)" generated="2026-09-25T13:19:36.749438" rpa="false" schemaversion="5">
+<robot generator="Robot 7.4.2 (Python 3.14.4 on darwin)" generated="2026-09-26T17:43:51.448941" rpa="false" schemaversion="5">
 <suite id="s1" name="18 Date Pickers" source="/Users/eye/Documents/automation-robot/18_date_pickers.robot">
-<test id="s1-t1" name="Open Test Website" line="16">
+<test id="s1-t1" name="Open Test Website" line="21">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2026-09-25T13:19:36.851308" level="INFO">Opening browser 'chrome' to base url 'https://qa-automation-practice.netlify.app/'.</msg>
+<msg time="2026-09-26T17:43:51.529587" level="INFO">Opening browser 'chrome' to base url 'https://qa-automation-practice.netlify.app/'.</msg>
 <arg>${url}</arg>
 <arg>${browser}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2026-09-25T13:19:36.851182" elapsed="3.205056"/>
+<status status="PASS" start="2026-09-26T17:43:51.529468" elapsed="1.135500"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2026-09-25T13:19:40.056765" elapsed="0.334360"/>
+<status status="PASS" start="2026-09-26T17:43:52.665470" elapsed="0.256976"/>
 </kw>
 <kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
 <arg>${xpath_date_pickers_menu}</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" start="2026-09-25T13:19:40.391475" elapsed="0.007420"/>
+<status status="PASS" start="2026-09-26T17:43:52.922665" elapsed="0.007612"/>
 </kw>
-<status status="PASS" start="2026-09-25T13:19:36.850780" elapsed="3.548258"/>
+<status status="PASS" start="2026-09-26T17:43:51.529089" elapsed="1.401425"/>
 </test>
-<test id="s1-t2" name="Go To Test Page" line="20">
+<test id="s1-t2" name="Go To Test Page" line="25">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-09-25T13:19:40.399573" level="INFO">Clicking element 'xpath=//*[@id="date-picker"]'.</msg>
+<msg time="2026-09-26T17:43:52.931236" level="INFO">Clicking element 'xpath=//*[@id="date-picker"]'.</msg>
 <arg>${xpath_date_pickers_menu}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-09-25T13:19:40.399421" elapsed="0.805449"/>
+<status status="PASS" start="2026-09-26T17:43:52.931046" elapsed="0.389875"/>
 </kw>
 <kw name="Wait Until Page Contains" owner="SeleniumLibrary">
 <arg>Range Date Picker Example</arg>
 <doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" start="2026-09-25T13:19:41.205017" elapsed="0.004342"/>
+<status status="PASS" start="2026-09-26T17:43:53.321119" elapsed="0.004094"/>
 </kw>
 <kw name="Wait Until Page Contains" owner="SeleniumLibrary">
 <arg>Basic Date Picker Example</arg>
 <doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" start="2026-09-25T13:19:41.209473" elapsed="0.003047"/>
+<status status="PASS" start="2026-09-26T17:43:53.325321" elapsed="0.003849"/>
 </kw>
-<status status="PASS" start="2026-09-25T13:19:40.399205" elapsed="0.813408"/>
+<status status="PASS" start="2026-09-26T17:43:52.930714" elapsed="0.398581"/>
 </test>
-<test id="s1-t3" name="Check For The Current Value Of Range Date" line="24">
+<test id="s1-t3" name="Verify Current Value Before Typing On Date Range Picker Input Field" line="29">
 <kw name="Get Value" owner="SeleniumLibrary">
-<msg time="2026-09-25T13:19:41.217689" level="INFO">${value_before} = 01/01/2018 - 01/15/2018</msg>
+<msg time="2026-09-26T17:43:53.335101" level="INFO">${value_before} = 01/01/2018 - 01/15/2018</msg>
 <var>${value_before}</var>
 <arg>locator=${xpath_drp_input}</arg>
 <doc>Returns the value attribute of the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-09-25T13:19:41.212863" elapsed="0.004848"/>
+<status status="PASS" start="2026-09-26T17:43:53.329594" elapsed="0.005530"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>Value before new input:${value_before}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2026-09-25T13:19:41.217808" elapsed="0.000258"/>
+<status status="PASS" start="2026-09-26T17:43:53.335219" elapsed="0.000245"/>
 </kw>
-<status status="PASS" start="2026-09-25T13:19:41.212720" elapsed="0.005405"/>
+<status status="PASS" start="2026-09-26T17:43:53.329409" elapsed="0.006116"/>
 </test>
-<test id="s1-t4" name="Set New Date Range By Typing" line="27">
+<test id="s1-t4" name="Set New Date Range By Typing On Date Range Picker Input Field" line="32">
 <kw name="Clear Element Text" owner="SeleniumLibrary">
 <arg>${xpath_drp_input}</arg>
 <doc>Clears the value of the text-input-element identified by ``locator``.</doc>
-<status status="PASS" start="2026-09-25T13:19:41.218321" elapsed="0.021622"/>
+<status status="PASS" start="2026-09-26T17:43:53.335741" elapsed="0.018824"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2026-09-25T13:19:41.240474" level="INFO">${input_value} = 09/01/2026 - 09/24/2026</msg>
+<msg time="2026-09-26T17:43:53.354957" level="INFO">${input_value} = 09/01/2026 - 09/24/2026</msg>
 <var>${input_value}</var>
 <arg>09/01/2026 - 09/24/2026</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2026-09-25T13:19:41.240263" elapsed="0.000231"/>
+<status status="PASS" start="2026-09-26T17:43:53.354736" elapsed="0.000237"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-09-25T13:19:41.240790" level="INFO">Typing text '09/01/2026 - 09/24/2026' into text field 'xpath=//*[@id="range-date-calendar"]'.</msg>
+<msg time="2026-09-26T17:43:53.355343" level="INFO">Typing text '09/01/2026 - 09/24/2026' into text field 'xpath=//*[@id="range-date-calendar"]'.</msg>
 <arg>${xpath_drp_input}</arg>
 <arg>${input_value}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-09-25T13:19:41.240593" elapsed="0.062345"/>
+<status status="PASS" start="2026-09-26T17:43:53.355038" elapsed="0.068897"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>Input value: ${input_value}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2026-09-25T13:19:41.303073" elapsed="0.000189"/>
+<status status="PASS" start="2026-09-26T17:43:53.424173" elapsed="0.000270"/>
 </kw>
 <kw name="Get Text" owner="SeleniumLibrary">
-<msg time="2026-09-25T13:19:41.309674" level="INFO">${selected_value} = 09/01/2026 - 09/24/2026</msg>
+<msg time="2026-09-26T17:43:53.432111" level="INFO">${selected_value} = 09/01/2026 - 09/24/2026</msg>
 <var>${selected_value}</var>
 <arg>${xpath_selected_drp}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-09-25T13:19:41.303321" elapsed="0.006375"/>
+<status status="PASS" start="2026-09-26T17:43:53.424524" elapsed="0.007612"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>Value displayed on carlendar: ${selected_value}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2026-09-25T13:19:41.309796" elapsed="0.000153"/>
+<status status="PASS" start="2026-09-26T17:43:53.432272" elapsed="0.000165"/>
 </kw>
 <kw name="Should Match" owner="BuiltIn">
 <arg>${input_value}</arg>
 <arg>${selected_value}</arg>
 <doc>Fails if the given ``string`` does not match the given ``pattern``.</doc>
-<status status="PASS" start="2026-09-25T13:19:41.310003" elapsed="0.000193"/>
+<status status="PASS" start="2026-09-26T17:43:53.432503" elapsed="0.000212"/>
 </kw>
 <kw name="Element Should Be Visible" owner="SeleniumLibrary">
-<msg time="2026-09-25T13:19:41.314775" level="INFO">Element 'xpath=/html/body/div[2]' is displayed.</msg>
+<msg time="2026-09-26T17:43:53.438245" level="INFO">Element 'xpath=/html/body/div[2]' is displayed.</msg>
 <arg>${xpath_drp_calendar}</arg>
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="PASS" start="2026-09-25T13:19:41.310249" elapsed="0.004551"/>
+<status status="PASS" start="2026-09-26T17:43:53.432778" elapsed="0.005495"/>
 </kw>
 <kw name="Element Should Be Visible" owner="SeleniumLibrary">
-<msg time="2026-09-25T13:19:41.318657" level="INFO">Element 'xpath=/html/body/div[2]/div[4]/button[2]' is displayed.</msg>
+<msg time="2026-09-26T17:43:53.442283" level="INFO">Element 'xpath=/html/body/div[2]/div[4]/button[2]' is displayed.</msg>
 <arg>${xpath_drp_apply_btn}</arg>
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="PASS" start="2026-09-25T13:19:41.314854" elapsed="0.003824"/>
+<status status="PASS" start="2026-09-26T17:43:53.438344" elapsed="0.003959"/>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2026-09-25T13:19:41.318829" level="INFO">Clicking button 'xpath=/html/body/div[2]/div[4]/button[2]'.</msg>
+<msg time="2026-09-26T17:43:53.442452" level="INFO">Clicking button 'xpath=/html/body/div[2]/div[4]/button[2]'.</msg>
 <arg>${xpath_drp_apply_btn}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2026-09-25T13:19:41.318753" elapsed="0.018912"/>
+<status status="PASS" start="2026-09-26T17:43:53.442378" elapsed="0.021456"/>
 </kw>
 <kw name="Get Value" owner="SeleniumLibrary">
-<msg time="2026-09-25T13:19:41.341567" level="INFO">${displayed_value} = 09/01/2026 - 09/24/2026</msg>
+<msg time="2026-09-26T17:43:53.467781" level="INFO">${displayed_value} = 09/01/2026 - 09/24/2026</msg>
 <var>${displayed_value}</var>
 <arg>${xpath_drp_input}</arg>
 <doc>Returns the value attribute of the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-09-25T13:19:41.337784" elapsed="0.003801"/>
+<status status="PASS" start="2026-09-26T17:43:53.463984" elapsed="0.003819"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>Displayed value after clicking apply btn: ${displayed_value}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2026-09-25T13:19:41.341674" elapsed="0.000143"/>
+<status status="PASS" start="2026-09-26T17:43:53.467910" elapsed="0.000169"/>
 </kw>
 <kw name="Should Match" owner="BuiltIn">
 <arg>${input_value}</arg>
 <arg>${selected_value}</arg>
 <arg>${displayed_value}</arg>
 <doc>Fails if the given ``string`` does not match the given ``pattern``.</doc>
-<status status="PASS" start="2026-09-25T13:19:41.341866" elapsed="0.000126"/>
+<status status="PASS" start="2026-09-26T17:43:53.468132" elapsed="0.000141"/>
 </kw>
-<status status="PASS" start="2026-09-25T13:19:41.218205" elapsed="0.123837"/>
+<status status="PASS" start="2026-09-26T17:43:53.335614" elapsed="0.132716"/>
 </test>
-<status status="PASS" start="2026-09-25T13:19:36.750227" elapsed="4.591983"/>
+<test id="s1-t5" name="Verify Value Before Setting New Date On Single-Month Date Calendar" line="46">
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2026-09-26T17:43:53.472769" level="INFO">Element 'xpath=//*[@id="calendar"]' is displayed.</msg>
+<arg>${xpath_dp_input}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2026-09-26T17:43:53.468539" elapsed="0.004261"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-09-26T17:43:53.477214" level="INFO">${before_date} = </msg>
+<var>${before_date}</var>
+<arg>${xpath_dp_input}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-26T17:43:53.472862" elapsed="0.004371"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Value before picking calendar: ${before_date}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-09-26T17:43:53.477297" elapsed="0.000118"/>
+</kw>
+<kw name="Should Match" owner="BuiltIn">
+<arg>${before_date}</arg>
+<arg>\</arg>
+<doc>Fails if the given ``string`` does not match the given ``pattern``.</doc>
+<status status="PASS" start="2026-09-26T17:43:53.477485" elapsed="0.000144"/>
+</kw>
+<status status="PASS" start="2026-09-26T17:43:53.468409" elapsed="0.009276"/>
+</test>
+<test id="s1-t6" name="Set New Date On Single-Month Date Calendar" line="51">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-09-26T17:43:53.477957" level="INFO">Clicking element 'xpath=//*[@id="calendar"]'.</msg>
+<arg>${xpath_dp_input}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-26T17:43:53.477883" elapsed="0.020355"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${xpath_dp_calendar}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2026-09-26T17:43:53.498429" elapsed="0.003502"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2026-09-26T17:43:53.504724" level="INFO">Current page contains element 'xpath=/html/body/div[3]/div[1]/table/thead/tr[1]/th[1]'.</msg>
+<arg>${xpath_dp_prev_btn}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2026-09-26T17:43:53.502068" elapsed="0.002685"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2026-09-26T17:43:53.507229" level="INFO">Current page contains element 'xpath=/html/body/div[3]/div[1]/table/thead/tr[1]/th[3]'.</msg>
+<arg>${xpath_dp_next_btn}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2026-09-26T17:43:53.504829" elapsed="0.002423"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-09-26T17:43:53.507404" level="INFO">Clicking element 'xpath=/html/body/div[3]/div[1]/table/thead/tr[1]/th[2]'.</msg>
+<arg>${xpath_dp_year}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-26T17:43:53.507317" elapsed="0.025888"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${xpath_selected_dp_month}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-09-26T17:43:53.533338" elapsed="0.004789"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-09-26T17:43:53.538329" level="INFO">Clicking element 'xpath=/html/body/div[3]/div[2]/table/tbody/tr/td/span[text()="Oct"]'.</msg>
+<arg>${xpath_selected_dp_month}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-26T17:43:53.538225" elapsed="0.014985"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${xpath_selected_dp_date}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-09-26T17:43:53.553327" elapsed="0.004038"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-09-26T17:43:53.557529" level="INFO">Clicking element 'xpath=/html/body/div[3]/div[1]/table/tbody/tr/*[text()="10"]'.</msg>
+<arg>${xpath_selected_dp_date}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-26T17:43:53.557440" elapsed="0.016740"/>
+</kw>
+<kw name="Get Value" owner="SeleniumLibrary">
+<msg time="2026-09-26T17:43:53.577626" level="INFO">${dp_result} = 10/10/2026</msg>
+<var>${dp_result}</var>
+<arg>${xpath_dp_input}</arg>
+<doc>Returns the value attribute of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-26T17:43:53.574319" elapsed="0.003322"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>New Date: ${dp_result}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-09-26T17:43:53.577717" elapsed="0.000133"/>
+</kw>
+<kw name="Should Match" owner="BuiltIn">
+<arg>${dp_result}</arg>
+<arg>10/10/2026</arg>
+<doc>Fails if the given ``string`` does not match the given ``pattern``.</doc>
+<status status="PASS" start="2026-09-26T17:43:53.577907" elapsed="0.000131"/>
+</kw>
+<status status="PASS" start="2026-09-26T17:43:53.477771" elapsed="0.100325"/>
+</test>
+<status status="PASS" start="2026-09-26T17:43:51.449440" elapsed="2.128834"/>
 </suite>
 <statistics>
 <total>
-<stat pass="4" fail="0" skip="0">All Tests</stat>
+<stat pass="6" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat name="18 Date Pickers" id="s1" pass="4" fail="0" skip="0">18 Date Pickers</stat>
+<stat name="18 Date Pickers" id="s1" pass="6" fail="0" skip="0">18 Date Pickers</stat>
 </suite>
 </statistics>
 <errors>
