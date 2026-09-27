@@ -13,9 +13,11 @@ ${xpath_dp_input}    xpath=//*[@id="calendar"]
 ${xpath_dp_calendar}    xpath=//html/body/div[3]
 ${xpath_dp_prev_btn}    xpath=/html/body/div[3]/div[1]/table/thead/tr[1]/th[1]
 ${xpath_dp_next_btn}    xpath=/html/body/div[3]/div[1]/table/thead/tr[1]/th[3]
-${xpath_dp_year}    xpath=/html/body/div[3]/div[1]/table/thead/tr[1]/th[2]
-${xpath_selected_dp_month}    xpath=/html/body/div[3]/div[2]/table/tbody/tr/td/span[text()="Oct"]
-${xpath_selected_dp_date}    xpath=/html/body/div[3]/div[1]/table/tbody/tr/*[text()="10"]
+${xpath_dp_month_yr}    xpath=/html/body/div[3]/div[1]/table/thead/tr[1]/th[2]
+${xpath_dp_yr}    xpath=/html/body/div[3]/div[2]/table/thead/tr/th[2]
+${xpath_year}    xpath=/html/body/div[3]/div[3]/table/tbody/tr/td/span
+${xpath_selected_dp_month}    xpath=/html/body/div[3]/div[2]/table/tbody/tr/td/span
+${xpath_selected_dp_date}    xpath=/html/body/div[3]/div[1]/table/tbody/tr/*
 
 *** Test Cases ***
 Open Test Website
@@ -49,17 +51,34 @@ Verify Value Before Setting New Date On Single-Month Date Calendar
     Log To Console    Value before picking calendar: ${before_date}
     Should Match    ${before_date}    \
 Set New Date On Single-Month Date Calendar
+    # Click Input Field
     Click Element    ${xpath_dp_input}
+    # Check If Calendar shows up
     Wait Until Page Contains Element    ${xpath_dp_calendar}
-    Page Should Contain Element    ${xpath_dp_prev_btn}
-    Page Should Contain Element    ${xpath_dp_next_btn}
-    Click Element    ${xpath_dp_year}
-    Wait Until Element Is Visible    ${xpath_selected_dp_month}
-    Click Element    ${xpath_selected_dp_month}
-    Wait Until Element Is Visible    ${xpath_selected_dp_date}
-    Click Element    ${xpath_selected_dp_date}
+    # Get Value Of Current Month and Year
+    ${value_1}=    Get Text    ${xpath_dp_month_yr}
+    Log To Console    Value 1: ${value_1}
+    # Click On Current Month and Year It Show All Months In That Year
+    Click Element    ${xpath_dp_month_yr}   
+    # Get Value Of The Year   
+    ${value_2}=    Get Text    ${xpath_dp_yr}
+    Log To Console    Value 2: ${value_2}
+    # Year Conditions
+    IF    ${value_2} != '2027'
+        Click Element    ${xpath_dp_yr}
+        ## Add Check Year Range IF selected year is not in 2020-2029
+
+        ##
+        Click Element    ${xpath_year}\[text()="2027"]
+        Click Element    ${xpath_selected_dp_month}\[text()="Oct"]
+        Click Element    ${xpath_selected_dp_date}\[text()="10"]
+    ELSE    
+        Click Element    ${xpath_selected_dp_month}\[text()="Oct"]
+        Click Element    ${xpath_selected_dp_date}\[text()="10"]
+    END
     ${dp_result}=    Get Value    ${xpath_dp_input}
     Log To Console    New Date: ${dp_result}
-    Should Match    ${dp_result}    10/10/2026
+    Should Match    ${dp_result}    10/10/2027
+    
 
 *** Keywords ***
