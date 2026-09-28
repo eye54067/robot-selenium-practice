@@ -1,4 +1,4 @@
-# Hands-On Practice: Robot Framework with SeleniumLibrary
+## Hands-On Practice: Robot Framework with SeleniumLibrary
 
 Practice project for learning web test automation using Robot Framework and SeleniumLibrary.
 
@@ -6,10 +6,10 @@ Practice project for learning web test automation using Robot Framework and Sele
 - Opening a browser 
 - Navigating to pages
 - Opening new browser tab
-- Locating elements (id, xpath, css)
+- Locating elements (id, xpath)
 - Filling forms
 - Clicking buttons, checkboxes, radio buttons, dropdowns
 - Scrolling
 - Mouse hovering
-- Testing basic iframe, alerts, pagination, file uploder, date pickers, static table, and dynamic table
+- Testing basic iframe, alerts, pagination, file uploader, date pickers, static table, and dynamic table
 
