@@ -1,9 +1,8 @@
 *** Settings ***
 Library    SeleniumLibrary
+Resource    ../resources/common.resource
 
 *** Variables ***
-${browser}    chrome
-${url}    https://qa-automation-practice.netlify.app/
 ${xpath_btn_menu}    xpath=//a[text()='Btn actions']
 ${xpath_hover_submenu}    xpath=//*[@id="mouse-hover"]
 ${xpath_first_element}    xpath=//*[@id="demo"][text()="If you hover this text, it will be changed."]
@@ -12,8 +11,7 @@ ${xpath_second_element}    xpath=//*[@id="button-hover-over"]
 
 *** Test Cases ***
 Open Test Website
-    Open Browser    ${url}    ${browser}
-    Maximize Browser Window
+    Open QA-Automation-Practice Application
     Wait Until Page Contains Element    ${xpath_btn_menu}
 Go To Mouse Hover Page
     Click Element    ${xpath_btn_menu}

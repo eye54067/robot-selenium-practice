@@ -1,9 +1,8 @@
 *** Settings ***
 Library    SeleniumLibrary
+Resource    ../resources/common.resource
 
 *** Variables ***
-${browser}    chrome
-${url}    https://qa-automation-practice.netlify.app/
 ${xpath_btn_menu}    xpath=//a[text()='Btn actions']
 ${xpath_double_click_submenu}    xpath=//a[text()='Double click btn']
 ${xpath_double_click_me_btn}    xpath=//*[@id='double-click-btn']
@@ -11,8 +10,7 @@ ${xpath_double_click_result}    xpath=//*[@id='double-click-result']
 
 *** Test Cases ***
 Open Test Website
-    Open Browser    ${url}    ${browser}
-    Maximize Browser Window
+    Open QA-Automation-Practice Application
     Wait Until Page Contains Element    ${xpath_btn_menu}
 Click Btn actions menu
     clickBtnActionsMenu

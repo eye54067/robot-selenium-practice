@@ -1,9 +1,10 @@
 *** Settings ***
 Library    SeleniumLibrary
+Resource    ../resources/common.resource
+Suite Setup    Open Saucedemo Application
+Suite Teardown    Close All Browsers
 
 *** Variables ***
-${browser}    chrome
-${url}    https://www.saucedemo.com/
 ${normal_user}    standard_user
 ${locked_out_user}    locked_out_user
 ${problem_user}    problem_user
@@ -14,15 +15,10 @@ ${password}    secret_sauce
 
 
 *** Test Cases ***
-LoginTest
-    openWebsite
-    logintoWebSite
-    
-
+Login With Valid Account
+    validAccount
 *** Keywords ***
-openWebsite
-    Open Browser    ${url}    ${browser}
-logintoWebSite
+validAccount
     Input Text    xpath=//*[@id="user-name"]    ${normal_user}   
     Input Text    xpath=//*[@id="password"]    ${password}
     Click Button    id=login-button

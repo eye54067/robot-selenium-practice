@@ -11,5 +11,11 @@ Practice project for learning web test automation using Robot Framework and Sele
 - Clicking buttons, checkboxes, radio buttons, dropdowns
 - Scrolling
 - Mouse hovering
-- Testing basic iframe, alerts, pagination, file uploader, date pickers, static table, and dynamic table
+- Basic iframe
+- Alerts
+- Pagination
+- File uploader
+- Date pickers
+- Static table
+- Dynamic table
 

@@ -1,9 +1,8 @@
 *** Settings ***
 Library    SeleniumLibrary
+Resource    ../resources/common.resource
 
 *** Variables ***
-${browser}    chrome
-${url}    https://qa-automation-practice.netlify.app/
 ${xpath_btn_menu}    xpath=//a[text()='Btn actions']
 ${xpath_show_hide_submenu}    xpath=//*[@id="show-hide-elements"]    
 ${xpath_show_hide_btn}    xpath=//button[@id="showHideBtn"]
@@ -11,8 +10,7 @@ ${xpath_visible_text}    xpath=//*[@id="hiddenText"]
 
 *** Test Cases ***
 Open Test Website
-    Open Browser    ${url}    ${browser}
-    Maximize Browser Window
+    Open QA-Automation-Practice Application
     Wait Until Page Contains Element    ${xpath_btn_menu}
 Go To Test Page
     Click Element    ${xpath_btn_menu}

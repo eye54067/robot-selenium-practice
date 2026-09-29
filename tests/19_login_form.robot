@@ -1,18 +1,17 @@
 *** Settings ***
 Library    SeleniumLibrary
+Resource    ../resources/common.resource
 
 *** Variables ***
-${browser}    chrome
-${url}    https://qa-automation-practice.netlify.app/
 ${xpath_forms_menu}    xpath=//a[text()="Forms"]
 ${xpath_login_submenu}    xpath=//a[text()="Login"]
 ${xpath_email}    xpath=//*[@id="email"]
 ${xpath_password}       xpath=//*[@id="password"]
 ${xpath_submit_btn}    xpath=//*[@id="submitLoginBtn"]
+
 *** Test Cases ***
 Open Test Website
-    Open Browser    ${url}    ${browser}
-    Maximize Browser Window
+    Open QA-Automation-Practice Application
     Wait Until Page Contains Element    ${xpath_forms_menu}   
 Go To Test Page
     Click Element    ${xpath_forms_menu}
@@ -54,9 +53,7 @@ Verify User Can Login With Valid Email and Password
     Click Button    ${xpath_submit_btn}
     Page Should Not Contain    Bad credentials! Please try again! Make sure that you've registered.
     Wait Until Page Contains    SHOPPING CART
-
-
-    
+ 
 *** Keywords ***
 
 

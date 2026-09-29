@@ -1,9 +1,8 @@
 *** Settings ***
 Library    SeleniumLibrary
+Resource    ../resources/common.resource
 
 *** Variables ***
-${browser}    chrome
-${url}    https://qa-automation-practice.netlify.app/
 ${pagination_menu}    xpath=//a[text()="Pagination"]
 ${pagination_element}    xpath=//*[@id="content"]/nav[2]
 ${page_previous}    xpath=//*[@class="page-item disabled"]
@@ -12,11 +11,9 @@ ${page_2}    xpath=//*[@id="content"]/nav[2]/ul/li[3]/a
 ${page_3}    xpath=//*[@id="content"]/nav[2]/ul/li[4]/a
 ${page_next}    xpath=//*[@id="content"]/nav[2]/ul/li[5]/a
 
-
 *** Test Cases ***
 Open Test Website
-    Open Browser    ${url}    ${browser}
-    Maximize Browser Window
+    Open QA-Automation-Practice Application
     Page Should Contain Element    ${pagination_menu}
 Go To Test Page
     Click Element    ${pagination_menu}

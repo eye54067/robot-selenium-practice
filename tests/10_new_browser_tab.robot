@@ -1,17 +1,14 @@
 *** Settings ***
 Library    SeleniumLibrary
-
+Resource    ../resources/common.resource
 *** Variables ***
-${browser}    chrome
-${url}    https://qa-automation-practice.netlify.app/
 ${xpath_new_tab_window_menu}    xpath=//a[text()="New Tab / Window"]
 ${xpath_new_tab_submenu}    xpath=//*[@id="browser-tab"]
 ${xpath_new_tab_btn}    xpath=//*[@id="newTabBtn"]
 
 *** Test Cases ***
 Open Test Website
-    Open Browser    ${url}    ${browser}
-    Maximize Browser Window
+    Open QA-Automation-Practice Application
     Scroll Element Into View    ${xpath_new_tab_window_menu}
     Wait Until Page Contains Element    ${xpath_new_tab_window_menu}
 Go To Test Page
@@ -31,9 +28,4 @@ Close New Window And Go To Main Window
     Page Should Contain    Switch to a new Browser Tab
     Sleep    1
     
-
-
-
-
 *** Keywords ***
-

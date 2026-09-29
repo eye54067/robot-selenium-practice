@@ -1,9 +1,8 @@
 *** Settings ***
 Library    SeleniumLibrary
+Resource    ../resources/common.resource
 
 *** Variables ***
-${browser}    chrome
-${url}    https://qa-automation-practice.netlify.app/
 ${xpath_date_pickers_menu}    xpath=//*[@id="date-picker"]
 ${xpath_drp_input}    xpath=//*[@id="range-date-calendar"]
 ${xpath_selected_drp}    xpath=//span[@class="drp-selected"]
@@ -21,8 +20,7 @@ ${xpath_selected_dp_date}    xpath=/html/body/div[3]/div[1]/table/tbody/tr/*
 
 *** Test Cases ***
 Open Test Website
-    Open Browser    ${url}    ${browser}
-    Maximize Browser Window
+    Open QA-Automation-Practice Application
     Wait Until Page Contains Element    ${xpath_date_pickers_menu}
 Go To Test Page
     Click Element    ${xpath_date_pickers_menu}
@@ -80,5 +78,4 @@ Set New Date On Single-Month Date Calendar
     Log To Console    New Date: ${dp_result}
     Should Match    ${dp_result}    10/10/2027
     
-
 *** Keywords ***

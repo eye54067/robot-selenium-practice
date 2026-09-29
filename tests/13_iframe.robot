@@ -1,9 +1,8 @@
 *** Settings ***
 Library    SeleniumLibrary
+Resource    ../resources/common.resource
 
 *** Variables ***
-${browser}    chrome
-${url}    https://qa-automation-practice.netlify.app/
 ${xpath_iframe_menu}    xpath=//*[@id="iframes"]
 ${xpath_iframe_element}    xpath=//iframe[@id="iframe-checkboxes"]
 ${xpath_iframe_navbar_btn}    xpath=//button[@class="navbar-toggler"]
@@ -12,8 +11,7 @@ ${iframe_btn}    xpath=//a[@id="learn-more"]
 
 *** Test Cases ***
 Open Website
-    Open Browser    ${url}    ${browser}
-    Maximize Browser Window
+    Open QA-Automation-Practice Application
     Wait Until Page Contains Element    ${xpath_iframe_menu}
 Go To Test Page And Verfiy Page Contains Iframe
     Scroll Element Into View    ${xpath_iframe_menu}
@@ -28,6 +26,4 @@ Click Iframe Button and Verify Appeared Message
     Click Element    ${iframe_btn}
     Wait Until Page Contains    This text appears when you click the "Learn more" button
     
-
-
 *** Keywords ***

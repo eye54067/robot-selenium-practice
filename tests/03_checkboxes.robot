@@ -1,9 +1,10 @@
 *** Settings ***
 Library    SeleniumLibrary
+Resource    ../resources/common.resource
+Suite Setup    Open QA-Automation-Practice Application
+Suite Teardown    Close All Browsers
 
 *** Variables ***
-${browser}    chrome
-${url}    https://qa-automation-practice.netlify.app/
 ${xpath_button_menu}    //*[@id="buttons"]
 ${xpath_checkbox_submenu}    xpath=//*[@id="checkboxes"]
 ${xpath_checkbox_1}    xpath=//label[text()='Check me out - 1']//preceding-sibling::input[@type='checkbox']
@@ -13,7 +14,6 @@ ${xpath_reset_button}    xpath=//button[text()='Reset']
 
 *** Test Cases ***
 Test Checkboxes
-    openTestWebsite
     clickButtonMenu
     clickCheckboxesSubmenu
     verifyCheckbox1IsEnabled
@@ -26,9 +26,6 @@ Test Checkboxes
     verifyAllCheckboxesAreUnselected
     
 *** Keywords ***
-openTestWebsite
-    Open Browser    ${url}    ${browser}
-    Maximize Browser Window
 clickButtonMenu
     Click Element    ${xpath_button_menu}
     Sleep    1

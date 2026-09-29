@@ -1,17 +1,15 @@
 *** Settings ***
 Library    SeleniumLibrary
+Resource    ../resources/common.resource
 
 *** Variables ***
-${browser}    chrome
-${url}    https://qa-automation-practice.netlify.app/
 ${xpath_tables_menu}    xpath=//a[text()="Tables"]
 ${xpath_dynamic_table_submenu}    xpath=//a[text()="Dynamic Table"]
 ${xpath_dynamic_table}    xpath=//*[@id="data-table"]
 
 *** Test Cases ***
 Open Test Website
-    Open Browser    ${url}    ${browser}
-    Maximize Browser Window
+    Open QA-Automation-Practice Application
     Wait Until Page Contains Element    ${xpath_tables_menu}
 Go To Test Page
     Scroll Element Into View    ${xpath_tables_menu}

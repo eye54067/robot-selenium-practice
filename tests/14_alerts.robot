@@ -1,16 +1,15 @@
 *** Settings ***
 Library    SeleniumLibrary
+Resource    ../resources/common.resource
 
 *** Variables ***
-${browser}    chrome
-${url}    https://qa-automation-practice.netlify.app/
 ${xpath_alerts_menu}    xpath=//a[@id="alerts"]
 ${xpath_alert_btn}    xpath=//button[@id="alert-btn"]
 ${xpath_confirm_btn}    xpath=//button[@id="confirm-btn"]
+
 *** Test Cases ***
 Open Test Website
-    Open Browser    ${url}    ${browser}
-    Maximize Browser Window
+    Open QA-Automation-Practice Application
     Wait Until Page Contains Element    ${xpath_alerts_menu}
 Go To Test Page And Verify Elements
     Click Element    ${xpath_alerts_menu}
@@ -38,15 +37,5 @@ Click OK On Alert Box
     Handle Alert    action=ACCEPT
     Alert Should Not Be Present
     Close Browser
-
-
-
-    
-
-
-
-
-#Click OK On Alert Box
-
 
 *** Keywords ***

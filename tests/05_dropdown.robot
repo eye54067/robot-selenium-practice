@@ -1,9 +1,8 @@
 *** Settings ***
 Library    SeleniumLibrary
+Resource    ../resources/common.resource
 
 *** Variables ***
-${browser}    chrome
-${url}    https://qa-automation-practice.netlify.app/
 ${xpath_dropdown_menu}    xpath=//a[text()='Dropdowns']
 ${xpath_country_dropdown}    xpath=//select[@id='dropdown-menu']
 ${xpath_multi_dropdown_button}    xpath=//button[@id="multi-level-dropdown-btn"]
@@ -15,7 +14,7 @@ ${result_url}    https://qa-automation-practice.netlify.app/dropdowns#4th-level-
 
 *** Test Cases ***
 Test Simple Dropdown
-    openWebSite
+    Open QA-Automation-Practice Application
     clickDropdownMenu
     verifyCountryDropdownNotSelected
     selectCountryDropdown1
@@ -27,11 +26,7 @@ Test Multi-Level Dropdown
     hoverMultiDropdownLevel3
     clickDropdownLevel4
 
-
-*** Keywords ***
-openWebSite
-    Open Browser    ${url}    ${browser}
-    Maximize Browser Window    
+*** Keywords ***  
 clickDropdownMenu
     Click Element    ${xpath_dropdown_menu}
     Sleep    1
