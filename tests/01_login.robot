@@ -3,6 +3,7 @@ Library    SeleniumLibrary
 Resource    ../resources/common.resource
 Suite Setup    Open Saucedemo Application
 Suite Teardown    Close All Browsers
+Test Tags    regression
 
 *** Variables ***
 ${normal_user}    standard_user

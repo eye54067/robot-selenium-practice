@@ -1,6 +1,7 @@
 *** Settings ***
 Library    SeleniumLibrary
 Resource    ../resources/common.resource
+Test Tags    regression
 
 *** Variables ***
 ${xpath_dropdown_menu}    xpath=//a[text()='Dropdowns']

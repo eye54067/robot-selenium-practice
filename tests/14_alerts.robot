@@ -1,6 +1,7 @@
 *** Settings ***
 Library    SeleniumLibrary
 Resource    ../resources/common.resource
+Test Tags    regression
 
 *** Variables ***
 ${xpath_alerts_menu}    xpath=//a[@id="alerts"]

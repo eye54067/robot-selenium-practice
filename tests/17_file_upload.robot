@@ -1,6 +1,7 @@
 *** Settings ***
 Library    SeleniumLibrary
 Resource    ../resources/common.resource
+Test Tags    regression
 
 *** Variables ***
 ${xpath_file_upload_menu}    xpath=//a[text()="File Upload"]

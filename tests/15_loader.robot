@@ -1,6 +1,7 @@
 *** Settings ***
 Library     SeleniumLibrary
 Resource    ../resources/common.resource
+Test Tags    regression
 
 *** Variables ***
 ${loader_menu}    xpath=//a[text()="Loader"]

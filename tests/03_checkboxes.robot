@@ -3,6 +3,7 @@ Library    SeleniumLibrary
 Resource    ../resources/common.resource
 Suite Setup    Open QA-Automation-Practice Application
 Suite Teardown    Close All Browsers
+Test Tags    regression
 
 *** Variables ***
 ${xpath_button_menu}    //*[@id="buttons"]

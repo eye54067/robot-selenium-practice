@@ -1,6 +1,7 @@
 *** Settings ***
 Library    SeleniumLibrary
 Resource    ../resources/common.resource
+Test Tags    regression
 
 *** Variables ***
 ${path_radio_1}    //label[text()='Radio button 1']/preceding-sibling::input[@type='radio']

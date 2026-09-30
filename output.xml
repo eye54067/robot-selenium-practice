@@ -1,77 +1,2783 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.4.2 (Python 3.14.4 on darwin)" generated="2026-09-29T16:31:37.744429" rpa="false" schemaversion="5">
-<suite id="s1" name="17 File Upload" source="/Users/eye/Documents/automation-robot/tests/17_file_upload.robot">
-<test id="s1-t1" name="Open Test Website" line="10">
-<kw name="Open QA-Automation-Practice Application" owner="common">
+<robot generator="Robot 7.4.2 (Python 3.14.4 on darwin)" generated="2026-09-30T13:12:51.143350" rpa="false" schemaversion="5">
+<suite id="s1" name="Automation-Robot" source="/Users/eye/Documents/automation-robot">
+<suite id="s1-s1" name="Tests" source="/Users/eye/Documents/automation-robot/tests">
+<suite id="s1-s1-s1" name="01 Login" source="/Users/eye/Documents/automation-robot/tests/01_login.robot">
+<kw name="Open Saucedemo Application" owner="common" type="SETUP">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2026-09-29T16:31:37.819935" level="INFO">Opening browser 'chrome' to base url 'https://qa-automation-practice.netlify.app/'.</msg>
-<arg>${url_2}</arg>
+<msg time="2026-09-30T13:12:51.254340" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com/'.</msg>
+<arg>${url_1}</arg>
 <arg>${browser}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2026-09-29T16:31:37.819836" elapsed="1.062457"/>
+<status status="PASS" start="2026-09-30T13:12:51.254233" elapsed="1.063946"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2026-09-29T16:31:38.882596" elapsed="0.339502"/>
+<status status="PASS" start="2026-09-30T13:12:52.318595" elapsed="0.346975"/>
+</kw>
+<doc>Opens the browser and navigates to the Saucedemo URL</doc>
+<status status="PASS" start="2026-09-30T13:12:51.253978" elapsed="1.411726"/>
+</kw>
+<test id="s1-s1-s1-t1" name="Login With Valid Account" line="19">
+<kw name="validAccount">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:12:52.666915" level="INFO">Typing text 'standard_user' into text field 'xpath=//*[@id="user-name"]'.</msg>
+<arg>xpath=//*[@id="user-name"]</arg>
+<arg>${normal_user}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:12:52.666567" elapsed="0.055550"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:12:52.722412" level="INFO">Typing text 'secret_sauce' into text field 'xpath=//*[@id="password"]'.</msg>
+<arg>xpath=//*[@id="password"]</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:12:52.722241" elapsed="0.020983"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:12:52.743509" level="INFO">Clicking button 'id=login-button'.</msg>
+<arg>id=login-button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:12:52.743363" elapsed="0.027652"/>
+</kw>
+<status status="PASS" start="2026-09-30T13:12:52.666379" elapsed="0.104721"/>
+</kw>
+<tag>regression</tag>
+<status status="PASS" start="2026-09-30T13:12:52.665848" elapsed="0.105380"/>
+</test>
+<kw name="Close All Browsers" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2026-09-30T13:12:52.771547" elapsed="0.066423"/>
+</kw>
+<status status="PASS" start="2026-09-30T13:12:51.157998" elapsed="1.680035"/>
+</suite>
+<suite id="s1-s1-s2" name="02 Inputbox" source="/Users/eye/Documents/automation-robot/tests/02_inputbox.robot">
+<kw name="Open Saucedemo Application" owner="common" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:12:52.840138" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com/'.</msg>
+<arg>${url_1}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-09-30T13:12:52.840033" elapsed="0.723293"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-09-30T13:12:53.563555" elapsed="0.336672"/>
+</kw>
+<doc>Opens the browser and navigates to the Saucedemo URL</doc>
+<status status="PASS" start="2026-09-30T13:12:52.839909" elapsed="1.060437"/>
+</kw>
+<test id="s1-s1-s2-t1" name="Test Input Box" line="12">
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:12:53.906050" level="INFO">Current page contains text 'Swag Labs'.</msg>
+<arg>Swag Labs</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2026-09-30T13:12:53.900877" elapsed="0.005235"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-09-30T13:12:53.906612" level="INFO">${username_txt} = id=user-name</msg>
+<var>${username_txt}</var>
+<arg>id=user-name</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-09-30T13:12:53.906288" elapsed="0.000341"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:12:53.914778" level="INFO">Element 'id=user-name' is displayed.</msg>
+<arg>${username_txt}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2026-09-30T13:12:53.906707" elapsed="0.008133"/>
+</kw>
+<kw name="Element Should Be Enabled" owner="SeleniumLibrary">
+<arg>${username_txt}</arg>
+<doc>Verifies that element identified by ``locator`` is enabled.</doc>
+<status status="PASS" start="2026-09-30T13:12:53.914970" elapsed="0.005792"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:12:53.920973" level="INFO">Typing text 'standard_user' into text field 'id=user-name'.</msg>
+<arg>${username_txt}</arg>
+<arg>standard_user</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:12:53.920853" elapsed="0.053318"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-09-30T13:12:58.975368" level="INFO">Slept 5 seconds.</msg>
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-09-30T13:12:53.974533" elapsed="5.001128"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${username_txt}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:12:58.976282" elapsed="0.027128"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-09-30T13:13:04.004719" level="INFO">Slept 5 seconds.</msg>
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-09-30T13:12:59.003758" elapsed="5.001242"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-09-30T13:13:04.005513" elapsed="0.082779"/>
+</kw>
+<tag>regression</tag>
+<status status="PASS" start="2026-09-30T13:12:53.900447" elapsed="10.188048"/>
+</test>
+<kw name="Close All Browsers" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2026-09-30T13:13:04.088777" elapsed="0.000121"/>
+</kw>
+<status status="PASS" start="2026-09-30T13:12:52.838414" elapsed="11.250508"/>
+</suite>
+<suite id="s1-s1-s3" name="03 Checkboxes" source="/Users/eye/Documents/automation-robot/tests/03_checkboxes.robot">
+<kw name="Open QA-Automation-Practice Application" owner="common" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:04.098386" level="INFO">Opening browser 'chrome' to base url 'https://qa-automation-practice.netlify.app/'.</msg>
+<arg>${url_2}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-09-30T13:13:04.098259" elapsed="1.886461"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-09-30T13:13:05.985046" elapsed="0.335362"/>
 </kw>
 <doc>Opens the browser and navigates to the qa-automation-practice URL</doc>
-<status status="PASS" start="2026-09-29T16:31:37.819565" elapsed="1.402851"/>
+<status status="PASS" start="2026-09-30T13:13:04.098110" elapsed="2.222413"/>
+</kw>
+<test id="s1-s1-s3-t1" name="Test Checkboxes" line="17">
+<kw name="clickButtonMenu">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:06.321501" level="INFO">Clicking element '//*[@id="buttons"]'.</msg>
+<arg>${xpath_button_menu}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:13:06.321294" elapsed="0.024871"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-09-30T13:13:07.346964" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-09-30T13:13:06.346319" elapsed="1.000971"/>
+</kw>
+<status status="PASS" start="2026-09-30T13:13:06.321132" elapsed="1.026414"/>
+</kw>
+<kw name="clickCheckboxesSubmenu">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:07.349283" level="INFO">Clicking element 'xpath=//*[@id="checkboxes"]'.</msg>
+<arg>${xpath_checkbox_submenu}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:13:07.348735" elapsed="0.604086"/>
+</kw>
+<status status="PASS" start="2026-09-30T13:13:07.348123" elapsed="0.604797"/>
+</kw>
+<kw name="verifyCheckbox1IsEnabled">
+<kw name="Element Should Be Enabled" owner="SeleniumLibrary">
+<arg>${xpath_checkbox_1}</arg>
+<doc>Verifies that element identified by ``locator`` is enabled.</doc>
+<status status="PASS" start="2026-09-30T13:13:07.953268" elapsed="0.008128"/>
+</kw>
+<kw name="Checkbox Should Not Be Selected" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:07.961727" level="INFO">Verifying checkbox 'xpath=//label[text()='Check me out - 1']//preceding-sibling::input[@type='checkbox']' is not selected.</msg>
+<arg>${xpath_checkbox_1}</arg>
+<doc>Verifies checkbox ``locator`` is not selected/checked.</doc>
+<status status="PASS" start="2026-09-30T13:13:07.961526" elapsed="0.008335"/>
+</kw>
+<status status="PASS" start="2026-09-30T13:13:07.953085" elapsed="0.016850"/>
+</kw>
+<kw name="clickCheckbox1">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:07.970339" level="INFO">Clicking element 'xpath=//label[text()='Check me out - 1']//preceding-sibling::input[@type='checkbox']'.</msg>
+<arg>${xpath_checkbox_1}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:13:07.970223" elapsed="0.016162"/>
+</kw>
+<kw name="Checkbox Should Be Selected" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:07.986661" level="INFO">Verifying checkbox 'xpath=//label[text()='Check me out - 1']//preceding-sibling::input[@type='checkbox']' is selected.</msg>
+<arg>${xpath_checkbox_1}</arg>
+<doc>Verifies checkbox ``locator`` is selected/checked.</doc>
+<status status="PASS" start="2026-09-30T13:13:07.986504" elapsed="0.006236"/>
+</kw>
+<status status="PASS" start="2026-09-30T13:13:07.970080" elapsed="0.022735"/>
+</kw>
+<kw name="verifyCheckbox2Isenabled">
+<kw name="Element Should Be Enabled" owner="SeleniumLibrary">
+<arg>${xpath_checkbox_2}</arg>
+<doc>Verifies that element identified by ``locator`` is enabled.</doc>
+<status status="PASS" start="2026-09-30T13:13:07.993109" elapsed="0.005932"/>
+</kw>
+<kw name="Checkbox Should Not Be Selected" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:07.999251" level="INFO">Verifying checkbox 'xpath=//label[text()='Check me out - 2']//preceding-sibling::input[@type='checkbox']' is not selected.</msg>
+<arg>${xpath_checkbox_2}</arg>
+<doc>Verifies checkbox ``locator`` is not selected/checked.</doc>
+<status status="PASS" start="2026-09-30T13:13:07.999131" elapsed="0.005895"/>
+</kw>
+<status status="PASS" start="2026-09-30T13:13:07.992978" elapsed="0.012093"/>
+</kw>
+<kw name="clickCheckbox2">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:08.005393" level="INFO">Clicking element 'xpath=//label[text()='Check me out - 2']//preceding-sibling::input[@type='checkbox']'.</msg>
+<arg>${xpath_checkbox_2}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:13:08.005309" elapsed="0.013389"/>
+</kw>
+<kw name="Checkbox Should Be Selected" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:08.018985" level="INFO">Verifying checkbox 'xpath=//label[text()='Check me out - 2']//preceding-sibling::input[@type='checkbox']' is selected.</msg>
+<arg>${xpath_checkbox_2}</arg>
+<doc>Verifies checkbox ``locator`` is selected/checked.</doc>
+<status status="PASS" start="2026-09-30T13:13:08.018820" elapsed="0.006122"/>
+</kw>
+<status status="PASS" start="2026-09-30T13:13:08.005191" elapsed="0.019804"/>
+</kw>
+<kw name="verifyCheckbox3IsEnabled">
+<kw name="Element Should Be Enabled" owner="SeleniumLibrary">
+<arg>${xpath_checkbox_3}</arg>
+<doc>Verifies that element identified by ``locator`` is enabled.</doc>
+<status status="PASS" start="2026-09-30T13:13:08.025246" elapsed="0.006036"/>
+</kw>
+<kw name="Checkbox Should Not Be Selected" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:08.031477" level="INFO">Verifying checkbox 'xpath=//label[text()='Check me out - 3']//preceding-sibling::input[@type='checkbox']' is not selected.</msg>
+<arg>${xpath_checkbox_3}</arg>
+<doc>Verifies checkbox ``locator`` is not selected/checked.</doc>
+<status status="PASS" start="2026-09-30T13:13:08.031364" elapsed="0.005702"/>
+</kw>
+<status status="PASS" start="2026-09-30T13:13:08.025125" elapsed="0.011985"/>
+</kw>
+<kw name="clickCheckbox3">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:08.037412" level="INFO">Clicking element 'xpath=//label[text()='Check me out - 3']//preceding-sibling::input[@type='checkbox']'.</msg>
+<arg>${xpath_checkbox_3}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:13:08.037334" elapsed="0.013608"/>
+</kw>
+<kw name="Checkbox Should Be Selected" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:08.051153" level="INFO">Verifying checkbox 'xpath=//label[text()='Check me out - 3']//preceding-sibling::input[@type='checkbox']' is selected.</msg>
+<arg>${xpath_checkbox_3}</arg>
+<doc>Verifies checkbox ``locator`` is selected/checked.</doc>
+<status status="PASS" start="2026-09-30T13:13:08.051027" elapsed="0.005667"/>
+</kw>
+<status status="PASS" start="2026-09-30T13:13:08.037228" elapsed="0.019527"/>
+</kw>
+<kw name="resetAllCheckboxes">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:08.057226" level="INFO">Clicking button 'xpath=//button[text()='Reset']'.</msg>
+<arg>${xpath_reset_button}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:13:08.057119" elapsed="0.018777"/>
+</kw>
+<status status="PASS" start="2026-09-30T13:13:08.056949" elapsed="0.019010"/>
+</kw>
+<kw name="verifyAllCheckboxesAreUnselected">
+<kw name="Checkbox Should Not Be Selected" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:08.076425" level="INFO">Verifying checkbox 'xpath=//label[text()='Check me out - 1']//preceding-sibling::input[@type='checkbox']' is not selected.</msg>
+<arg>${xpath_checkbox_1}</arg>
+<doc>Verifies checkbox ``locator`` is not selected/checked.</doc>
+<status status="PASS" start="2026-09-30T13:13:08.076308" elapsed="0.006409"/>
+</kw>
+<kw name="Checkbox Should Not Be Selected" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:08.082917" level="INFO">Verifying checkbox 'xpath=//label[text()='Check me out - 2']//preceding-sibling::input[@type='checkbox']' is not selected.</msg>
+<arg>${xpath_checkbox_2}</arg>
+<doc>Verifies checkbox ``locator`` is not selected/checked.</doc>
+<status status="PASS" start="2026-09-30T13:13:08.082801" elapsed="0.005520"/>
+</kw>
+<kw name="Checkbox Should Not Be Selected" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:08.088446" level="INFO">Verifying checkbox 'xpath=//label[text()='Check me out - 3']//preceding-sibling::input[@type='checkbox']' is not selected.</msg>
+<arg>${xpath_checkbox_3}</arg>
+<doc>Verifies checkbox ``locator`` is not selected/checked.</doc>
+<status status="PASS" start="2026-09-30T13:13:08.088367" elapsed="0.005254"/>
+</kw>
+<status status="PASS" start="2026-09-30T13:13:08.076139" elapsed="0.017516"/>
+</kw>
+<tag>regression</tag>
+<status status="PASS" start="2026-09-30T13:13:06.320629" elapsed="1.773109"/>
+</test>
+<kw name="Close All Browsers" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2026-09-30T13:13:08.093963" elapsed="0.076390"/>
+</kw>
+<status status="PASS" start="2026-09-30T13:13:04.089411" elapsed="4.081006"/>
+</suite>
+<suite id="s1-s1-s4" name="04 Radiobutton" source="/Users/eye/Documents/automation-robot/tests/04_radiobutton.robot">
+<test id="s1-s1-s4-t1" name="Open Test Website" line="13">
+<kw name="Open QA-Automation-Practice Application" owner="common">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:08.173753" level="INFO">Opening browser 'chrome' to base url 'https://qa-automation-practice.netlify.app/'.</msg>
+<arg>${url_2}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-09-30T13:13:08.173615" elapsed="0.970592"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-09-30T13:13:09.144520" elapsed="0.338152"/>
+</kw>
+<doc>Opens the browser and navigates to the qa-automation-practice URL</doc>
+<status status="PASS" start="2026-09-30T13:13:08.173465" elapsed="1.309386"/>
+</kw>
+<tag>regression</tag>
+<status status="PASS" start="2026-09-30T13:13:08.173249" elapsed="1.309864"/>
+</test>
+<test id="s1-s1-s4-t2" name="Click Radio Button 1" line="15">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath=//*[@id="buttons"]</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2026-09-30T13:13:09.483662" elapsed="0.004634"/>
+</kw>
+<kw name="clickButtonsSubmenu">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:09.488701" level="INFO">Clicking element 'xpath=//*[@id="buttons"]'.</msg>
+<arg>xpath=//*[@id="buttons"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:13:09.488596" elapsed="0.022522"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-09-30T13:13:10.511985" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-09-30T13:13:09.511248" elapsed="1.001111"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:10.532989" level="INFO">Element 'xpath=//*[@id="checkboxes"]' is displayed.</msg>
+<arg>xpath=//*[@id="checkboxes"]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2026-09-30T13:13:10.512812" elapsed="0.020306"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:10.543014" level="INFO">Element 'xpath=//*[@id="radio-buttons"]' is displayed.</msg>
+<arg>xpath=//*[@id="radio-buttons"]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2026-09-30T13:13:10.533385" elapsed="0.009707"/>
+</kw>
+<status status="PASS" start="2026-09-30T13:13:09.488453" elapsed="1.054727"/>
+</kw>
+<kw name="clickRadioMenu">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:10.543878" level="INFO">Clicking element 'xpath=//*[@id="radio-buttons"]'.</msg>
+<arg>xpath=//*[@id="radio-buttons"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:13:10.543708" elapsed="0.474795"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-09-30T13:13:12.020752" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-09-30T13:13:11.018644" elapsed="1.002482"/>
+</kw>
+<status status="PASS" start="2026-09-30T13:13:10.543432" elapsed="1.477997"/>
+</kw>
+<kw name="clickRadioButton1">
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:12.036857" level="INFO">Current page contains text 'Radio button 1'.</msg>
+<arg>Radio button 1</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2026-09-30T13:13:12.022713" elapsed="0.014268"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:12.037620" level="INFO">Clicking element 'xpath=//label[text()='Radio button 1']/preceding-sibling::input[@type='radio']'.</msg>
+<arg>xpath=${path_radio_1}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:13:12.037196" elapsed="0.030173"/>
+</kw>
+<status status="PASS" start="2026-09-30T13:13:12.022030" elapsed="0.045434"/>
+</kw>
+<tag>regression</tag>
+<status status="PASS" start="2026-09-30T13:13:09.483384" elapsed="2.584222"/>
+</test>
+<test id="s1-s1-s4-t3" name="Click Radio Button 2" line="20">
+<kw name="clickRadioButton2">
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:12.072760" level="INFO">Current page contains text 'Radio button 2'.</msg>
+<arg>Radio button 2</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2026-09-30T13:13:12.068240" elapsed="0.004562"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:12.073030" level="INFO">Clicking element 'xpath=//label[text()='Radio button 2']/preceding-sibling::input[@type='radio']'.</msg>
+<arg>xpath=${path_radio_2}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:13:12.072875" elapsed="0.016686"/>
+</kw>
+<status status="PASS" start="2026-09-30T13:13:12.068037" elapsed="0.021608"/>
+</kw>
+<tag>regression</tag>
+<status status="PASS" start="2026-09-30T13:13:12.067769" elapsed="0.022001"/>
+</test>
+<test id="s1-s1-s4-t4" name="Click Radio Button 3" line="22">
+<kw name="clickRadioButton3">
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:12.094558" level="INFO">Current page contains text 'Radio button'.</msg>
+<arg>Radio button</arg>
+<arg>3</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2026-09-30T13:13:12.090241" elapsed="0.004349"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:12.094783" level="INFO">Clicking element 'xpath=//label[text()='Radio button 3']//preceding-sibling::input[@type='radio']'.</msg>
+<arg>xpath=${path_radio_3}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:13:12.094649" elapsed="0.015001"/>
+</kw>
+<status status="PASS" start="2026-09-30T13:13:12.090130" elapsed="0.019597"/>
+</kw>
+<tag>regression</tag>
+<status status="PASS" start="2026-09-30T13:13:12.089891" elapsed="0.019939"/>
+</test>
+<test id="s1-s1-s4-t5" name="Verify Radio Button 4 is Disabled" line="24">
+<kw name="Element Should Be Disabled" owner="SeleniumLibrary">
+<arg>xpath=${path_radio_4}</arg>
+<doc>Verifies that element identified by ``locator`` is disabled.</doc>
+<status status="PASS" start="2026-09-30T13:13:12.110118" elapsed="0.004910"/>
+</kw>
+<tag>regression</tag>
+<status status="PASS" start="2026-09-30T13:13:12.109934" elapsed="0.005177"/>
+</test>
+<status status="PASS" start="2026-09-30T13:13:08.170936" elapsed="3.944316"/>
+</suite>
+<suite id="s1-s1-s5" name="05 Dropdown" source="/Users/eye/Documents/automation-robot/tests/05_dropdown.robot">
+<test id="s1-s1-s5-t1" name="Test Simple Dropdown" line="17">
+<kw name="Open QA-Automation-Practice Application" owner="common">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:12.116961" level="INFO">Opening browser 'chrome' to base url 'https://qa-automation-practice.netlify.app/'.</msg>
+<arg>${url_2}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-09-30T13:13:12.116872" elapsed="0.993922"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-09-30T13:13:13.111091" elapsed="0.333285"/>
+</kw>
+<doc>Opens the browser and navigates to the qa-automation-practice URL</doc>
+<status status="PASS" start="2026-09-30T13:13:12.116767" elapsed="1.327750"/>
+</kw>
+<kw name="clickDropdownMenu">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:13.445128" level="INFO">Clicking element 'xpath=//a[text()='Dropdowns']'.</msg>
+<arg>${xpath_dropdown_menu}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:13:13.444948" elapsed="0.781854"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-09-30T13:13:15.229869" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-09-30T13:13:14.227163" elapsed="1.003238"/>
+</kw>
+<status status="PASS" start="2026-09-30T13:13:13.444763" elapsed="1.785883"/>
+</kw>
+<kw name="verifyCountryDropdownNotSelected">
+<kw name="Select From List By Label" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:15.231806" level="INFO">Selecting options from selection list 'xpath=//select[@id='dropdown-menu']' by label Select a country....</msg>
+<arg>${xpath_country_dropdown}</arg>
+<arg>Select a country...</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<status status="PASS" start="2026-09-30T13:13:15.231420" elapsed="0.040128"/>
+</kw>
+<status status="PASS" start="2026-09-30T13:13:15.231012" elapsed="0.040708"/>
+</kw>
+<kw name="selectCountryDropdown1">
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:15.272480" level="INFO">Selecting options from selection list 'xpath=//select[@id='dropdown-menu']' by value Thailand.</msg>
+<arg>${xpath_country_dropdown}</arg>
+<arg>Thailand</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="PASS" start="2026-09-30T13:13:15.272266" elapsed="0.022911"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-09-30T13:13:16.296186" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-09-30T13:13:15.295379" elapsed="1.001257"/>
+</kw>
+<status status="PASS" start="2026-09-30T13:13:15.271995" elapsed="1.025051"/>
+</kw>
+<kw name="selectCountryDropdown2">
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:16.299938" level="INFO">Selecting options from selection list 'xpath=//select[@id='dropdown-menu']' by value Spain.</msg>
+<arg>${xpath_country_dropdown}</arg>
+<arg>Spain</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="PASS" start="2026-09-30T13:13:16.299226" elapsed="0.039187"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-09-30T13:13:17.340516" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-09-30T13:13:16.338630" elapsed="1.002083"/>
+</kw>
+<status status="PASS" start="2026-09-30T13:13:16.297864" elapsed="1.043014"/>
+</kw>
+<tag>regression</tag>
+<status status="PASS" start="2026-09-30T13:13:12.116609" elapsed="5.224613"/>
+</test>
+<test id="s1-s1-s5-t2" name="Test Multi-Level Dropdown" line="23">
+<kw name="clickDropdownButton">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:17.343195" level="INFO">Clicking button 'xpath=//button[@id="multi-level-dropdown-btn"]'.</msg>
+<arg>${xpath_multi_dropdown_button}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:13:17.342823" elapsed="0.046674"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-09-30T13:13:18.390316" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-09-30T13:13:17.389729" elapsed="1.000956"/>
+</kw>
+<status status="PASS" start="2026-09-30T13:13:17.342434" elapsed="1.048566"/>
+</kw>
+<kw name="hoverMultiDropdownLevel1">
+<kw name="Mouse Down" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:18.392801" level="INFO">Simulating Mouse Down on element 'xpath=//a[text()='Hover me for more options']'.</msg>
+<arg>${xpath_hovered_dropdown}</arg>
+<doc>Simulates pressing the left mouse button on the element ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:13:18.392311" elapsed="0.286445"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-09-30T13:13:19.680486" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-09-30T13:13:18.679036" elapsed="1.001763"/>
+</kw>
+<status status="PASS" start="2026-09-30T13:13:18.391646" elapsed="1.289441"/>
+</kw>
+<kw name="hoverMultiDropdownLevel2">
+<kw name="Mouse Down" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:19.682919" level="INFO">Simulating Mouse Down on element 'xpath=//a[text()='Even More..']'.</msg>
+<arg>${xpath_hovered_dropdown_2}</arg>
+<doc>Simulates pressing the left mouse button on the element ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:13:19.682338" elapsed="0.277690"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-09-30T13:13:20.963463" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-09-30T13:13:19.960535" elapsed="1.003094"/>
+</kw>
+<status status="PASS" start="2026-09-30T13:13:19.681673" elapsed="1.282077"/>
+</kw>
+<kw name="hoverMultiDropdownLevel3">
+<kw name="Mouse Down" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:20.964368" level="INFO">Simulating Mouse Down on element 'xpath=//a[text()='another level']'.</msg>
+<arg>${xpath_hovered_dropdown_3}</arg>
+<doc>Simulates pressing the left mouse button on the element ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:13:20.964205" elapsed="0.270104"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-09-30T13:13:22.237457" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-09-30T13:13:21.234576" elapsed="1.003060"/>
+</kw>
+<status status="PASS" start="2026-09-30T13:13:20.964002" elapsed="1.273751"/>
+</kw>
+<kw name="clickDropdownLevel4">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:22.238527" level="INFO">Clicking element 'xpath=//a[text()='4th level - 1']'.</msg>
+<arg>${xpath_dropdown_4}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:13:22.238288" elapsed="0.028198"/>
+</kw>
+<kw name="Location Should Be" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:22.269659" level="INFO">Current location is 'https://qa-automation-practice.netlify.app/dropdowns#4th-level-1'.</msg>
+<arg>${result_url}</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<status status="PASS" start="2026-09-30T13:13:22.266637" elapsed="0.003093"/>
+</kw>
+<status status="PASS" start="2026-09-30T13:13:22.238016" elapsed="0.031778"/>
+</kw>
+<tag>regression</tag>
+<status status="PASS" start="2026-09-30T13:13:17.341783" elapsed="4.928112"/>
+</test>
+<status status="PASS" start="2026-09-30T13:13:12.115458" elapsed="10.154614"/>
+</suite>
+<suite id="s1-s1-s6" name="06 Doubleclick" source="/Users/eye/Documents/automation-robot/tests/06_doubleclick.robot">
+<test id="s1-s1-s6-t1" name="Open Test Website" line="13">
+<kw name="Open QA-Automation-Practice Application" owner="common">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:22.272172" level="INFO">Opening browser 'chrome' to base url 'https://qa-automation-practice.netlify.app/'.</msg>
+<arg>${url_2}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-09-30T13:13:22.272027" elapsed="1.014576"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-09-30T13:13:23.286939" elapsed="0.333347"/>
+</kw>
+<doc>Opens the browser and navigates to the qa-automation-practice URL</doc>
+<status status="PASS" start="2026-09-30T13:13:22.271750" elapsed="1.348644"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${xpath_btn_menu}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2026-09-30T13:13:23.620578" elapsed="0.005610"/>
+</kw>
+<tag>regression</tag>
+<status status="PASS" start="2026-09-30T13:13:22.271558" elapsed="1.354828"/>
+</test>
+<test id="s1-s1-s6-t2" name="Click Btn actions menu" line="16">
+<kw name="clickBtnActionsMenu">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:23.627178" level="INFO">Clicking element 'xpath=//a[text()='Btn actions']'.</msg>
+<arg>${xpath_btn_menu}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:13:23.627055" elapsed="0.019789"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-09-30T13:13:24.647433" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-09-30T13:13:23.646998" elapsed="1.000711"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${xpath_double_click_submenu}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2026-09-30T13:13:24.647953" elapsed="0.011674"/>
+</kw>
+<status status="PASS" start="2026-09-30T13:13:23.626889" elapsed="1.032962"/>
+</kw>
+<tag>regression</tag>
+<status status="PASS" start="2026-09-30T13:13:23.626559" elapsed="1.033613"/>
+</test>
+<test id="s1-s1-s6-t3" name="Click double click btn menu" line="18">
+<kw name="clickDoubleActionsSubMenu">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:24.662808" level="INFO">Clicking element 'xpath=//a[text()='Double click btn']'.</msg>
+<arg>${xpath_double_click_submenu}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:13:24.662408" elapsed="0.589260"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${xpath_double_click_me_btn}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-09-30T13:13:25.251831" elapsed="0.007231"/>
+</kw>
+<status status="PASS" start="2026-09-30T13:13:24.661929" elapsed="0.597294"/>
+</kw>
+<tag>regression</tag>
+<status status="PASS" start="2026-09-30T13:13:24.660608" elapsed="0.598808"/>
+</test>
+<test id="s1-s1-s6-t4" name="Double click on button and validate the result" line="20">
+<kw name="doubleClickOnButton">
+<kw name="Double Click Element" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:25.260120" level="INFO">Double clicking element 'xpath=//*[@id='double-click-btn']'.</msg>
+<arg>${xpath_double_click_me_btn}</arg>
+<doc>Double clicks the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:13:25.259963" elapsed="0.279207"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-09-30T13:13:26.539608" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-09-30T13:13:25.539271" elapsed="1.000465"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${xpath_double_click_result}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-09-30T13:13:26.539912" elapsed="0.007662"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:26.552216" level="INFO">Current page contains text 'Congrats, you double clicked!'.</msg>
+<arg>Congrats, you double clicked!</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2026-09-30T13:13:26.547687" elapsed="0.004575"/>
+</kw>
+<status status="PASS" start="2026-09-30T13:13:25.259809" elapsed="1.292508"/>
+</kw>
+<tag>regression</tag>
+<status status="PASS" start="2026-09-30T13:13:25.259559" elapsed="1.292880"/>
+</test>
+<status status="PASS" start="2026-09-30T13:13:22.270301" elapsed="4.282334"/>
+</suite>
+<suite id="s1-s1-s7" name="07 Scrolling" source="/Users/eye/Documents/automation-robot/tests/07_scrolling.robot">
+<test id="s1-s1-s7-t1" name="Open Test Website" line="13">
+<kw name="Open QA-Automation-Practice Application" owner="common">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:26.554752" level="INFO">Opening browser 'chrome' to base url 'https://qa-automation-practice.netlify.app/'.</msg>
+<arg>${url_2}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-09-30T13:13:26.554640" elapsed="1.651871"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-09-30T13:13:28.206890" elapsed="0.338474"/>
+</kw>
+<doc>Opens the browser and navigates to the qa-automation-practice URL</doc>
+<status status="PASS" start="2026-09-30T13:13:26.554506" elapsed="1.990961"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${xpath_btn_menu}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2026-09-30T13:13:28.545636" elapsed="0.004246"/>
+</kw>
+<tag>regression</tag>
+<status status="PASS" start="2026-09-30T13:13:26.554295" elapsed="1.995733"/>
+</test>
+<test id="s1-s1-s7-t2" name="Go To Scrolling page" line="16">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:28.550569" level="INFO">Clicking element 'xpath=//a[text()='Btn actions']'.</msg>
+<arg>${xpath_btn_menu}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:13:28.550424" elapsed="0.020676"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${xpath_scrolling_submenu}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-09-30T13:13:28.571346" elapsed="0.217068"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:28.788877" level="INFO">Clicking element 'xpath=//*[@id='scrolling']'.</msg>
+<arg>${xpath_scrolling_submenu}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:13:28.788631" elapsed="0.661444"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Scrolling Demo</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-09-30T13:13:29.450348" elapsed="0.003767"/>
+</kw>
+<tag>regression</tag>
+<status status="PASS" start="2026-09-30T13:13:28.550191" elapsed="0.904029"/>
+</test>
+<test id="s1-s1-s7-t3" name="Scroll To The First Word" line="21">
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${xpath_start_text}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-09-30T13:13:29.454470" elapsed="0.266369"/>
+</kw>
+<tag>regression</tag>
+<status status="PASS" start="2026-09-30T13:13:29.454318" elapsed="0.266998"/>
+</test>
+<test id="s1-s1-s7-t4" name="Scroll To The Last Word" line="23">
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${xpath_end_text}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-09-30T13:13:29.722346" elapsed="0.282225"/>
+</kw>
+<tag>regression</tag>
+<status status="PASS" start="2026-09-30T13:13:29.721693" elapsed="0.283357"/>
+</test>
+<status status="PASS" start="2026-09-30T13:13:26.552898" elapsed="3.453033"/>
+</suite>
+<suite id="s1-s1-s8" name="08 Mouse Hover" source="/Users/eye/Documents/automation-robot/tests/08_mouse_hover.robot">
+<test id="s1-s1-s8-t1" name="Open Test Website" line="14">
+<kw name="Open QA-Automation-Practice Application" owner="common">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:30.010614" level="INFO">Opening browser 'chrome' to base url 'https://qa-automation-practice.netlify.app/'.</msg>
+<arg>${url_2}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-09-30T13:13:30.010405" elapsed="1.073749"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-09-30T13:13:31.084625" elapsed="0.332980"/>
+</kw>
+<doc>Opens the browser and navigates to the qa-automation-practice URL</doc>
+<status status="PASS" start="2026-09-30T13:13:30.010143" elapsed="1.407573"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${xpath_btn_menu}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2026-09-30T13:13:31.417887" elapsed="0.003805"/>
+</kw>
+<tag>regression</tag>
+<status status="PASS" start="2026-09-30T13:13:30.009699" elapsed="1.412121"/>
+</test>
+<test id="s1-s1-s8-t2" name="Go To Mouse Hover Page" line="17">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:31.422265" level="INFO">Clicking element 'xpath=//a[text()='Btn actions']'.</msg>
+<arg>${xpath_btn_menu}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:13:31.422159" elapsed="0.021577"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${xpath_hover_submenu}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-09-30T13:13:31.443967" elapsed="0.219631"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:31.664189" level="INFO">Clicking element 'xpath=//*[@id="mouse-hover"]'.</msg>
+<arg>${xpath_hover_submenu}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:13:31.663805" elapsed="0.612858"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Mouse Hover Example</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-09-30T13:13:32.276991" elapsed="0.004635"/>
+</kw>
+<tag>regression</tag>
+<status status="PASS" start="2026-09-30T13:13:31.421966" elapsed="0.859818"/>
+</test>
+<test id="s1-s1-s8-t3" name="Mouse Hover The First Element" line="22">
+<kw name="Mouse Over" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:32.282293" level="INFO">Simulating Mouse Over on element 'xpath=//*[@id="demo"][text()="If you hover this text, it will be changed."]'.</msg>
+<arg>${xpath_first_element}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:13:32.282137" elapsed="0.271323"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${xpath_first_result}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-09-30T13:13:32.553639" elapsed="0.006277"/>
+</kw>
+<kw name="Element Should Not Be Visible" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:32.562402" level="INFO">Element 'xpath=//*[@id="demo"][text()="If you hover this text, it will be changed."]' did not exist.</msg>
+<arg>${xpath_first_element}</arg>
+<doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
+<status status="PASS" start="2026-09-30T13:13:32.560163" elapsed="0.002269"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-09-30T13:13:33.564354" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-09-30T13:13:32.562516" elapsed="1.002062"/>
+</kw>
+<tag>regression</tag>
+<status status="PASS" start="2026-09-30T13:13:32.281926" elapsed="1.283095"/>
+</test>
+<test id="s1-s1-s8-t4" name="Mouse Hover The Second Element" line="27">
+<kw name="Mouse Over" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:33.566475" level="INFO">Simulating Mouse Over on element 'xpath=//*[@id="button-hover-over"]'.</msg>
+<arg>${xpath_second_element}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:13:33.565912" elapsed="0.269448"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-09-30T13:13:34.836945" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-09-30T13:13:33.835800" elapsed="1.001238"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:34.841421" level="INFO">Current page contains text 'I am shown when someone hovers over the text above.'.</msg>
+<arg>I am shown when someone hovers over the text above.</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2026-09-30T13:13:34.837199" elapsed="0.004269"/>
+</kw>
+<tag>regression</tag>
+<status status="PASS" start="2026-09-30T13:13:33.565328" elapsed="1.276251"/>
+</test>
+<status status="PASS" start="2026-09-30T13:13:30.006732" elapsed="4.835037"/>
+</suite>
+<suite id="s1-s1-s9" name="09 Show Hide Element" source="/Users/eye/Documents/automation-robot/tests/09_show_hide_element.robot">
+<test id="s1-s1-s9-t1" name="Open Test Website" line="13">
+<kw name="Open QA-Automation-Practice Application" owner="common">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:34.843745" level="INFO">Opening browser 'chrome' to base url 'https://qa-automation-practice.netlify.app/'.</msg>
+<arg>${url_2}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-09-30T13:13:34.843635" elapsed="1.049149"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-09-30T13:13:35.893066" elapsed="0.328614"/>
+</kw>
+<doc>Opens the browser and navigates to the qa-automation-practice URL</doc>
+<status status="PASS" start="2026-09-30T13:13:34.843491" elapsed="1.378292"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${xpath_btn_menu}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2026-09-30T13:13:36.221948" elapsed="0.009653"/>
+</kw>
+<tag>regression</tag>
+<status status="PASS" start="2026-09-30T13:13:34.843295" elapsed="1.388447"/>
+</test>
+<test id="s1-s1-s9-t2" name="Go To Test Page" line="16">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:36.232208" level="INFO">Clicking element 'xpath=//a[text()='Btn actions']'.</msg>
+<arg>${xpath_btn_menu}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:13:36.232075" elapsed="0.021364"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${xpath_show_hide_submenu}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-09-30T13:13:36.253624" elapsed="0.215101"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:36.468993" level="INFO">Clicking element 'xpath=//*[@id="show-hide-elements"]'.</msg>
+<arg>${xpath_show_hide_submenu}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:13:36.468852" elapsed="0.985365"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Show / Hide Element</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-09-30T13:13:37.454409" elapsed="0.004098"/>
+</kw>
+<tag>regression</tag>
+<status status="PASS" start="2026-09-30T13:13:36.231877" elapsed="1.226744"/>
+</test>
+<test id="s1-s1-s9-t3" name="Verfify Text Is Visible Before Click Btn" line="21">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:37.462510" level="INFO">Current page contains element 'xpath=//*[@id="hiddenText"]'.</msg>
+<arg>${xpath_visible_text}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2026-09-30T13:13:37.458933" elapsed="0.003622"/>
+</kw>
+<tag>regression</tag>
+<status status="PASS" start="2026-09-30T13:13:37.458740" elapsed="0.003903"/>
+</test>
+<test id="s1-s1-s9-t4" name="Verify Text Is Invisible After Click Btn" line="23">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:37.463062" level="INFO">Clicking button 'xpath=//button[@id="showHideBtn"]'.</msg>
+<arg>${xpath_show_hide_btn}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:13:37.462934" elapsed="0.022142"/>
+</kw>
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>${xpath_visible_text}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2026-09-30T13:13:37.485270" elapsed="0.004739"/>
+</kw>
+<tag>regression</tag>
+<status status="PASS" start="2026-09-30T13:13:37.462744" elapsed="0.027406"/>
+</test>
+<status status="PASS" start="2026-09-30T13:13:34.841992" elapsed="2.648317"/>
+</suite>
+<suite id="s1-s1-s10" name="10 New Browser Tab" source="/Users/eye/Documents/automation-robot/tests/10_new_browser_tab.robot">
+<test id="s1-s1-s10-t1" name="Open Test Website" line="11">
+<kw name="Open QA-Automation-Practice Application" owner="common">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:37.492854" level="INFO">Opening browser 'chrome' to base url 'https://qa-automation-practice.netlify.app/'.</msg>
+<arg>${url_2}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-09-30T13:13:37.492753" elapsed="1.481425"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-09-30T13:13:38.974456" elapsed="0.340646"/>
+</kw>
+<doc>Opens the browser and navigates to the qa-automation-practice URL</doc>
+<status status="PASS" start="2026-09-30T13:13:37.492632" elapsed="1.822560"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${xpath_new_tab_window_menu}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-09-30T13:13:39.315328" elapsed="0.271777"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${xpath_new_tab_window_menu}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2026-09-30T13:13:39.587253" elapsed="0.002467"/>
+</kw>
+<tag>regression</tag>
+<status status="PASS" start="2026-09-30T13:13:37.492461" elapsed="2.097363"/>
+</test>
+<test id="s1-s1-s10-t2" name="Go To Test Page" line="15">
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${xpath_new_tab_window_menu}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-09-30T13:13:39.590148" elapsed="0.262213"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:39.852738" level="INFO">Clicking element 'xpath=//a[text()="New Tab / Window"]'.</msg>
+<arg>${xpath_new_tab_window_menu}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:13:39.852539" elapsed="0.022412"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${xpath_new_tab_submenu}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-09-30T13:13:39.875104" elapsed="0.213265"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:40.088703" level="INFO">Clicking element 'xpath=//*[@id="browser-tab"]'.</msg>
+<arg>${xpath_new_tab_submenu}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:13:40.088530" elapsed="0.665903"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:40.757793" level="INFO">Current page contains text 'Switch to a new Browser Tab'.</msg>
+<arg>Switch to a new Browser Tab</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2026-09-30T13:13:40.754553" elapsed="0.003270"/>
+</kw>
+<tag>regression</tag>
+<status status="PASS" start="2026-09-30T13:13:39.589966" elapsed="1.167937"/>
+</test>
+<test id="s1-s1-s10-t3" name="Click Button To Open New Tab" line="21">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:40.758216" level="INFO">Clicking button 'xpath=//*[@id="newTabBtn"]'.</msg>
+<arg>${xpath_new_tab_btn}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:13:40.758121" elapsed="0.031200"/>
+</kw>
+<kw name="Switch Window" owner="SeleniumLibrary">
+<arg>NEW</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:13:40.789466" elapsed="0.005538"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-09-30T13:13:41.797295" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-09-30T13:13:40.795169" elapsed="1.002401"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:41.812980" level="INFO">Current page contains text 'Table Example'.</msg>
+<arg>Table Example</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2026-09-30T13:13:41.798125" elapsed="0.015028"/>
+</kw>
+<tag>regression</tag>
+<status status="PASS" start="2026-09-30T13:13:40.757993" elapsed="1.055485"/>
+</test>
+<test id="s1-s1-s10-t4" name="Close New Window And Go To Main Window" line="26">
+<kw name="Close Window" owner="SeleniumLibrary">
+<doc>Closes currently opened and selected browser window/tab.</doc>
+<status status="PASS" start="2026-09-30T13:13:41.814228" elapsed="0.053824"/>
+</kw>
+<kw name="Switch Window" owner="SeleniumLibrary">
+<arg>MAIN</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:13:41.868518" elapsed="0.009414"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:41.882001" level="INFO">Current page contains text 'Switch to a new Browser Tab'.</msg>
+<arg>Switch to a new Browser Tab</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2026-09-30T13:13:41.878082" elapsed="0.003991"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-09-30T13:13:42.884700" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-09-30T13:13:41.882263" elapsed="1.002643"/>
+</kw>
+<tag>regression</tag>
+<status status="PASS" start="2026-09-30T13:13:41.813741" elapsed="1.071457"/>
+</test>
+<status status="PASS" start="2026-09-30T13:13:37.490567" elapsed="5.395005"/>
+</suite>
+<suite id="s1-s1-s11" name="11 Static Table" source="/Users/eye/Documents/automation-robot/tests/11_static_table.robot">
+<test id="s1-s1-s11-t1" name="Open Test Website" line="12">
+<kw name="Open QA-Automation-Practice Application" owner="common">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:42.889256" level="INFO">Opening browser 'chrome' to base url 'https://qa-automation-practice.netlify.app/'.</msg>
+<arg>${url_2}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-09-30T13:13:42.889074" elapsed="1.251897"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-09-30T13:13:44.141211" elapsed="0.340936"/>
+</kw>
+<doc>Opens the browser and navigates to the qa-automation-practice URL</doc>
+<status status="PASS" start="2026-09-30T13:13:42.888840" elapsed="1.593619"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${xpath_tables_menu}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2026-09-30T13:13:44.482727" elapsed="0.003782"/>
+</kw>
+<tag>regression</tag>
+<status status="PASS" start="2026-09-30T13:13:42.888464" elapsed="1.598146"/>
+</test>
+<test id="s1-s1-s11-t2" name="Go To Test Page" line="15">
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${xpath_tables_menu}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-09-30T13:13:44.486920" elapsed="0.267839"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:44.755531" level="INFO">Clicking element 'xpath=//a[text()="Tables"]'.</msg>
+<arg>${xpath_tables_menu}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:13:44.755132" elapsed="0.043770"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${xpath_static_table_submenu}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-09-30T13:13:44.799167" elapsed="0.226089"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:45.025826" level="INFO">Clicking element 'xpath=//a[text()="Static Table"]'.</msg>
+<arg>${xpath_static_table_submenu}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:13:45.025537" elapsed="0.498659"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Table Example</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-09-30T13:13:45.524399" elapsed="0.003644"/>
+</kw>
+<tag>regression</tag>
+<status status="PASS" start="2026-09-30T13:13:44.486747" elapsed="1.041498"/>
+</test>
+<test id="s1-s1-s11-t3" name="Verify Table Should Be Visible" line="21">
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:45.534371" level="INFO">Element 'xpath=//*[@id="peopleTable"]' is displayed.</msg>
+<arg>${xpath_static_table}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2026-09-30T13:13:45.528542" elapsed="0.005897"/>
+</kw>
+<tag>regression</tag>
+<status status="PASS" start="2026-09-30T13:13:45.528373" elapsed="0.006193"/>
+</test>
+<test id="s1-s1-s11-t4" name="Verify Table Should Have Correct Headers" line="23">
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:45.541389" level="INFO">${h1} = #</msg>
+<var>${h1}</var>
+<arg>${xpath_static_table}/thead/tr/th[1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:13:45.534843" elapsed="0.006570"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:45.547112" level="INFO">${h2} = First</msg>
+<var>${h2}</var>
+<arg>${xpath_static_table}/thead/tr/th[2]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:13:45.541535" elapsed="0.005674"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:45.553359" level="INFO">${h3} = Last</msg>
+<var>${h3}</var>
+<arg>${xpath_static_table}/thead/tr/th[3]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:13:45.547386" elapsed="0.006007"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:45.558762" level="INFO">${h4} = Email</msg>
+<var>${h4}</var>
+<arg>${xpath_static_table}/thead/tr/th[4]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:13:45.553546" elapsed="0.005246"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${h1}</arg>
+<arg>\#</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2026-09-30T13:13:45.558928" elapsed="0.000365"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${h2}</arg>
+<arg>First</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2026-09-30T13:13:45.559349" elapsed="0.000107"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${h3}</arg>
+<arg>Last</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2026-09-30T13:13:45.559506" elapsed="0.000090"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${h4}</arg>
+<arg>Email</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2026-09-30T13:13:45.559640" elapsed="0.000084"/>
+</kw>
+<tag>regression</tag>
+<status status="PASS" start="2026-09-30T13:13:45.534671" elapsed="0.025114"/>
+</test>
+<test id="s1-s1-s11-t5" name="Verify Table Should Have Correct Row Count" line="32">
+<kw name="Get Element Count" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:45.565646" level="INFO">${count} = 5</msg>
+<var>${count}</var>
+<arg>${xpath_static_table}/tbody/tr</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:13:45.560032" elapsed="0.005642"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2026-09-30T13:13:45.566028" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${count}</arg>
+<arg>5</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2026-09-30T13:13:45.565821" elapsed="0.000250"/>
+</kw>
+<tag>regression</tag>
+<status status="PASS" start="2026-09-30T13:13:45.559881" elapsed="0.006255"/>
+</test>
+<test id="s1-s1-s11-t6" name="Verify Table Should Contain Expected Data" line="35">
+<kw name="Table Column Should Contain" owner="SeleniumLibrary">
+<arg>${xpath_static_table}</arg>
+<arg>2</arg>
+<arg>First</arg>
+<doc>Verifies table column contains text ``expected``.</doc>
+<status status="PASS" start="2026-09-30T13:13:45.566412" elapsed="0.007881"/>
+</kw>
+<kw name="Table Row Should Contain" owner="SeleniumLibrary">
+<arg>${xpath_static_table}</arg>
+<arg>1</arg>
+<arg>Mark</arg>
+<doc>Verifies that table row contains text ``expected``.</doc>
+<status status="PASS" start="2026-09-30T13:13:45.574376" elapsed="0.012287"/>
+</kw>
+<tag>regression</tag>
+<status status="PASS" start="2026-09-30T13:13:45.566231" elapsed="0.020555"/>
+</test>
+<test id="s1-s1-s11-t7" name="Verify Specific Test Data In Specific Cell" line="38">
+<kw name="Table Cell Should Contain" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:45.600305" level="INFO">Table cell contains 'Larry'.</msg>
+<arg>${xpath_static_table}</arg>
+<arg>4</arg>
+<arg>2</arg>
+<arg>Larry</arg>
+<doc>Verifies table cell contains text ``expected``.</doc>
+<status status="PASS" start="2026-09-30T13:13:45.587024" elapsed="0.013389"/>
+</kw>
+<kw name="Table Cell Should Contain" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:45.610253" level="INFO">Table cell contains 'Bow'.</msg>
+<arg>${xpath_static_table}</arg>
+<arg>4</arg>
+<arg>3</arg>
+<arg>Bow</arg>
+<doc>Verifies table cell contains text ``expected``.</doc>
+<status status="PASS" start="2026-09-30T13:13:45.600638" elapsed="0.009653"/>
+</kw>
+<kw name="Table Cell Should Contain" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:45.620931" level="INFO">Table cell contains 'lbow@gmail.com'.</msg>
+<arg>${xpath_static_table}</arg>
+<arg>4</arg>
+<arg>4</arg>
+<arg>lbow@gmail.com</arg>
+<doc>Verifies table cell contains text ``expected``.</doc>
+<status status="PASS" start="2026-09-30T13:13:45.610386" elapsed="0.010596"/>
+</kw>
+<tag>regression</tag>
+<status status="PASS" start="2026-09-30T13:13:45.586875" elapsed="0.034235"/>
+</test>
+<status status="PASS" start="2026-09-30T13:13:42.886077" elapsed="2.735242"/>
+</suite>
+<suite id="s1-s1-s12" name="12 Dynamic Table" source="/Users/eye/Documents/automation-robot/tests/12_dynamic_table.robot">
+<test id="s1-s1-s12-t1" name="Open Test Website" line="12">
+<kw name="Open QA-Automation-Practice Application" owner="common">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:45.623222" level="INFO">Opening browser 'chrome' to base url 'https://qa-automation-practice.netlify.app/'.</msg>
+<arg>${url_2}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-09-30T13:13:45.623129" elapsed="1.013481"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-09-30T13:13:46.636876" elapsed="0.336480"/>
+</kw>
+<doc>Opens the browser and navigates to the qa-automation-practice URL</doc>
+<status status="PASS" start="2026-09-30T13:13:45.623014" elapsed="1.350494"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${xpath_tables_menu}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2026-09-30T13:13:46.973749" elapsed="0.005313"/>
+</kw>
+<tag>regression</tag>
+<status status="PASS" start="2026-09-30T13:13:45.622837" elapsed="1.356367"/>
+</test>
+<test id="s1-s1-s12-t2" name="Go To Test Page" line="15">
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${xpath_tables_menu}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-09-30T13:13:46.979615" elapsed="0.277364"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:47.257591" level="INFO">Clicking element 'xpath=//a[text()="Tables"]'.</msg>
+<arg>${xpath_tables_menu}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:13:47.257272" elapsed="0.023528"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${xpath_dynamic_table_submenu}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-09-30T13:13:47.281038" elapsed="0.211719"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:47.493096" level="INFO">Clicking element 'xpath=//a[text()="Dynamic Table"]'.</msg>
+<arg>${xpath_dynamic_table_submenu}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:13:47.492923" elapsed="0.515065"/>
+</kw>
+<tag>regression</tag>
+<status status="PASS" start="2026-09-30T13:13:46.979355" elapsed="1.028756"/>
+</test>
+<test id="s1-s1-s12-t3" name="Verify Table Should Be Visible" line="20">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${xpath_dynamic_table}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-09-30T13:13:48.008395" elapsed="0.004930"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-09-30T13:13:51.013815" level="INFO">Slept 3 seconds.</msg>
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-09-30T13:13:48.013442" elapsed="3.000484"/>
+</kw>
+<tag>regression</tag>
+<status status="PASS" start="2026-09-30T13:13:48.008213" elapsed="3.005854"/>
+</test>
+<test id="s1-s1-s12-t4" name="Verify Table Column" line="23">
+<kw name="Get Element Count" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:51.018084" level="INFO">${column_count} = 7</msg>
+<var>${column_count}</var>
+<arg>${xpath_dynamic_table}/thead/tr/th</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:13:51.014346" elapsed="0.003761"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2026-09-30T13:13:51.018371" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${column_count}</arg>
+<arg>7</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2026-09-30T13:13:51.018211" elapsed="0.000190"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:51.024694" level="INFO">${h1} = Avatar</msg>
+<var>${h1}</var>
+<arg>${xpath_dynamic_table}/thead/tr/th[1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:13:51.018455" elapsed="0.006258"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:51.029512" level="INFO">${h2} = First Name</msg>
+<var>${h2}</var>
+<arg>${xpath_dynamic_table}/thead/tr/th[2]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:13:51.024795" elapsed="0.004740"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:51.034044" level="INFO">${h3} = Last Name</msg>
+<var>${h3}</var>
+<arg>${xpath_dynamic_table}/thead/tr/th[3]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:13:51.029656" elapsed="0.004406"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:51.038176" level="INFO">${h4} = Age</msg>
+<var>${h4}</var>
+<arg>${xpath_dynamic_table}/thead/tr/th[4]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:13:51.034140" elapsed="0.004052"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:51.042532" level="INFO">${h5} = Email</msg>
+<var>${h5}</var>
+<arg>${xpath_dynamic_table}/thead/tr/th[5]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:13:51.038246" elapsed="0.004301"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:51.046701" level="INFO">${h6} = City</msg>
+<var>${h6}</var>
+<arg>${xpath_dynamic_table}/thead/tr/th[6]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:13:51.042607" elapsed="0.004106"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:51.050644" level="INFO">${h7} = Country</msg>
+<var>${h7}</var>
+<arg>${xpath_dynamic_table}/thead/tr/th[7]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:13:51.046766" elapsed="0.003888"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${h1}</arg>
+<arg>Avatar</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2026-09-30T13:13:51.050721" elapsed="0.000151"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${h2}</arg>
+<arg>First Name</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2026-09-30T13:13:51.050920" elapsed="0.000083"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${h3}</arg>
+<arg>Last Name</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2026-09-30T13:13:51.051043" elapsed="0.000081"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${h4}</arg>
+<arg>Age</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2026-09-30T13:13:51.051162" elapsed="0.000076"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${h5}</arg>
+<arg>Email</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2026-09-30T13:13:51.051276" elapsed="0.000076"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${h6}</arg>
+<arg>City</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2026-09-30T13:13:51.051392" elapsed="0.000077"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${h7}</arg>
+<arg>Country</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2026-09-30T13:13:51.051512" elapsed="0.000082"/>
+</kw>
+<tag>regression</tag>
+<status status="PASS" start="2026-09-30T13:13:51.014180" elapsed="0.037470"/>
+</test>
+<test id="s1-s1-s12-t5" name="Verfify Row Should be more than 0" line="40">
+<kw name="Get Element Count" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:51.054441" level="INFO">${row_count} = 10</msg>
+<var>${row_count}</var>
+<arg>${xpath_dynamic_table}/tbody/tr</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:13:51.051862" elapsed="0.002591"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${row_count} &gt; 0</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2026-09-30T13:13:51.054505" elapsed="0.000225"/>
+</kw>
+<tag>regression</tag>
+<status status="PASS" start="2026-09-30T13:13:51.051737" elapsed="0.003037"/>
+</test>
+<test id="s1-s1-s12-t6" name="Verify All Column Data Types" line="43">
+<kw name="Check Column Is Image">
+<kw name="Get Element Count" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:51.056997" level="INFO">${rows} = 10</msg>
+<var>${rows}</var>
+<arg>${xpath_dynamic_table}/tbody/tr</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:13:51.055106" elapsed="0.001903"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:51.061139" level="INFO">Element 'xpath=//*[@id="data-table"]/tbody/tr[1]/td[1]//img' is displayed.</msg>
+<arg>${xpath_dynamic_table}/tbody/tr[${i}]/td[${col}]//img</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2026-09-30T13:13:51.057238" elapsed="0.003921"/>
+</kw>
+<var name="${i}">1</var>
+<status status="PASS" start="2026-09-30T13:13:51.057195" elapsed="0.003981"/>
+</iter>
+<iter>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:51.066110" level="INFO">Element 'xpath=//*[@id="data-table"]/tbody/tr[2]/td[1]//img' is displayed.</msg>
+<arg>${xpath_dynamic_table}/tbody/tr[${i}]/td[${col}]//img</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2026-09-30T13:13:51.061255" elapsed="0.004907"/>
+</kw>
+<var name="${i}">2</var>
+<status status="PASS" start="2026-09-30T13:13:51.061224" elapsed="0.004970"/>
+</iter>
+<iter>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:51.070400" level="INFO">Element 'xpath=//*[@id="data-table"]/tbody/tr[3]/td[1]//img' is displayed.</msg>
+<arg>${xpath_dynamic_table}/tbody/tr[${i}]/td[${col}]//img</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2026-09-30T13:13:51.066325" elapsed="0.004102"/>
+</kw>
+<var name="${i}">3</var>
+<status status="PASS" start="2026-09-30T13:13:51.066264" elapsed="0.004181"/>
+</iter>
+<iter>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:51.074839" level="INFO">Element 'xpath=//*[@id="data-table"]/tbody/tr[4]/td[1]//img' is displayed.</msg>
+<arg>${xpath_dynamic_table}/tbody/tr[${i}]/td[${col}]//img</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2026-09-30T13:13:51.070510" elapsed="0.004381"/>
+</kw>
+<var name="${i}">4</var>
+<status status="PASS" start="2026-09-30T13:13:51.070479" elapsed="0.004447"/>
+</iter>
+<iter>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:51.079659" level="INFO">Element 'xpath=//*[@id="data-table"]/tbody/tr[5]/td[1]//img' is displayed.</msg>
+<arg>${xpath_dynamic_table}/tbody/tr[${i}]/td[${col}]//img</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2026-09-30T13:13:51.075047" elapsed="0.004679"/>
+</kw>
+<var name="${i}">5</var>
+<status status="PASS" start="2026-09-30T13:13:51.074994" elapsed="0.004774"/>
+</iter>
+<iter>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:51.084316" level="INFO">Element 'xpath=//*[@id="data-table"]/tbody/tr[6]/td[1]//img' is displayed.</msg>
+<arg>${xpath_dynamic_table}/tbody/tr[${i}]/td[${col}]//img</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2026-09-30T13:13:51.079915" elapsed="0.004444"/>
+</kw>
+<var name="${i}">6</var>
+<status status="PASS" start="2026-09-30T13:13:51.079851" elapsed="0.004539"/>
+</iter>
+<iter>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:51.089065" level="INFO">Element 'xpath=//*[@id="data-table"]/tbody/tr[7]/td[1]//img' is displayed.</msg>
+<arg>${xpath_dynamic_table}/tbody/tr[${i}]/td[${col}]//img</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2026-09-30T13:13:51.084498" elapsed="0.004602"/>
+</kw>
+<var name="${i}">7</var>
+<status status="PASS" start="2026-09-30T13:13:51.084450" elapsed="0.004676"/>
+</iter>
+<iter>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:51.093838" level="INFO">Element 'xpath=//*[@id="data-table"]/tbody/tr[8]/td[1]//img' is displayed.</msg>
+<arg>${xpath_dynamic_table}/tbody/tr[${i}]/td[${col}]//img</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2026-09-30T13:13:51.089224" elapsed="0.004659"/>
+</kw>
+<var name="${i}">8</var>
+<status status="PASS" start="2026-09-30T13:13:51.089178" elapsed="0.004745"/>
+</iter>
+<iter>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:51.098784" level="INFO">Element 'xpath=//*[@id="data-table"]/tbody/tr[9]/td[1]//img' is displayed.</msg>
+<arg>${xpath_dynamic_table}/tbody/tr[${i}]/td[${col}]//img</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2026-09-30T13:13:51.094030" elapsed="0.004829"/>
+</kw>
+<var name="${i}">9</var>
+<status status="PASS" start="2026-09-30T13:13:51.093982" elapsed="0.004936"/>
+</iter>
+<iter>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:51.103648" level="INFO">Element 'xpath=//*[@id="data-table"]/tbody/tr[10]/td[1]//img' is displayed.</msg>
+<arg>${xpath_dynamic_table}/tbody/tr[${i}]/td[${col}]//img</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2026-09-30T13:13:51.099096" elapsed="0.004589"/>
+</kw>
+<var name="${i}">10</var>
+<status status="PASS" start="2026-09-30T13:13:51.099016" elapsed="0.004695"/>
+</iter>
+<var>${i}</var>
+<value>1</value>
+<value>${rows}+1</value>
+<status status="PASS" start="2026-09-30T13:13:51.057051" elapsed="0.046678"/>
+</for>
+<arg>1</arg>
+<status status="PASS" start="2026-09-30T13:13:51.055014" elapsed="0.048761"/>
+</kw>
+<kw name="Check Column Is String">
+<kw name="Get Element Count" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:51.105987" level="INFO">${rows} = 10</msg>
+<var>${rows}</var>
+<arg>${xpath_dynamic_table}/tbody/tr</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:13:51.104010" elapsed="0.001998"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:51.110940" level="INFO">${value} = Fernando</msg>
+<var>${value}</var>
+<arg>${xpath_dynamic_table}/tbody/tr[${i}]/td[${col}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:13:51.106199" elapsed="0.004763"/>
+</kw>
+<kw name="Should Match Regexp" owner="BuiltIn">
+<arg>${value}</arg>
+<arg>^[^\\d\\W]+(\\s[^\\d\\W]+)*$</arg>
+<doc>Fails if ``string`` does not match ``pattern`` as a regular expression.</doc>
+<status status="PASS" start="2026-09-30T13:13:51.111047" elapsed="0.000270"/>
+</kw>
+<var name="${i}">1</var>
+<status status="PASS" start="2026-09-30T13:13:51.106161" elapsed="0.005178"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:51.115482" level="INFO">${value} = Jayaraj</msg>
+<var>${value}</var>
+<arg>${xpath_dynamic_table}/tbody/tr[${i}]/td[${col}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:13:51.111429" elapsed="0.004067"/>
+</kw>
+<kw name="Should Match Regexp" owner="BuiltIn">
+<arg>${value}</arg>
+<arg>^[^\\d\\W]+(\\s[^\\d\\W]+)*$</arg>
+<doc>Fails if ``string`` does not match ``pattern`` as a regular expression.</doc>
+<status status="PASS" start="2026-09-30T13:13:51.115548" elapsed="0.000113"/>
+</kw>
+<var name="${i}">2</var>
+<status status="PASS" start="2026-09-30T13:13:51.111391" elapsed="0.004289"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:51.120053" level="INFO">${value} = Edvald</msg>
+<var>${value}</var>
+<arg>${xpath_dynamic_table}/tbody/tr[${i}]/td[${col}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:13:51.115748" elapsed="0.004320"/>
+</kw>
+<kw name="Should Match Regexp" owner="BuiltIn">
+<arg>${value}</arg>
+<arg>^[^\\d\\W]+(\\s[^\\d\\W]+)*$</arg>
+<doc>Fails if ``string`` does not match ``pattern`` as a regular expression.</doc>
+<status status="PASS" start="2026-09-30T13:13:51.120118" elapsed="0.000112"/>
+</kw>
+<var name="${i}">3</var>
+<status status="PASS" start="2026-09-30T13:13:51.115720" elapsed="0.004529"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:51.124364" level="INFO">${value} = Beatrice</msg>
+<var>${value}</var>
+<arg>${xpath_dynamic_table}/tbody/tr[${i}]/td[${col}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:13:51.120334" elapsed="0.004042"/>
+</kw>
+<kw name="Should Match Regexp" owner="BuiltIn">
+<arg>${value}</arg>
+<arg>^[^\\d\\W]+(\\s[^\\d\\W]+)*$</arg>
+<doc>Fails if ``string`` does not match ``pattern`` as a regular expression.</doc>
+<status status="PASS" start="2026-09-30T13:13:51.124414" elapsed="0.000089"/>
+</kw>
+<var name="${i}">4</var>
+<status status="PASS" start="2026-09-30T13:13:51.120303" elapsed="0.004216"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:51.128868" level="INFO">${value} = Heinz-Walter</msg>
+<var>${value}</var>
+<arg>${xpath_dynamic_table}/tbody/tr[${i}]/td[${col}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:13:51.124579" elapsed="0.004309"/>
+</kw>
+<kw name="Should Match Regexp" owner="BuiltIn">
+<msg time="2026-09-30T13:13:51.129161" level="FAIL">'Heinz-Walter' does not match '^[^\d\W]+(\s[^\d\W]+)*$'</msg>
+<arg>${value}</arg>
+<arg>^[^\\d\\W]+(\\s[^\\d\\W]+)*$</arg>
+<doc>Fails if ``string`` does not match ``pattern`` as a regular expression.</doc>
+<status status="FAIL" start="2026-09-30T13:13:51.128953" elapsed="0.000345">'Heinz-Walter' does not match '^[^\d\W]+(\s[^\d\W]+)*$'</status>
+</kw>
+<var name="${i}">5</var>
+<status status="FAIL" start="2026-09-30T13:13:51.124553" elapsed="0.004789">'Heinz-Walter' does not match '^[^\d\W]+(\s[^\d\W]+)*$'</status>
+</iter>
+<var>${i}</var>
+<value>1</value>
+<value>${rows}+1</value>
+<status status="FAIL" start="2026-09-30T13:13:51.106044" elapsed="0.023329">'Heinz-Walter' does not match '^[^\d\W]+(\s[^\d\W]+)*$'</status>
+</for>
+<arg>2</arg>
+<status status="FAIL" start="2026-09-30T13:13:51.103893" elapsed="0.025546">'Heinz-Walter' does not match '^[^\d\W]+(\s[^\d\W]+)*$'</status>
+</kw>
+<kw name="Check Column Is String">
+<arg>3</arg>
+<status status="NOT RUN" start="2026-09-30T13:13:51.129548" elapsed="0.000013"/>
+</kw>
+<kw name="Check Column Is String">
+<arg>6</arg>
+<status status="NOT RUN" start="2026-09-30T13:13:51.129620" elapsed="0.000010"/>
+</kw>
+<kw name="Check Column Is String">
+<arg>7</arg>
+<status status="NOT RUN" start="2026-09-30T13:13:51.129685" elapsed="0.000009"/>
+</kw>
+<kw name="Check Column Is Integer">
+<arg>4</arg>
+<status status="NOT RUN" start="2026-09-30T13:13:51.129744" elapsed="0.000009"/>
+</kw>
+<kw name="Check Column Is Email">
+<arg>5</arg>
+<status status="NOT RUN" start="2026-09-30T13:13:51.129804" elapsed="0.000008"/>
+</kw>
+<tag>regression</tag>
+<status status="FAIL" start="2026-09-30T13:13:51.054835" elapsed="0.075043">'Heinz-Walter' does not match '^[^\d\W]+(\s[^\d\W]+)*$'</status>
+</test>
+<status status="FAIL" start="2026-09-30T13:13:45.621530" elapsed="5.508487"/>
+</suite>
+<suite id="s1-s1-s13" name="13 Iframe" source="/Users/eye/Documents/automation-robot/tests/13_iframe.robot">
+<test id="s1-s1-s13-t1" name="Open Website" line="14">
+<kw name="Open QA-Automation-Practice Application" owner="common">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:51.131594" level="INFO">Opening browser 'chrome' to base url 'https://qa-automation-practice.netlify.app/'.</msg>
+<arg>${url_2}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-09-30T13:13:51.131513" elapsed="0.990268"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-09-30T13:13:52.122106" elapsed="0.343845"/>
+</kw>
+<doc>Opens the browser and navigates to the qa-automation-practice URL</doc>
+<status status="PASS" start="2026-09-30T13:13:51.131423" elapsed="1.334629"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${xpath_iframe_menu}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2026-09-30T13:13:52.466310" elapsed="0.004239"/>
+</kw>
+<tag>regression</tag>
+<status status="PASS" start="2026-09-30T13:13:51.131294" elapsed="1.339367"/>
+</test>
+<test id="s1-s1-s13-t2" name="Go To Test Page And Verfiy Page Contains Iframe" line="17">
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${xpath_iframe_menu}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-09-30T13:13:52.470978" elapsed="0.266648"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:52.738038" level="INFO">Clicking element 'xpath=//*[@id="iframes"]'.</msg>
+<arg>${xpath_iframe_menu}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:13:52.737830" elapsed="0.846244"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${xpath_iframe_element}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2026-09-30T13:13:53.584305" elapsed="0.003258"/>
+</kw>
+<tag>regression</tag>
+<status status="PASS" start="2026-09-30T13:13:52.470791" elapsed="1.116868"/>
+</test>
+<test id="s1-s1-s13-t3" name="Verify Elements On Iframe" line="21">
+<kw name="Select Frame" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:53.588000" level="INFO">Selecting frame 'xpath=//iframe[@id="iframe-checkboxes"]'.</msg>
+<arg>${xpath_iframe_element}</arg>
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<status status="PASS" start="2026-09-30T13:13:53.587899" elapsed="0.006075"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:53.596853" level="INFO">Current page contains element 'xpath=//button[@class="navbar-toggler"]'.</msg>
+<arg>${xpath_iframe_navbar_btn}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2026-09-30T13:13:53.594084" elapsed="0.002802"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:53.600940" level="INFO">Current page contains element 'xpath=//h1[text()="Hello, this is an Iframe!"]'.</msg>
+<arg>${iframe_h1_text}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2026-09-30T13:13:53.596948" elapsed="0.004049"/>
+</kw>
+<kw name="Element Should Be Enabled" owner="SeleniumLibrary">
+<arg>${iframe_btn}</arg>
+<doc>Verifies that element identified by ``locator`` is enabled.</doc>
+<status status="PASS" start="2026-09-30T13:13:53.601120" elapsed="0.005957"/>
+</kw>
+<tag>regression</tag>
+<status status="PASS" start="2026-09-30T13:13:53.587758" elapsed="0.019402"/>
+</test>
+<test id="s1-s1-s13-t4" name="Click Iframe Button and Verify Appeared Message" line="26">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:53.607494" level="INFO">Clicking element 'xpath=//a[@id="learn-more"]'.</msg>
+<arg>${iframe_btn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:13:53.607407" elapsed="0.029497"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>This text appears when you click the "Learn more" button</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-09-30T13:13:53.637048" elapsed="0.003171"/>
+</kw>
+<tag>regression</tag>
+<status status="PASS" start="2026-09-30T13:13:53.607256" elapsed="0.033088"/>
+</test>
+<status status="PASS" start="2026-09-30T13:13:51.130216" elapsed="2.510284"/>
+</suite>
+<suite id="s1-s1-s14" name="14 Alerts" source="/Users/eye/Documents/automation-robot/tests/14_alerts.robot">
+<test id="s1-s1-s14-t1" name="Open Test Website" line="12">
+<kw name="Open QA-Automation-Practice Application" owner="common">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:53.642230" level="INFO">Opening browser 'chrome' to base url 'https://qa-automation-practice.netlify.app/'.</msg>
+<arg>${url_2}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-09-30T13:13:53.642142" elapsed="1.006943"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-09-30T13:13:54.649382" elapsed="0.331320"/>
+</kw>
+<doc>Opens the browser and navigates to the qa-automation-practice URL</doc>
+<status status="PASS" start="2026-09-30T13:13:53.642031" elapsed="1.338785"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${xpath_alerts_menu}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2026-09-30T13:13:54.980991" elapsed="0.004155"/>
+</kw>
+<tag>regression</tag>
+<status status="PASS" start="2026-09-30T13:13:53.641863" elapsed="1.343405"/>
+</test>
+<test id="s1-s1-s14-t2" name="Go To Test Page And Verify Elements" line="15">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:54.985754" level="INFO">Clicking element 'xpath=//a[@id="alerts"]'.</msg>
+<arg>${xpath_alerts_menu}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:13:54.985625" elapsed="0.575979"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Alerts Example</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-09-30T13:13:55.561807" elapsed="0.005124"/>
+</kw>
+<kw name="Page Should Contain Button" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:55.578105" level="INFO">Current page contains button 'xpath=//button[@id="alert-btn"]'.</msg>
+<arg>${xpath_alert_btn}</arg>
+<doc>Verifies button ``locator`` is found from current page.</doc>
+<status status="PASS" start="2026-09-30T13:13:55.567110" elapsed="0.011063"/>
+</kw>
+<kw name="Element Should Be Enabled" owner="SeleniumLibrary">
+<arg>${xpath_alert_btn}</arg>
+<doc>Verifies that element identified by ``locator`` is enabled.</doc>
+<status status="PASS" start="2026-09-30T13:13:55.578345" elapsed="0.005998"/>
+</kw>
+<kw name="Page Should Contain Button" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:55.593471" level="INFO">Current page contains button 'xpath=//button[@id="confirm-btn"]'.</msg>
+<arg>${xpath_confirm_btn}</arg>
+<doc>Verifies button ``locator`` is found from current page.</doc>
+<status status="PASS" start="2026-09-30T13:13:55.584500" elapsed="0.009034"/>
+</kw>
+<kw name="Element Should Be Enabled" owner="SeleniumLibrary">
+<arg>${xpath_confirm_btn}</arg>
+<doc>Verifies that element identified by ``locator`` is enabled.</doc>
+<status status="PASS" start="2026-09-30T13:13:55.593671" elapsed="0.006613"/>
+</kw>
+<tag>regression</tag>
+<status status="PASS" start="2026-09-30T13:13:54.985416" elapsed="0.615195"/>
+</test>
+<test id="s1-s1-s14-t3" name="Click Alert Button And Verify Alert Box" line="22">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:55.601230" level="INFO">Clicking button 'xpath=//button[@id="alert-btn"]'.</msg>
+<arg>${xpath_alert_btn}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:13:55.601036" elapsed="0.034345"/>
+</kw>
+<kw name="Alert Should Be Present" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:55.635859" level="INFO">HANDLE::&lt;class 'NoneType'&gt;::None</msg>
+<arg>Hello! I am an alert box!!</arg>
+<arg>action=LEAVE</arg>
+<doc>Verifies that an alert is present and by default, accepts it.</doc>
+<status status="PASS" start="2026-09-30T13:13:55.635697" elapsed="0.000979"/>
+</kw>
+<tag>regression</tag>
+<status status="PASS" start="2026-09-30T13:13:55.600780" elapsed="0.035989"/>
+</test>
+<test id="s1-s1-s14-t4" name="Click OK On Alert Box And Verify The Result" line="25">
+<kw name="Handle Alert" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:13:55.637103" level="INFO">HANDLE::&lt;class 'NoneType'&gt;::None</msg>
+<arg>action=ACCEPT</arg>
+<doc>Handles the current alert and returns its message.</doc>
+<status status="PASS" start="2026-09-30T13:13:55.637036" elapsed="0.002135"/>
+</kw>
+<kw name="Alert Should Not Be Present" owner="SeleniumLibrary">
+<doc>Verifies that no alert is present.</doc>
+<status status="PASS" start="2026-09-30T13:13:55.639479" elapsed="5.061293"/>
+</kw>
+<tag>regression</tag>
+<status status="PASS" start="2026-09-30T13:13:55.636865" elapsed="5.064420"/>
+</test>
+<test id="s1-s1-s14-t5" name="Click Confirm Button And Verify Alert Box" line="28">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:14:00.703157" level="INFO">Clicking button 'xpath=//button[@id="confirm-btn"]'.</msg>
+<arg>${xpath_confirm_btn}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:14:00.702684" elapsed="0.052889"/>
+</kw>
+<kw name="Alert Should Be Present" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:14:00.756084" level="INFO">HANDLE::&lt;class 'NoneType'&gt;::None</msg>
+<arg>Press a button! Either OK or Cancel.</arg>
+<arg>action=LEAVE</arg>
+<doc>Verifies that an alert is present and by default, accepts it.</doc>
+<status status="PASS" start="2026-09-30T13:14:00.755886" elapsed="0.002166"/>
+</kw>
+<tag>regression</tag>
+<status status="PASS" start="2026-09-30T13:14:00.701676" elapsed="0.056602"/>
+</test>
+<test id="s1-s1-s14-t6" name="Click Cancel button on Alert Box And Verify The Result" line="31">
+<kw name="Handle Alert" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:14:00.758966" level="INFO">HANDLE::&lt;class 'NoneType'&gt;::None</msg>
+<arg>action=DISMISS</arg>
+<doc>Handles the current alert and returns its message.</doc>
+<status status="PASS" start="2026-09-30T13:14:00.758732" elapsed="0.002938"/>
+</kw>
+<kw name="Alert Should Not Be Present" owner="SeleniumLibrary">
+<doc>Verifies that no alert is present.</doc>
+<status status="PASS" start="2026-09-30T13:14:00.761983" elapsed="5.066869"/>
+</kw>
+<tag>regression</tag>
+<status status="PASS" start="2026-09-30T13:14:00.758439" elapsed="5.070900"/>
+</test>
+<test id="s1-s1-s14-t7" name="Click Confirm Button To Open Alert Box Again" line="34">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:14:05.830931" level="INFO">Clicking button 'xpath=//button[@id="confirm-btn"]'.</msg>
+<arg>${xpath_confirm_btn}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:14:05.830511" elapsed="0.044181"/>
+</kw>
+<kw name="Alert Should Be Present" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:14:05.874990" level="INFO">HANDLE::&lt;class 'NoneType'&gt;::None</msg>
+<arg>Press a button! Either OK or Cancel.</arg>
+<arg>action=LEAVE</arg>
+<doc>Verifies that an alert is present and by default, accepts it.</doc>
+<status status="PASS" start="2026-09-30T13:14:05.874868" elapsed="0.001364"/>
+</kw>
+<tag>regression</tag>
+<status status="PASS" start="2026-09-30T13:14:05.829859" elapsed="0.046514"/>
+</test>
+<test id="s1-s1-s14-t8" name="Click OK On Alert Box" line="37">
+<kw name="Handle Alert" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:14:05.876805" level="INFO">HANDLE::&lt;class 'NoneType'&gt;::None</msg>
+<arg>action=ACCEPT</arg>
+<doc>Handles the current alert and returns its message.</doc>
+<status status="PASS" start="2026-09-30T13:14:05.876703" elapsed="0.002514"/>
+</kw>
+<kw name="Alert Should Not Be Present" owner="SeleniumLibrary">
+<doc>Verifies that no alert is present.</doc>
+<status status="PASS" start="2026-09-30T13:14:05.879467" elapsed="5.066389"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-09-30T13:14:10.946045" elapsed="0.076888"/>
+</kw>
+<tag>regression</tag>
+<status status="PASS" start="2026-09-30T13:14:05.876508" elapsed="5.146594"/>
+</test>
+<status status="PASS" start="2026-09-30T13:13:53.640689" elapsed="17.382604"/>
+</suite>
+<suite id="s1-s1-s15" name="15 Loader" source="/Users/eye/Documents/automation-robot/tests/15_loader.robot">
+<test id="s1-s1-s15-t1" name="Open Test Website" line="11">
+<kw name="Open QA-Automation-Practice Application" owner="common">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:14:11.026971" level="INFO">Opening browser 'chrome' to base url 'https://qa-automation-practice.netlify.app/'.</msg>
+<arg>${url_2}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-09-30T13:14:11.026878" elapsed="0.948794"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-09-30T13:14:11.976052" elapsed="0.341171"/>
+</kw>
+<doc>Opens the browser and navigates to the qa-automation-practice URL</doc>
+<status status="PASS" start="2026-09-30T13:14:11.026749" elapsed="1.290580"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:14:12.321844" level="INFO">Current page contains element 'xpath=//a[text()="Loader"]'.</msg>
+<arg>${loader_menu}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2026-09-30T13:14:12.317498" elapsed="0.004407"/>
+</kw>
+<tag>regression</tag>
+<status status="PASS" start="2026-09-30T13:14:11.024932" elapsed="1.297111"/>
+</test>
+<test id="s1-s1-s15-t2" name="Go To Test Page" line="14">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:14:12.322554" level="INFO">Clicking element 'xpath=//a[text()="Loader"]'.</msg>
+<arg>${loader_menu}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:14:12.322421" elapsed="0.593718"/>
+</kw>
+<tag>regression</tag>
+<status status="PASS" start="2026-09-30T13:14:12.322206" elapsed="0.594079"/>
+</test>
+<test id="s1-s1-s15-t3" name="Verify Loader And The Result After Loading Stop" line="16">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${loader}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-09-30T13:14:12.916605" elapsed="0.006134"/>
+</kw>
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>${loader}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2026-09-30T13:14:12.922920" elapsed="2.149470"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:14:15.083028" level="INFO">Current page contains text 'Tada!'.</msg>
+<arg>Tada!</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2026-09-30T13:14:15.072982" elapsed="0.010146"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:14:15.089291" level="INFO">Current page contains text 'Some text in my newly loaded page..'.</msg>
+<arg>Some text in my newly loaded page..</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2026-09-30T13:14:15.083332" elapsed="0.006026"/>
+</kw>
+<tag>regression</tag>
+<status status="PASS" start="2026-09-30T13:14:12.916405" elapsed="2.173105"/>
+</test>
+<status status="PASS" start="2026-09-30T13:14:11.023515" elapsed="4.066248"/>
+</suite>
+<suite id="s1-s1-s16" name="16 Pagination" source="/Users/eye/Documents/automation-robot/tests/16_pagination.robot">
+<test id="s1-s1-s16-t1" name="Open Test Website" line="16">
+<kw name="Open QA-Automation-Practice Application" owner="common">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:14:15.092552" level="INFO">Opening browser 'chrome' to base url 'https://qa-automation-practice.netlify.app/'.</msg>
+<arg>${url_2}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-09-30T13:14:15.092404" elapsed="0.996953"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-09-30T13:14:16.089731" elapsed="0.337642"/>
+</kw>
+<doc>Opens the browser and navigates to the qa-automation-practice URL</doc>
+<status status="PASS" start="2026-09-30T13:14:15.092231" elapsed="1.335236"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:14:16.431298" level="INFO">Current page contains element 'xpath=//a[text()="Pagination"]'.</msg>
+<arg>${pagination_menu}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2026-09-30T13:14:16.427617" elapsed="0.003723"/>
+</kw>
+<tag>regression</tag>
+<status status="PASS" start="2026-09-30T13:14:15.091982" elapsed="1.339475"/>
+</test>
+<test id="s1-s1-s16-t2" name="Go To Test Page" line="19">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:14:16.431963" level="INFO">Clicking element 'xpath=//a[text()="Pagination"]'.</msg>
+<arg>${pagination_menu}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:14:16.431834" elapsed="0.580997"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${pagination_element}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2026-09-30T13:14:17.012982" elapsed="0.004004"/>
+</kw>
+<tag>regression</tag>
+<status status="PASS" start="2026-09-30T13:14:16.431626" elapsed="0.585488"/>
+</test>
+<test id="s1-s1-s16-t3" name="Verify Page 1 Link Is Enabled" line="22">
+<kw name="Element Should Be Enabled" owner="SeleniumLibrary">
+<arg>${page_1}</arg>
+<doc>Verifies that element identified by ``locator`` is enabled.</doc>
+<status status="PASS" start="2026-09-30T13:14:17.017385" elapsed="0.006108"/>
+</kw>
+<tag>regression</tag>
+<status status="PASS" start="2026-09-30T13:14:17.017216" elapsed="0.006346"/>
+</test>
+<test id="s1-s1-s16-t4" name="Click Page 1 Link And Verify The Result" line="24">
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:14:17.023868" level="INFO">Clicking link 'xpath=//*[@id="content"]/nav[2]/ul/li[2]/a'.</msg>
+<arg>${page_1}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:14:17.023771" elapsed="0.022677"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>You clicked page no. 1</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-09-30T13:14:17.046574" elapsed="0.011932"/>
+</kw>
+<tag>regression</tag>
+<status status="PASS" start="2026-09-30T13:14:17.023639" elapsed="0.034988"/>
+</test>
+<test id="s1-s1-s16-t5" name="Verify Page 2 Link Is Enabled" line="27">
+<kw name="Element Should Be Enabled" owner="SeleniumLibrary">
+<arg>${page_2}</arg>
+<doc>Verifies that element identified by ``locator`` is enabled.</doc>
+<status status="PASS" start="2026-09-30T13:14:17.058877" elapsed="0.006847"/>
+</kw>
+<tag>regression</tag>
+<status status="PASS" start="2026-09-30T13:14:17.058722" elapsed="0.007139"/>
+</test>
+<test id="s1-s1-s16-t6" name="Click Page 2 Link And Verify The Result" line="29">
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:14:17.066246" level="INFO">Clicking link 'xpath=//*[@id="content"]/nav[2]/ul/li[3]/a'.</msg>
+<arg>${page_2}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:14:17.066118" elapsed="0.017367"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>You clicked page no. 2</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-09-30T13:14:17.083596" elapsed="0.002903"/>
+</kw>
+<tag>regression</tag>
+<status status="PASS" start="2026-09-30T13:14:17.065959" elapsed="0.020616"/>
+</test>
+<test id="s1-s1-s16-t7" name="Verify Page 3 Link Is Enabled" line="32">
+<kw name="Element Should Be Enabled" owner="SeleniumLibrary">
+<arg>${page_3}</arg>
+<doc>Verifies that element identified by ``locator`` is enabled.</doc>
+<status status="PASS" start="2026-09-30T13:14:17.086783" elapsed="0.005614"/>
+</kw>
+<tag>regression</tag>
+<status status="PASS" start="2026-09-30T13:14:17.086659" elapsed="0.005839"/>
+</test>
+<test id="s1-s1-s16-t8" name="Click Page 3 Link And Verify The Result" line="34">
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:14:17.092844" level="INFO">Clicking link 'xpath=//*[@id="content"]/nav[2]/ul/li[4]/a'.</msg>
+<arg>${page_3}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:14:17.092738" elapsed="0.018490"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>You clicked page no. 3</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-09-30T13:14:17.111360" elapsed="0.004359"/>
+</kw>
+<tag>regression</tag>
+<status status="PASS" start="2026-09-30T13:14:17.092577" elapsed="0.023290"/>
+</test>
+<test id="s1-s1-s16-t9" name="Verify Page Link Next Should Be Enabled" line="37">
+<kw name="Element Should Be Enabled" owner="SeleniumLibrary">
+<arg>${page_next}</arg>
+<doc>Verifies that element identified by ``locator`` is enabled.</doc>
+<status status="PASS" start="2026-09-30T13:14:17.116166" elapsed="0.006493"/>
+</kw>
+<tag>regression</tag>
+<status status="PASS" start="2026-09-30T13:14:17.115994" elapsed="0.006777"/>
+</test>
+<test id="s1-s1-s16-t10" name="Click Page Link Next And Verify The Result" line="39">
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:14:17.123138" level="INFO">Clicking link 'xpath=//*[@id="content"]/nav[2]/ul/li[5]/a'.</msg>
+<arg>${page_next}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:14:17.123023" elapsed="0.018477"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>You clicked the "Next" button</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-09-30T13:14:17.141649" elapsed="0.003192"/>
+</kw>
+<tag>regression</tag>
+<status status="PASS" start="2026-09-30T13:14:17.122870" elapsed="0.022064"/>
+</test>
+<status status="PASS" start="2026-09-30T13:14:15.090111" elapsed="2.054975"/>
+</suite>
+<suite id="s1-s1-s17" name="17 File Upload" source="/Users/eye/Documents/automation-robot/tests/17_file_upload.robot">
+<test id="s1-s1-s17-t1" name="Open Test Website" line="12">
+<kw name="Open QA-Automation-Practice Application" owner="common">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:14:17.146815" level="INFO">Opening browser 'chrome' to base url 'https://qa-automation-practice.netlify.app/'.</msg>
+<arg>${url_2}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-09-30T13:14:17.146727" elapsed="1.025896"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-09-30T13:14:18.173922" elapsed="0.341515"/>
+</kw>
+<doc>Opens the browser and navigates to the qa-automation-practice URL</doc>
+<status status="PASS" start="2026-09-30T13:14:17.146617" elapsed="1.369035"/>
 </kw>
 <kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
 <arg>${xpath_file_upload_menu}</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" start="2026-09-29T16:31:39.222671" elapsed="0.005177"/>
+<status status="PASS" start="2026-09-30T13:14:18.515995" elapsed="0.004410"/>
 </kw>
-<status status="PASS" start="2026-09-29T16:31:37.819318" elapsed="1.408678"/>
+<tag>regression</tag>
+<status status="PASS" start="2026-09-30T13:14:17.146407" elapsed="1.374133"/>
 </test>
-<test id="s1-t2" name="Go To Test Page" line="13">
+<test id="s1-s1-s17-t2" name="Go To Test Page" line="15">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-09-29T16:31:39.228574" level="INFO">Clicking element 'xpath=//a[text()="File Upload"]'.</msg>
+<msg time="2026-09-30T13:14:18.521138" level="INFO">Clicking element 'xpath=//a[text()="File Upload"]'.</msg>
 <arg>${xpath_file_upload_menu}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-09-29T16:31:39.228419" elapsed="0.707856"/>
+<status status="PASS" start="2026-09-30T13:14:18.521009" elapsed="0.468647"/>
 </kw>
 <kw name="Wait Until Page Contains" owner="SeleniumLibrary">
 <arg>File Upload Example</arg>
 <doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" start="2026-09-29T16:31:39.936778" elapsed="0.005216"/>
+<status status="PASS" start="2026-09-30T13:14:18.989905" elapsed="0.003741"/>
 </kw>
-<status status="PASS" start="2026-09-29T16:31:39.228185" elapsed="0.714032"/>
+<tag>regression</tag>
+<status status="PASS" start="2026-09-30T13:14:18.520752" elapsed="0.473015"/>
 </test>
-<test id="s1-t3" name="Upload File" line="16">
+<test id="s1-s1-s17-t3" name="Upload File" line="18">
 <kw name="Choose File" owner="SeleniumLibrary">
-<msg time="2026-09-29T16:31:39.942876" level="INFO">Sending /Users/eye/Documents/automation-robot/data/hello-kitty.jpg to browser.</msg>
+<msg time="2026-09-30T13:14:18.994313" level="INFO">Sending /Users/eye/Documents/automation-robot/data/hello-kitty.jpg to browser.</msg>
 <arg>${xpath_uploader}</arg>
 <arg>/Users/eye/Documents/automation-robot/data/hello-kitty.jpg</arg>
 <doc>Inputs the ``file_path`` into the file input field ``locator``.</doc>
-<status status="PASS" start="2026-09-29T16:31:39.942669" elapsed="0.014652"/>
+<status status="PASS" start="2026-09-30T13:14:18.994134" elapsed="0.011329"/>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2026-09-29T16:31:39.957589" level="INFO">Clicking button 'xpath=//button[@onclick="uploadFile()"]'.</msg>
+<msg time="2026-09-30T13:14:19.005844" level="INFO">Clicking button 'xpath=//button[@onclick="uploadFile()"]'.</msg>
 <arg>${xpath_submit_btn}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2026-09-29T16:31:39.957448" elapsed="0.021974"/>
+<status status="PASS" start="2026-09-30T13:14:19.005665" elapsed="0.020821"/>
 </kw>
-<status status="PASS" start="2026-09-29T16:31:39.942422" elapsed="0.037126"/>
+<tag>regression</tag>
+<status status="PASS" start="2026-09-30T13:14:18.993890" elapsed="0.032908"/>
 </test>
-<test id="s1-t4" name="Verify The Result" line="19">
+<test id="s1-s1-s17-t4" name="Verify The Result" line="21">
 <kw name="Wait Until Page Contains" owner="SeleniumLibrary">
 <arg>You have successfully uploaded "hello-kitty.jpg"</arg>
 <doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" start="2026-09-29T16:31:39.979774" elapsed="0.002774"/>
+<status status="PASS" start="2026-09-30T13:14:19.027142" elapsed="0.004220"/>
 </kw>
-<status status="PASS" start="2026-09-29T16:31:39.979641" elapsed="0.002965"/>
+<tag>regression</tag>
+<status status="PASS" start="2026-09-30T13:14:19.026918" elapsed="0.004575"/>
 </test>
-<status status="PASS" start="2026-09-29T16:31:37.745057" elapsed="2.237728"/>
+<status status="PASS" start="2026-09-30T13:14:17.145296" elapsed="1.886413"/>
+</suite>
+<suite id="s1-s1-s18" name="18 Date Pickers" source="/Users/eye/Documents/automation-robot/tests/18_date_pickers.robot">
+<test id="s1-s1-s18-t1" name="Open Test Website" line="23">
+<kw name="Open QA-Automation-Practice Application" owner="common">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:14:19.036129" level="INFO">Opening browser 'chrome' to base url 'https://qa-automation-practice.netlify.app/'.</msg>
+<arg>${url_2}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-09-30T13:14:19.035844" elapsed="1.028882"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-09-30T13:14:20.065129" elapsed="0.334271"/>
+</kw>
+<doc>Opens the browser and navigates to the qa-automation-practice URL</doc>
+<status status="PASS" start="2026-09-30T13:14:19.035622" elapsed="1.363941"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${xpath_date_pickers_menu}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2026-09-30T13:14:20.399752" elapsed="0.004536"/>
+</kw>
+<tag>regression</tag>
+<status status="PASS" start="2026-09-30T13:14:19.035345" elapsed="1.369057"/>
+</test>
+<test id="s1-s1-s18-t2" name="Go To Test Page" line="26">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:14:20.404844" level="INFO">Clicking element 'xpath=//*[@id="date-picker"]'.</msg>
+<arg>${xpath_date_pickers_menu}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:14:20.404735" elapsed="0.825563"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Range Date Picker Example</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-09-30T13:14:21.230698" elapsed="0.004664"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Basic Date Picker Example</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-09-30T13:14:21.235534" elapsed="0.003049"/>
+</kw>
+<tag>regression</tag>
+<status status="PASS" start="2026-09-30T13:14:20.404543" elapsed="0.834144"/>
+</test>
+<test id="s1-s1-s18-t3" name="Verify Current Value Before Typing On Date Range Picker Input Field" line="30">
+<kw name="Get Value" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:14:21.244785" level="INFO">${value_before} = 01/01/2018 - 01/15/2018</msg>
+<var>${value_before}</var>
+<arg>locator=${xpath_drp_input}</arg>
+<doc>Returns the value attribute of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:14:21.238984" elapsed="0.005835"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Value before new input:${value_before}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-09-30T13:14:21.245011" elapsed="0.000300"/>
+</kw>
+<tag>regression</tag>
+<status status="PASS" start="2026-09-30T13:14:21.238793" elapsed="0.006577"/>
+</test>
+<test id="s1-s1-s18-t4" name="Set New Date Range By Typing On Date Range Picker Input Field" line="33">
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${xpath_drp_input}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:14:21.245619" elapsed="0.021527"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-09-30T13:14:21.267736" level="INFO">${input_value} = 09/01/2026 - 09/24/2026</msg>
+<var>${input_value}</var>
+<arg>09/01/2026 - 09/24/2026</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-09-30T13:14:21.267322" elapsed="0.000439"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:14:21.268158" level="INFO">Typing text '09/01/2026 - 09/24/2026' into text field 'xpath=//*[@id="range-date-calendar"]'.</msg>
+<arg>${xpath_drp_input}</arg>
+<arg>${input_value}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:14:21.267928" elapsed="0.072333"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Input value: ${input_value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-09-30T13:14:21.340503" elapsed="0.000309"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:14:21.348661" level="INFO">${selected_value} = 09/01/2026 - 09/24/2026</msg>
+<var>${selected_value}</var>
+<arg>${xpath_selected_drp}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:14:21.340912" elapsed="0.007774"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Value displayed on carlendar: ${selected_value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-09-30T13:14:21.348814" elapsed="0.000173"/>
+</kw>
+<kw name="Should Match" owner="BuiltIn">
+<arg>${input_value}</arg>
+<arg>${selected_value}</arg>
+<doc>Fails if the given ``string`` does not match the given ``pattern``.</doc>
+<status status="PASS" start="2026-09-30T13:14:21.349052" elapsed="0.000305"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:14:21.355234" level="INFO">Element 'xpath=/html/body/div[2]' is displayed.</msg>
+<arg>${xpath_drp_calendar}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2026-09-30T13:14:21.349427" elapsed="0.005858"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:14:21.360433" level="INFO">Element 'xpath=/html/body/div[2]/div[4]/button[2]' is displayed.</msg>
+<arg>${xpath_drp_apply_btn}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2026-09-30T13:14:21.355395" elapsed="0.005087"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:14:21.360703" level="INFO">Clicking button 'xpath=/html/body/div[2]/div[4]/button[2]'.</msg>
+<arg>${xpath_drp_apply_btn}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:14:21.360592" elapsed="0.021918"/>
+</kw>
+<kw name="Get Value" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:14:21.386501" level="INFO">${displayed_value} = 09/01/2026 - 09/24/2026</msg>
+<var>${displayed_value}</var>
+<arg>${xpath_drp_input}</arg>
+<doc>Returns the value attribute of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:14:21.382646" elapsed="0.003876"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Displayed value after clicking apply btn: ${displayed_value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-09-30T13:14:21.386603" elapsed="0.000151"/>
+</kw>
+<kw name="Should Match" owner="BuiltIn">
+<arg>${input_value}</arg>
+<arg>${selected_value}</arg>
+<arg>${displayed_value}</arg>
+<doc>Fails if the given ``string`` does not match the given ``pattern``.</doc>
+<status status="PASS" start="2026-09-30T13:14:21.386799" elapsed="0.000126"/>
+</kw>
+<tag>regression</tag>
+<status status="PASS" start="2026-09-30T13:14:21.245460" elapsed="0.141520"/>
+</test>
+<test id="s1-s1-s18-t5" name="Verify Value Before Setting New Date On Single-Month Date Calendar" line="47">
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:14:21.391570" level="INFO">Element 'xpath=//*[@id="calendar"]' is displayed.</msg>
+<arg>${xpath_dp_input}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2026-09-30T13:14:21.387198" elapsed="0.004400"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:14:21.395035" level="INFO">${before_date} = </msg>
+<var>${before_date}</var>
+<arg>${xpath_dp_input}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:14:21.391659" elapsed="0.003388"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Value before picking calendar: ${before_date}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-09-30T13:14:21.395104" elapsed="0.000118"/>
+</kw>
+<kw name="Should Match" owner="BuiltIn">
+<arg>${before_date}</arg>
+<arg>\</arg>
+<doc>Fails if the given ``string`` does not match the given ``pattern``.</doc>
+<status status="PASS" start="2026-09-30T13:14:21.395266" elapsed="0.000131"/>
+</kw>
+<tag>regression</tag>
+<status status="PASS" start="2026-09-30T13:14:21.387063" elapsed="0.008385"/>
+</test>
+<test id="s1-s1-s18-t6" name="Set New Date On Single-Month Date Calendar" line="52">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:14:21.395712" level="INFO">Clicking element 'xpath=//*[@id="calendar"]'.</msg>
+<arg>${xpath_dp_input}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:14:21.395641" elapsed="0.019861"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${xpath_dp_calendar}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2026-09-30T13:14:21.415634" elapsed="0.003014"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:14:21.423456" level="INFO">${value_1} = September 2026</msg>
+<var>${value_1}</var>
+<arg>${xpath_dp_month_yr}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:14:21.418746" elapsed="0.004729"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Value 1: ${value_1}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-09-30T13:14:21.423561" elapsed="0.000145"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:14:21.423833" level="INFO">Clicking element 'xpath=/html/body/div[3]/div[1]/table/thead/tr[1]/th[2]'.</msg>
+<arg>${xpath_dp_month_yr}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:14:21.423754" elapsed="0.015150"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:14:21.443511" level="INFO">${value_2} = 2026</msg>
+<var>${value_2}</var>
+<arg>${xpath_dp_yr}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:14:21.439023" elapsed="0.004504"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Value 2: ${value_2}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-09-30T13:14:21.443610" elapsed="0.000136"/>
+</kw>
+<if>
+<branch type="IF" condition="${value_2} != '2027'">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:14:21.444058" level="INFO">Clicking element 'xpath=/html/body/div[3]/div[2]/table/thead/tr/th[2]'.</msg>
+<arg>${xpath_dp_yr}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:14:21.443975" elapsed="0.015356"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:14:21.459555" level="INFO">Clicking element 'xpath=/html/body/div[3]/div[3]/table/tbody/tr/td/span[text()="2027"]'.</msg>
+<arg>${xpath_year}\[text()="2027"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:14:21.459412" elapsed="0.018510"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:14:21.478229" level="INFO">Clicking element 'xpath=/html/body/div[3]/div[2]/table/tbody/tr/td/span[text()="Oct"]'.</msg>
+<arg>${xpath_selected_dp_month}\[text()="Oct"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:14:21.478045" elapsed="0.017475"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:14:21.495795" level="INFO">Clicking element 'xpath=/html/body/div[3]/div[1]/table/tbody/tr/*[text()="10"]'.</msg>
+<arg>${xpath_selected_dp_date}\[text()="10"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:14:21.495627" elapsed="0.025254"/>
+</kw>
+<status status="PASS" start="2026-09-30T13:14:21.443862" elapsed="0.077100"/>
+</branch>
+<branch type="ELSE">
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>${xpath_selected_dp_month}\[text()="Oct"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-09-30T13:14:21.521573" elapsed="0.000019"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>${xpath_selected_dp_date}\[text()="10"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-09-30T13:14:21.521711" elapsed="0.000018"/>
+</kw>
+<status status="NOT RUN" start="2026-09-30T13:14:21.521052" elapsed="0.000709"/>
+</branch>
+<status status="PASS" start="2026-09-30T13:14:21.443828" elapsed="0.077953"/>
+</if>
+<kw name="Get Value" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:14:21.526432" level="INFO">${dp_result} = 10/10/2027</msg>
+<var>${dp_result}</var>
+<arg>${xpath_dp_input}</arg>
+<doc>Returns the value attribute of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:14:21.521980" elapsed="0.004478"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>New Date: ${dp_result}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-09-30T13:14:21.526587" elapsed="0.000176"/>
+</kw>
+<kw name="Should Match" owner="BuiltIn">
+<arg>${dp_result}</arg>
+<arg>10/10/2027</arg>
+<doc>Fails if the given ``string`` does not match the given ``pattern``.</doc>
+<status status="PASS" start="2026-09-30T13:14:21.526817" elapsed="0.000157"/>
+</kw>
+<tag>regression</tag>
+<status status="PASS" start="2026-09-30T13:14:21.395523" elapsed="0.131509"/>
+</test>
+<status status="PASS" start="2026-09-30T13:14:19.032021" elapsed="2.495145"/>
+</suite>
+<suite id="s1-s1-s19" name="19 Login Form" source="/Users/eye/Documents/automation-robot/tests/19_login_form.robot">
+<test id="s1-s1-s19-t1" name="Open Test Website" line="14">
+<kw name="Open QA-Automation-Practice Application" owner="common">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:14:21.529065" level="INFO">Opening browser 'chrome' to base url 'https://qa-automation-practice.netlify.app/'.</msg>
+<arg>${url_2}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-09-30T13:14:21.528980" elapsed="1.040613"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-09-30T13:14:22.569899" elapsed="0.335403"/>
+</kw>
+<doc>Opens the browser and navigates to the qa-automation-practice URL</doc>
+<status status="PASS" start="2026-09-30T13:14:21.528870" elapsed="1.376642"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${xpath_forms_menu}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2026-09-30T13:14:22.905828" elapsed="0.006530"/>
+</kw>
+<tag>regression</tag>
+<status status="PASS" start="2026-09-30T13:14:21.528715" elapsed="1.383774"/>
+</test>
+<test id="s1-s1-s19-t2" name="Go To Test Page" line="17">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:14:22.913120" level="INFO">Clicking element 'xpath=//a[text()="Forms"]'.</msg>
+<arg>${xpath_forms_menu}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:14:22.912918" elapsed="0.021665"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${xpath_login_submenu}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2026-09-30T13:14:22.934802" elapsed="0.004452"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${xpath_login_submenu}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-09-30T13:14:22.939419" elapsed="0.263165"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:14:23.202902" level="INFO">Clicking element 'xpath=//a[text()="Login"]'.</msg>
+<arg>${xpath_login_submenu}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:14:23.202733" elapsed="1.139942"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Login - Shop</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-09-30T13:14:24.342807" elapsed="0.003339"/>
+</kw>
+<tag>regression</tag>
+<status status="PASS" start="2026-09-30T13:14:22.912642" elapsed="1.433583"/>
+</test>
+<test id="s1-s1-s19-t3" name="Verify User Cannot Login With Empty Input Fields" line="23">
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:14:24.352658" level="INFO">${email} = </msg>
+<var>${email}</var>
+<arg>${xpath_email}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:14:24.346461" elapsed="0.006218"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Email: ${email}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-09-30T13:14:24.352782" elapsed="0.000214"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:14:24.357606" level="INFO">${password} = </msg>
+<var>${password}</var>
+<arg>${xpath_password}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:14:24.353049" elapsed="0.004572"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Password: ${password}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-09-30T13:14:24.357686" elapsed="0.000108"/>
+</kw>
+<kw name="Should Be Empty" owner="BuiltIn">
+<msg time="2026-09-30T13:14:24.358880" level="INFO">Length is 0.</msg>
+<arg>${email}</arg>
+<arg>${password}</arg>
+<doc>Verifies that the given item is empty.</doc>
+<status status="PASS" start="2026-09-30T13:14:24.357843" elapsed="0.001057"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:14:24.359034" level="INFO">Clicking button 'xpath=//*[@id="submitLoginBtn"]'.</msg>
+<arg>${xpath_submit_btn}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:14:24.358954" elapsed="0.021557"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Bad credentials! Please try again! Make sure that you've registered.</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-09-30T13:14:24.380897" elapsed="0.004125"/>
+</kw>
+<tag>regression</tag>
+<status status="PASS" start="2026-09-30T13:14:24.346315" elapsed="0.039245"/>
+</test>
+<test id="s1-s1-s19-t4" name="Verify User Cannot Login With Only Email" line="31">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:14:24.385969" level="INFO">Typing text 'admin@admin.com' into text field 'xpath=//*[@id="email"]'.</msg>
+<arg>${xpath_email}</arg>
+<arg>admin@admin.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:14:24.385835" elapsed="0.049709"/>
+</kw>
+<kw name="Get Value" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:14:24.440295" level="INFO">${email} = admin@admin.com</msg>
+<var>${email}</var>
+<arg>${xpath_email}</arg>
+<doc>Returns the value attribute of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:14:24.435686" elapsed="0.004635"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${email}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-09-30T13:14:24.440424" elapsed="0.000155"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2026-09-30T13:14:24.440749" level="INFO">Length is 15.</msg>
+<arg>${email}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2026-09-30T13:14:24.440630" elapsed="0.000141"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:14:24.445344" level="INFO">${password} = </msg>
+<var>${password}</var>
+<arg>${xpath_password}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:14:24.440823" elapsed="0.004547"/>
+</kw>
+<kw name="Should Be Empty" owner="BuiltIn">
+<msg time="2026-09-30T13:14:24.445626" level="INFO">Length is 0.</msg>
+<arg>${password}</arg>
+<doc>Verifies that the given item is empty.</doc>
+<status status="PASS" start="2026-09-30T13:14:24.445471" elapsed="0.000179"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:14:24.445796" level="INFO">Clicking button 'xpath=//*[@id="submitLoginBtn"]'.</msg>
+<arg>${xpath_submit_btn}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:14:24.445710" elapsed="0.019497"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Bad credentials! Please try again! Make sure that you've registered.</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-09-30T13:14:24.465338" elapsed="0.002641"/>
+</kw>
+<tag>regression</tag>
+<status status="PASS" start="2026-09-30T13:14:24.385672" elapsed="0.082522"/>
+</test>
+<test id="s1-s1-s19-t5" name="Verify User Cannot Login With Only Password" line="40">
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${xpath_email}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:14:24.468545" elapsed="0.008849"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:14:24.477851" level="INFO">Typing text '1234567890' into text field 'xpath=//*[@id="password"]'.</msg>
+<arg>${xpath_password}</arg>
+<arg>1234567890</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:14:24.477564" elapsed="0.021942"/>
+</kw>
+<kw name="Get Value" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:14:24.503708" level="INFO">${password} = 1234567890</msg>
+<var>${password}</var>
+<arg>${xpath_password}</arg>
+<doc>Returns the value attribute of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:14:24.499661" elapsed="0.004073"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${password}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-09-30T13:14:24.503846" elapsed="0.000171"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2026-09-30T13:14:24.504171" level="INFO">Length is 10.</msg>
+<arg>${password}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2026-09-30T13:14:24.504070" elapsed="0.000119"/>
+</kw>
+<kw name="Get Value" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:14:24.507498" level="INFO">${email} = </msg>
+<var>${email}</var>
+<arg>${xpath_email}</arg>
+<doc>Returns the value attribute of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:14:24.504240" elapsed="0.003278"/>
+</kw>
+<kw name="Should Be Empty" owner="BuiltIn">
+<msg time="2026-09-30T13:14:24.507736" level="INFO">Length is 0.</msg>
+<arg>${email}</arg>
+<doc>Verifies that the given item is empty.</doc>
+<status status="PASS" start="2026-09-30T13:14:24.507603" elapsed="0.000152"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:14:24.507884" level="INFO">Clicking button 'xpath=//*[@id="submitLoginBtn"]'.</msg>
+<arg>${xpath_submit_btn}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:14:24.507805" elapsed="0.021850"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Bad credentials! Please try again! Make sure that you've registered.</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-09-30T13:14:24.529780" elapsed="0.003008"/>
+</kw>
+<tag>regression</tag>
+<status status="PASS" start="2026-09-30T13:14:24.468342" elapsed="0.064595"/>
+</test>
+<test id="s1-s1-s19-t6" name="Verify User Can Login With Valid Email and Password" line="50">
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${xpath_password}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:14:24.533235" elapsed="0.013496"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:14:24.546980" level="INFO">Typing text 'admin@admin.com' into text field 'xpath=//*[@id="email"]'.</msg>
+<arg>${xpath_email}</arg>
+<arg>admin@admin.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:14:24.546845" elapsed="0.019897"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:14:24.567066" level="INFO">Typing password into text field 'xpath=//*[@id="password"]'.</msg>
+<msg time="2026-09-30T13:14:24.574437" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${xpath_password}</arg>
+<arg>admin123</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:14:24.566900" elapsed="0.019998"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:14:24.587149" level="INFO">Clicking button 'xpath=//*[@id="submitLoginBtn"]'.</msg>
+<arg>${xpath_submit_btn}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-30T13:14:24.587020" elapsed="0.024215"/>
+</kw>
+<kw name="Page Should Not Contain" owner="SeleniumLibrary">
+<msg time="2026-09-30T13:14:24.617334" level="INFO">Current page does not contain text 'Bad credentials! Please try again! Make sure that you've registered.'.</msg>
+<arg>Bad credentials! Please try again! Make sure that you've registered.</arg>
+<doc>Verifies the current page does not contain ``text``.</doc>
+<status status="PASS" start="2026-09-30T13:14:24.611377" elapsed="0.005997"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>SHOPPING CART</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-09-30T13:14:24.617481" elapsed="0.002880"/>
+</kw>
+<tag>regression</tag>
+<status status="PASS" start="2026-09-30T13:14:24.533054" elapsed="0.087390"/>
+</test>
+<status status="PASS" start="2026-09-30T13:14:21.527358" elapsed="3.093233"/>
+</suite>
+<status status="FAIL" start="2026-09-30T13:12:51.157670" elapsed="93.463195"/>
+</suite>
+<status status="FAIL" start="2026-09-30T13:12:51.143833" elapsed="93.477347"/>
 </suite>
 <statistics>
 <total>
-<stat pass="4" fail="0" skip="0">All Tests</stat>
+<stat pass="83" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
+<stat pass="83" fail="1" skip="0">regression</stat>
 </tag>
 <suite>
-<stat name="17 File Upload" id="s1" pass="4" fail="0" skip="0">17 File Upload</stat>
+<stat name="Automation-Robot" id="s1" pass="83" fail="1" skip="0">Automation-Robot</stat>
+<stat name="Tests" id="s1-s1" pass="83" fail="1" skip="0">Automation-Robot.Tests</stat>
+<stat name="01 Login" id="s1-s1-s1" pass="1" fail="0" skip="0">Automation-Robot.Tests.01 Login</stat>
+<stat name="02 Inputbox" id="s1-s1-s2" pass="1" fail="0" skip="0">Automation-Robot.Tests.02 Inputbox</stat>
+<stat name="03 Checkboxes" id="s1-s1-s3" pass="1" fail="0" skip="0">Automation-Robot.Tests.03 Checkboxes</stat>
+<stat name="04 Radiobutton" id="s1-s1-s4" pass="5" fail="0" skip="0">Automation-Robot.Tests.04 Radiobutton</stat>
+<stat name="05 Dropdown" id="s1-s1-s5" pass="2" fail="0" skip="0">Automation-Robot.Tests.05 Dropdown</stat>
+<stat name="06 Doubleclick" id="s1-s1-s6" pass="4" fail="0" skip="0">Automation-Robot.Tests.06 Doubleclick</stat>
+<stat name="07 Scrolling" id="s1-s1-s7" pass="4" fail="0" skip="0">Automation-Robot.Tests.07 Scrolling</stat>
+<stat name="08 Mouse Hover" id="s1-s1-s8" pass="4" fail="0" skip="0">Automation-Robot.Tests.08 Mouse Hover</stat>
+<stat name="09 Show Hide Element" id="s1-s1-s9" pass="4" fail="0" skip="0">Automation-Robot.Tests.09 Show Hide Element</stat>
+<stat name="10 New Browser Tab" id="s1-s1-s10" pass="4" fail="0" skip="0">Automation-Robot.Tests.10 New Browser Tab</stat>
+<stat name="11 Static Table" id="s1-s1-s11" pass="7" fail="0" skip="0">Automation-Robot.Tests.11 Static Table</stat>
+<stat name="12 Dynamic Table" id="s1-s1-s12" pass="5" fail="1" skip="0">Automation-Robot.Tests.12 Dynamic Table</stat>
+<stat name="13 Iframe" id="s1-s1-s13" pass="4" fail="0" skip="0">Automation-Robot.Tests.13 Iframe</stat>
+<stat name="14 Alerts" id="s1-s1-s14" pass="8" fail="0" skip="0">Automation-Robot.Tests.14 Alerts</stat>
+<stat name="15 Loader" id="s1-s1-s15" pass="3" fail="0" skip="0">Automation-Robot.Tests.15 Loader</stat>
+<stat name="16 Pagination" id="s1-s1-s16" pass="10" fail="0" skip="0">Automation-Robot.Tests.16 Pagination</stat>
+<stat name="17 File Upload" id="s1-s1-s17" pass="4" fail="0" skip="0">Automation-Robot.Tests.17 File Upload</stat>
+<stat name="18 Date Pickers" id="s1-s1-s18" pass="6" fail="0" skip="0">Automation-Robot.Tests.18 Date Pickers</stat>
+<stat name="19 Login Form" id="s1-s1-s19" pass="6" fail="0" skip="0">Automation-Robot.Tests.19 Login Form</stat>
 </suite>
 </statistics>
 <errors>

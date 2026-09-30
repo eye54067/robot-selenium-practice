@@ -1,6 +1,7 @@
 *** Settings ***
 Library    SeleniumLibrary
 Resource    ../resources/common.resource
+Test Tags    regression
 *** Variables ***
 ${xpath_new_tab_window_menu}    xpath=//a[text()="New Tab / Window"]
 ${xpath_new_tab_submenu}    xpath=//*[@id="browser-tab"]
